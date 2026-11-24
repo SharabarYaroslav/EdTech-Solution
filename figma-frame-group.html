@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame чи Group: архітектурні відмінності — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Математична модель контейнерів Frame та Group у Figma, автономна геометрія, Clip Content, сітки розкладки та правила адаптивності.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.4</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 04</div>
+          <h1 class="lesson-hero__title">Frame чи Group: фундаментальні архітектурні відмінності</h1>
+          <p class="lesson-hero__lead">Математична модель контейнерів, автономна геометрія аналога &lt;div&gt;, приховування вмісту Clip Content та правила адаптивного ресайзингу.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-frame-group.jpg" alt="Візуальне порівняння автономного контейнера Frame та пунктирної рамки Group">
+            <button class="hotspot" style="left:26%;top:26%" data-icon="⬛" data-title="Frame: автономна геометрія (аналог <div>)" data-text="Фрейм має власну систему координат і незалежні розміри W та H, а також підтримує власні заливки, обводки, радіуси скруглення та тіні."></button>
+            <button class="hotspot" style="left:27%;top:50%" data-icon="📏" data-title="Layout Guides (Сітки розкладки)" data-text="Лише на фрейм можна накласти власні модульні сітки: Uniform Grid, колонки (Columns) та рядки (Rows)."></button>
+            <button class="hotspot" style="left:19%;top:64%" data-icon="✂️" data-title="Clip Content (Обрізання за межами)" data-text="Прапорець Clip Content у фреймі приховує частини дочірніх об'єктів, що виходять за рамки контейнера (ідеально для каруселей і масок)."></button>
+            <button class="hotspot" style="left:35%;top:64%" data-icon="🔄" data-title="Пряма трансформація в Auto Layout (Shift + A)" data-text="Фрейм керує дітьми через Constraints або одним натисканням Shift + A перетворюється на Flexbox-контейнер."></button>
+            <button class="hotspot" style="left:65%;top:25%" data-icon="📦" data-title="Group: жорсткий Bounding Box" data-text="Група не має власної геометрії: її межі завжди суворо дорівнюють спільному габаритному прямокутнику (Bounding Box) вкладених шарів."></button>
+            <button class="hotspot" style="left:75%;top:58%" data-icon="⚠️" data-title="Деформація при ресайзингу групи" data-text="При зміні розміру групи всі дочірні об'єкти нелінійно або пропорційно розтягуються з порушенням пропорцій та товщини обводок."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Порівняйте інженерний контейнер Frame та тимчасове об'єднання Group.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>&lt;div&gt;</strong><span>Прямий веб-аналог Frame з власною системою координат та автономними W / H</span></div>
+        <div class="stat"><strong data-count="6" data-suffix=" критеріїв">0</strong><span>Фундаментальних функціональних відмінностей між Frame та Group</span></div>
+        <div class="stat"><strong data-count="100" data-suffix="%">0</strong><span>UI-контейнерів, секцій та компонентів у дизайн-системах будуються на фреймах</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#math">1. Математична модель</a>
+          <a href="#compare">2. Порівняльний аналіз</a>
+          <a href="#simulator">3. Симулятор Frame vs Group</a>
+          <a href="#checklist">4. Практична вправа</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group ✓</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. МАТЕМАТИЧНА МОДЕЛЬ -->
+          <section class="l-section" id="math">
+            <h2><span class="n">01</span>Математична та концептуальна модель контейнерів</h2>
+            <p>Розуміння різниці між <b>Frame (Фрейм)</b> та <b>Group (Група)</b> є фундаментальним вододілом між аматорським малюванням та професійною інженерною архітектурою в Figma. Хоча обидва об'єкти виступають батьківськими контейнерами у дереві шарів, їхня математична природа діаметрально протилежна.</p>
+            <p><b>Фрейм</b> функціонує як прямий аналог елемента <code>&lt;div&gt;</code> у сучасній вебверстці. Він володіє власною абсолютною або відносною системою координат і <b>автономними розмірами (W та H), які не залежать від габаритів вкладеного вмісту</b>. На противагу цьому, <b>Група</b> є лише тимчасовим логічним об'єднанням об'єктів: її межі жорстко вираховуються як спільний габаритний прямокутник (<b>Bounding Box</b>) внутрішніх шарів.</p>
+
+            <div class="callout callout--warn">
+              <div class="callout__title">🏗️ Сучасний інженерний стандарт</div>
+              <p>У сучасних дизайн-системах використання груп вважається <b>застарілою практикою (антипатерном)</b> і допускається виключно для тимчасового об'єднання ілюстративних векторних плям. <b>Всі UI-контейнери, секції та компоненти будуються виключно на фреймах.</b></p>
+            </div>
+          </section>
+
+          <!-- 2. ПОРІВНЯЛЬНИЙ АНАЛІЗ -->
+          <section class="l-section" id="compare">
+            <h2><span class="n">02</span>Порівняльний аналіз функціональних властивостей</h2>
+            <p>Фрейм володіє повним набором властивостей графічного об'єкта: підтримує незалежні заливки, обводки, радіуси скруглення, ефекти тіні та приховування вмісту за власними межами (<b>Clip Content</b>). Крім того, фрейми підтримують сітки розкладки (<b>Layout Guides</b>), правила ресайзингу (<b>Constraints</b>) та пряму трансформацію в <b>Auto Layout</b> контейнери.</p>
+            <p>При зміні розмірів групи її внутрішній вміст нелінійно або пропорційно деформується без урахування правил адаптивності, що руйнує верстку інтерфейсу.</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Властивість</th><th>Frame (Фрейм) ✓</th><th>Group (Група) ✗</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Автономність геометрії</td>
+                    <td><b>Повна.</b> Ширина та висота задаються незалежно від внутрішніх шарів.</td>
+                    <td><b>Відсутня.</b> Розміри суворо дорівнюють загальному Bounding Box вмісту.</td>
+                  </tr>
+                  <tr>
+                    <td>Поведінка при ресайзингу</td>
+                    <td>Керується правилами <b>Constraints</b> або алгоритмом <b>Auto Layout</b>.</td>
+                    <td>Масштабує всі дочірні шари з порушенням пропорцій та товщини обводок.</td>
+                  </tr>
+                  <tr>
+                    <td>Clip Content (Обрізання)</td>
+                    <td><b>Підтримується.</b> Приховує елементи, що виходять за рамки контейнера.</td>
+                    <td><b>Не підтримується.</b> Вміст завжди залишається повністю видимим.</td>
+                  </tr>
+                  <tr>
+                    <td>Сітки (Layout Guides)</td>
+                    <td>Дозволяє накладати власні сітки (Uniform Grid, Columns, Rows).</td>
+                    <td>Не підтримує сітки розкладки.</td>
+                  </tr>
+                  <tr>
+                    <td>Auto Layout</td>
+                    <td>Пряма конвертація у Flexbox-контейнер натисканням <span class="kbd">Shift + A</span>.</td>
+                    <td>Потребує обов'язкової попередньої трансформації у Frame.</td>
+                  </tr>
+                  <tr>
+                    <td>Стилі оформлення</td>
+                    <td>Має власні заливки, обводки, кути, ефекти, <b>незалежні від дітей</b>.</td>
+                    <td>Застосовує стилі скопом до всіх внутрішніх векторів.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. СИМУЛЯТОР -->
+          <section class="l-section" id="simulator">
+            <h2><span class="n">03</span>Інтерактивний симулятор: ресайзинг Frame проти Group</h2>
+            <p>Потягніть повзунок ширини контейнера та увімкніть прапорець <b>Clip Content</b>, щоб наочно побачити, чому група руйнує пропорції UI-елементів, тоді як фрейм зберігає геометрію іконки та кнопки:</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Ширина контейнера: <b id="fg-w-val">260 px</b>
+                  <input type="range" id="fg-w" min="170" max="380" value="260">
+                </label>
+                <label>Прапорець Clip Content (для Frame)
+                  <select id="fg-clip">
+                    <option value="hidden" selected>Увімкнено (приховує карусель за межами)</option>
+                    <option value="visible">Вимкнено (елементи виходять за край)</option>
+                  </select>
+                </label>
+              </div>
+              <div class="sandbox__stage" style="grid-template-columns:1fr 1fr;gap:28px">
+                <!-- Frame demo -->
+                <div style="text-align:center">
+                  <div style="font-size:12px;font-weight:800;color:var(--c-primary);margin-bottom:8px">✅ FRAME (Constraints + Clip Content)</div>
+                  <div id="sim-frame" style="width:260px;height:120px;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:16px;padding:14px;box-shadow:var(--shadow-s);position:relative;overflow:hidden;margin:0 auto;text-align:left">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                      <span style="width:32px;height:32px;border-radius:50%;background:var(--grad-main);display:inline-grid;place-items:center;color:#fff;font-weight:800;flex-shrink:0">★</span>
+                      <b style="font-size:14px">UI Card (Frame)</b>
+                    </div>
+                    <div style="display:flex;gap:8px;width:360px">
+                      <span class="pill">Slide 1</span><span class="pill">Slide 2</span><span class="pill">Slide 3 (Clip)</span><span class="pill">Slide 4</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Group demo -->
+                <div style="text-align:center">
+                  <div style="font-size:12px;font-weight:800;color:var(--c-empathy);margin-bottom:8px">❌ GROUP (деформація пропорцій!)</div>
+                  <div id="sim-group" style="width:260px;height:120px;border:2px dashed var(--c-empathy);padding:14px;position:relative;margin:0 auto;text-align:left;transform-origin:left center">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                      <span style="width:32px;height:32px;border-radius:50%;background:var(--c-empathy);display:inline-grid;place-items:center;color:#fff;font-weight:800;flex-shrink:0">★</span>
+                      <b style="font-size:14px">UI Card (Group)</b>
+                    </div>
+                    <div style="display:flex;gap:8px;width:320px">
+                      <span class="pill">Slide 1</span><span class="pill">Slide 2</span><span class="pill">Виходить за край!</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">04</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-frame-group"></div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.4</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-frame-group#tests" style="white-space:nowrap">Пройти тест з теми 2.4 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-fonts.html"><small>← Попередня тема</small><b>2.3 Гарнітури, шрифти та типографічний рушій</b></a>
+              <a href="figma-auto-layout.html" class="next"><small>Наступна тема →</small><b>2.5 Auto Layout: алгоритмічна модель Flexbox</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Симулятор Frame vs Group */
+    (function () {
+      const wInput = document.getElementById("fg-w");
+      const wVal = document.getElementById("fg-w-val");
+      const clipSel = document.getElementById("fg-clip");
+      const sFrame = document.getElementById("sim-frame");
+      const sGroup = document.getElementById("sim-group");
+      const render = () => {
+        const w = Number(wInput.value);
+        wVal.textContent = w + " px";
+        sFrame.style.width = w + "px";
+        sFrame.style.overflow = clipSel.value;
+        const scaleX = (w / 260).toFixed(2);
+        sGroup.style.transform = `scaleX(${scaleX})`;
+      };
+      wInput.addEventListener("input", render);
+      clipSel.addEventListener("change", render);
+      render();
+    })();
+  </script>
+</body>
+</html>

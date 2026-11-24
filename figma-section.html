@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Секції (Section) та Середовище Dev Mode — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Контейнери верхнього рівня Section (Shift + S), статусний конвеєр Ready for Dev / Completed / Changed State, середовище інспектування Dev Mode (Shift + D), Focus View та Code Connect.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.15</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 15</div>
+          <h1 class="lesson-hero__title">Секції (Section) та Середовище Dev Mode</h1>
+          <p class="lesson-hero__lead">Контейнери найвищого рівня Section (Shift + S), статусний конвеєр передачі макетів (Ready for Dev, Completed, Changed State), ізольований Focus View та інтеграція з кодовою базою через Code Connect.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-section.jpg" alt="Контейнер верхнього рівня Section із зеленим бейджем Ready for Dev, з'єднаний цифровим мостом із темною панеллю інспектора коду Dev Mode">
+            <button class="hotspot" style="left:13%;top:15%" data-icon="🟢" data-title="Mark as Ready for Dev (Зелений статусний бейдж)" data-text="Офіційний маркер готовності Секції або фрейму: сигналізує розробникам, що дизайн затверджено і можна починати верстку."></button>
+            <button class="hotspot" style="left:26%;top:38%" data-icon="🗺️" data-title="Section (Shift + S — Контейнер верхнього рівня)" data-text="Групує цілі екрани користувацького сценарію (User Flow). Може містити фрейми та інші секції, але не вкладається у звичайні фрейми чи групи."></button>
+            <button class="hotspot" style="left:52%;top:49%" data-icon="🌉" data-title="Інженерний міст Handoff (Shift + D)" data-text="Перемикає полотно у спеціалізований простір Dev Mode, де інженери бачать лише готові секції без відволікання на робочі чернетки дизайнера."></button>
+            <button class="hotspot" style="left:65%;top:32%" data-icon="🔬" data-title="Focus View та Compare History" data-text="Ізолює обраний екран для тестування адаптивного ресайзингу та перемикання тем Light/Dark, а також показує диф змін між версіями."></button>
+            <button class="hotspot" style="left:78%;top:58%" data-icon="💻" data-title="Інспектор коду (CSS, Swift, Kotlin) та Code Connect" data-text="Генерує точні стилі, токени та підключає реальні компоненти зі Storybook / GitHub замість шаблонної автогенерації."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Вивчіть завершальний етап циклу розробки інтерфейсу у Figma.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>Shift + S</strong><span>Клавіатурне скорочення для огортання групи екранів у контейнер Section</span></div>
+        <div class="stat"><strong>Shift + D</strong><span>Миттєвий перехід у інженерне середовище інспектування коду Dev Mode</span></div>
+        <div class="stat"><strong data-count="3" data-suffix=" статуси">0</strong><span>Статусний конвеєр Handoff: Ready for Dev (🟢), Changed State (🟠) та Completed (🔵)</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#sections">1. Секції як контейнери верхнього рівня</a>
+          <a href="#devmode">2. Середовище розробника Dev Mode</a>
+          <a href="#pipeline">3. Статусний конвеєр та Focus View</a>
+          <a href="#sandbox">4. Інтерактивний симулятор Dev Mode</a>
+          <a href="#checklist">5. Практична вправа</a>
+          <a href="#quiz">6. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode ✓</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. СЕКЦІЇ ЯК КОНТЕЙНЕРИ ВЕРХНЬОГО РІВНЯ -->
+          <section class="l-section" id="sections">
+            <h2><span class="n">01</span>Секції (Section) як контейнери верхнього рівня</h2>
+            <p>Інструмент <b>Section</b> (клавіатурне скорочення <span class="kbd">Shift + S</span>) є найвищим ієрархічним рівнем структурування полотна Figma. На відміну від звичайних фреймів, секції створені спеціально для групування цілих екранів, логічного візуального зонування робочої області та організації безшовного процесу передачі макетів у розробку.</p>
+            <p>Секції можуть містити будь-які типи шарів, включаючи фрейми та інші вкладені секції, але <b>самі не можуть бути вкладені всередину звичайних фреймів чи груп</b>. Крім того, при прототипуванні секції запам'ятовують останній активний екран усередині себе, дозволяючи повертатися до нього з інших гілок сценарію.</p>
+          </section>
+
+          <!-- 2. СЕРЕДОВИЩЕ РОЗРОБНИКА DEV MODE (SHIFT + D) -->
+          <section class="l-section" id="devmode">
+            <h2><span class="n">02</span>Середовище розробника Dev Mode (Shift + D)</h2>
+            <p><b>Figma Dev Mode</b> — це спеціалізований робочий простір, орієнтований на фронтенд- та мобільних інженерів. Перемикання здійснюється комбінацією <span class="kbd">Shift + D</span> або перемикачем у верхньому правому кутку інтерфейсу.</p>
+            <p>У Dev Mode інтерфейс трансформується у потужний інспектор коду: розробники миттєво отримують згенеровані стилі (<b>CSS, Swift/SwiftUI, Kotlin/Jetpack Compose</b>), точні розміри внутрішніх відступів, доступ до токенів дизайн-системи, можливість ізольованого завантаження іконок та порівняння змін через <b>Compare History</b>.</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Статус / Інструмент</th><th>Візуальний індикатор</th><th>Інженерна функція у процесі Handoff</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ready for Dev</td>
+                    <td>🟢 Зелений бейдж</td>
+                    <td>Макет повністю затверджений, дизайн зафіксований і готовий до написання коду.</td>
+                  </tr>
+                  <tr>
+                    <td>Completed</td>
+                    <td>🔵 Синій бейдж</td>
+                    <td>Верстка та програмна реалізація даного екрана повністю завершена інженерами.</td>
+                  </tr>
+                  <tr>
+                    <td>Changed State</td>
+                    <td>🟠 Помаранчевий індикатор</td>
+                    <td>Автоматичне сповіщення про те, що після позначки готовності у макет вносилися правки.</td>
+                  </tr>
+                  <tr>
+                    <td>Focus View</td>
+                    <td>🔬 Ізольований перегляд</td>
+                    <td>Вікно для детального аналізу шарів, тесту адаптивного ресайзингу та перемикання тем.</td>
+                  </tr>
+                  <tr>
+                    <td>Code Connect</td>
+                    <td>🔗 Підключений код</td>
+                    <td>Інтеграція з реальними Storybook / GitHub компонентами кодової бази замість автогенерації.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. СТАТУСНИЙ КОНВЕЄР ТА FOCUS VIEW -->
+          <section class="l-section" id="pipeline">
+            <h2><span class="n">03</span>Статусний конвеєр та інструмент Focus View</h2>
+            <p>Секції та фрейми підтримують офіційні статуси розробки: <b>Mark as Ready for Dev</b> (зелений маркер готовності до верстки), <b>Completed</b> (синій маркер завершення робіт) та <b>Changed State</b> (помаранчеве сповіщення про те, що макет змінювався дизайнером після отримання статусу готовності).</p>
+            <p>Інструмент <b>Focus View</b> дозволяє інженеру ізолювати окремий екран від усього полотна, змінювати його розмір у реальному часі для перевірки адаптивності (<code>Constraints / Auto Layout</code>) та тестувати змінні теми (<code>Light / Dark Mode</code>) <b>без жодного ризику змінити сам оригінальний дизайн-файл</b>.</p>
+
+            <div class="callout callout--fact">
+              <div class="callout__title">🤝 Виключення непорозумінь між дизайнерами та програмістами</div>
+              <p>Маркування цілих Секцій статусом <b>«Ready for dev»</b> гарантує, що розробники бачать лише перевірені та завершені сценарії, не відволікаючись на робочі чернетки дизайнера на сусідніх ділянках полотна.</p>
+            </div>
+          </section>
+
+          <!-- 4. ІНТЕРАКТИВНИЙ СИМУЛЯТОР DEV MODE & CODE CONNECT -->
+          <section class="l-section" id="sandbox">
+            <h2><span class="n">04</span>Інтерактивна лабораторія: Інспектор Dev Mode &amp; Code Connect</h2>
+            <p>Перемикайте статус секції (<b>Ready for Dev, Changed State, Completed</b>), цільову платформу коду (<b>CSS, SwiftUI, Jetpack Compose, Code Connect React</b>) та режим <b>Focus View</b>:</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Статус секції (Section Status)
+                  <select id="dm-status">
+                    <option value="ready" selected>🟢 Ready for Dev (Готово до верстки)</option>
+                    <option value="changed">🟠 Changed after Ready (Внесено правки!)</option>
+                    <option value="done">🔵 Completed (Верстку завершено)</option>
+                  </select>
+                </label>
+                <label>Мова інспектора коду (Dev Mode Output)
+                  <select id="dm-lang">
+                    <option value="css" selected>🌐 Web — CSS + Design Tokens</option>
+                    <option value="react">⚛️ Code Connect — React / Storybook</option>
+                    <option value="swift">🍎 iOS — SwiftUI</option>
+                    <option value="kotlin">🤖 Android — Jetpack Compose (Kotlin)</option>
+                  </select>
+                </label>
+                <label>Focus View: Перевірка теми (Mode Preview)
+                  <select id="dm-theme">
+                    <option value="light" selected>☀️ Light Mode (Світла)</option>
+                    <option value="dark">🌙 Dark Mode (Темна)</option>
+                  </select>
+                </label>
+                <label>Анотація дизайнера (Dev Annotation)
+                  <select id="dm-note">
+                    <option value="show" selected>📌 Показати анотацію для верстальника</option>
+                    <option value="hide">Приховати анотації</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="gap:18px;flex-wrap:wrap">
+                <!-- Ліва частина: Секція з екраном -->
+                <div id="dm-sec" style="flex:1;min-width:240px;border:2px solid #10b981;border-radius:14px;padding:14px;background:var(--c-surface);position:relative">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                    <span id="dm-pill" style="font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;background:#10b981;color:#fff">🟢 Section: Auth Flow · Ready for Dev</span>
+                  </div>
+                  <div id="dm-frame" style="border-radius:10px;padding:14px;border:1px solid var(--c-border);transition:all .2s">
+                    <div style="font-weight:800;font-size:14px;margin-bottom:4px">Екран входу в EdTech</div>
+                    <div style="font-size:12px;opacity:.75;margin-bottom:10px">Padding: var(--space-24) · Gap: var(--space-12)</div>
+                    <span style="display:inline-block;background:#4f46e5;color:#fff;font-size:12px;font-weight:800;padding:6px 14px;border-radius:8px">Увійти через УДУ</span>
+                  </div>
+                  <div id="dm-annot" style="margin-top:10px;background:#fef3c7;color:#92400e;border:1px solid #f59e0b;border-radius:8px;padding:6px 10px;font-size:11.5px;font-weight:700">
+                    📌 Анотація: Кнопка використовує SSO-авторизацію університету (див. Storybook <code>&lt;AuthButton /&gt;</code>).
+                  </div>
+                </div>
+
+                <!-- Права частина: Код Dev Mode -->
+                <pre id="dm-code" style="flex:1;min-width:260px;margin:0;background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:14px;font-size:12px;line-height:1.55;overflow-x:auto;font-family:Consolas,monospace"></pre>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">05</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-section"></div>
+          </section>
+
+          <!-- 6. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">06</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.15</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-section#tests" style="white-space:nowrap">Пройти тест з теми 2.15 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-animation.html"><small>← Попередня тема</small><b>2.14 Інтерактивне Прототипування та Анімація</b></a>
+              <a href="course.html?s=figma" class="next"><small>Завершено Секцію 2 🎉 →</small><b>До каталогу всіх 15 тем Секції «Занурення у Figma»</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний симулятор Dev Mode & Code Connect */
+    (function () {
+      const statusEl = document.getElementById("dm-status");
+      const langEl = document.getElementById("dm-lang");
+      const themeEl = document.getElementById("dm-theme");
+      const noteEl = document.getElementById("dm-note");
+
+      const sec = document.getElementById("dm-sec");
+      const pill = document.getElementById("dm-pill");
+      const frame = document.getElementById("dm-frame");
+      const annot = document.getElementById("dm-annot");
+      const code = document.getElementById("dm-code");
+
+      const statuses = {
+        ready:   { col: "#10b981", text: "🟢 Section: Auth Flow · Ready for Dev" },
+        changed: { col: "#f59e0b", text: "🟠 Section: Auth Flow · Changed State (Compare Diff)" },
+        done:    { col: "#0ea5e9", text: "🔵 Section: Auth Flow · Completed" }
+      };
+
+      function render() {
+        const st = statuses[statusEl.value];
+        sec.style.borderColor = st.col;
+        pill.style.background = st.col;
+        pill.textContent = st.text;
+
+        const dark = themeEl.value === "dark";
+        frame.style.background = dark ? "#0f172a" : "#f8fafc";
+        frame.style.color = dark ? "#f8fafc" : "#0f172a";
+
+        annot.style.display = noteEl.value === "show" ? "block" : "none";
+
+        const snippets = {
+          css: `/* Figma Dev Mode · CSS Inspection */\n.auth-card {\n  display: flex;\n  flex-direction: column;\n  padding: var(--space-24, 24px);\n  gap: var(--space-12, 12px);\n  background: var(--color-surface-${dark ? "dark" : "light"});\n  border-radius: var(--radius-card, 16px);\n}`,
+          react: `// Figma Code Connect · Storybook / GitHub\nimport { AuthCard, AuthButton } from "@edtech/ui-kit";\n\nexport function LoginView() {\n  return (\n    <AuthCard mode="${themeEl.value}" padding="24">\n      <AuthButton provider="udu-sso" size="md">\n        Увійти через УДУ\n      </AuthButton>\n    </AuthCard>\n  );\n}`,
+          swift: `// Figma Dev Mode · SwiftUI\nVStack(alignment: .leading, spacing: DesignTokens.space12) {\n    Text("Екран входу в EdTech")\n        .font(.headline)\n    AuthButton(title: "Увійти через УДУ", mode: .${themeEl.value})\n}\n.padding(DesignTokens.space24)\n.background(Color.surface${dark ? "Dark" : "Light"})`,
+          kotlin: `// Figma Dev Mode · Jetpack Compose\nColumn(\n    modifier = Modifier\n        .background(AppTheme.colors.surface)\n        .padding(Dimens.Space24),\n    verticalArrangement = Arrangement.spacedBy(Dimens.Space12)\n) {\n    Text(text = "Екран входу в EdTech")\n    AuthButton(label = "Увійти через УДУ")\n}`
+        };
+
+        code.textContent = snippets[langEl.value];
+      }
+
+      [statusEl, langEl, themeEl, noteEl].forEach((el) => el.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

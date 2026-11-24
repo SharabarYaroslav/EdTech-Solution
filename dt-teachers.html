@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дизайн-мислення для вчителів — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Концепція «Вчитель як дизайнер», 3 механізми професійного розвитку, інтеграція DT-TPACK, алгоритм IDEO Toolkit та інклюзивна практика.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=design">Секція 1. Дизайн</a><span>/</span><span>Тема 1.3</span></nav>
+          <div class="lesson-hero__series">Дизайн-мислення в освіті · Модуль 3</div>
+          <h1 class="lesson-hero__title">Дизайн-мислення для вчителів: педагогічний дизайн та інструментарій фасилітатора</h1>
+          <p class="lesson-hero__lead">Концепція «Вчитель як дизайнер», 3 механізми професійного розвитку, інтеграція DT-TPACK, алгоритм IDEO Toolkit та інклюзивна практика.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/dt-teachers.jpg" alt="Вчитель-фасилітатор біля дошки з картою емпатії та колегами">
+            <button class="hotspot" style="left:28%;top:35%" data-icon="🗺️" data-title="Карта Емпатії (Empathy Map)" data-text="Інструмент фази Interpretation: фіксація того, що учень говорить, думає, робить і відчуває на уроці, для пошуку прихованих патернів."></button>
+            <button class="hotspot" style="left:47%;top:33%" data-icon="👩‍🏫" data-title="Teacher as Designer" data-text="Вчитель — не ретранслятор підручника, а автономний архітектор освітнього досвіду, який проєктує зміст, засоби й взаємодію під потреби учнів."></button>
+            <button class="hotspot" style="left:61%;top:57%" data-icon="💻" data-title="Модель DT-TPACK" data-text="Цифрові інструменти застосовуються не формально, а як людиноцентричний міст для подолання конкретного когнітивного бар'єру дитини."></button>
+            <button class="hotspot" style="left:78%;top:45%" data-icon="🤝" data-title="Професійні спільноти (PLC)" data-text="Подолання професійної ізольованості: вчителі спільно формулюють виклики, проводять брейнштормінг та діляться артефактами занять."></button>
+            <button class="hotspot" style="left:36%;top:52%" data-icon="💡" data-title="Запитання «How Might We...?»" data-text="Каталізатор переходу від аналізу проблем до творчої генерації рішень у команді педагогів."></button>
+            <button class="hotspot" style="left:82%;top:64%" data-icon="📝" data-title="Урок як прототип" data-text="Дидактичні матеріали сприймаються як «педагогічні прототипи», які можна гнучко коригувати безпосередньо в ході уроку (reflection-in-action)."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Кожна точка розкриває ключовий інструмент педагога-дизайнера.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="34" data-suffix=" дослідження">0</strong><span>Систематичного огляду підготовки вчителів (PRISMA/JBI, 2018–2025)</span></div>
+        <div class="stat"><strong data-count="3" data-suffix=" механізми">0</strong><span>Професійного зростання: емпатія, адаптивність, колаборація (Harabi, 2026)</span></div>
+        <div class="stat"><strong data-count="5" data-suffix=" фаз">0</strong><span>Педагогічного проєктування за фреймворком IDEO &amp; Riverdale</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#paradigm">1. Вчитель як дизайнер</a>
+          <a href="#ideo">2. 5 фаз IDEO &amp; Riverdale</a>
+          <a href="#udl">3. Інклюзивний дизайн (UDL)</a>
+          <a href="#barriers">4. Бар'єри та оптимізація</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <a href="#sources">6. Джерела</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 1</div>
+            <a href="dt-overview.html">1.1 Огляд</a>
+            <a href="dt-students.html">1.2 Для учнів</a>
+            <a href="dt-teachers.html">1.3 Для вчителів ✓</a>
+            <a href="dt-schools.html">1.4 Для шкіл</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ПАРАДИГМА -->
+          <section class="l-section" id="paradigm">
+            <h2><span class="n">01</span>Парадигма «Вчитель як дизайнер» та професійне зростання</h2>
+            <p>Сучасна освітня трансформація вимагає кардинального переосмислення професійної ідентичності педагога. У традиційній системі вчитель розглядався переважно як ретранслятор державної програми та підручника. Концепція <b>«Teacher as Designer»</b> (Каланціс і Коуп, 2010; Баран і Аль-Зубі, 2024; Харабі, 2026) визначає вчителя як <b>автономного архітектора освітнього досвіду</b>, котрий проєктує зміст, технологічні засоби та взаємодію в класі під конкретні потреби та особливості своїх учнів.</p>
+
+            <h3>1.1. Три когнітивно-поведінкові механізми професійного розвитку (Harabi, 2026)</h3>
+            <p class="hint">Натисніть на картку, щоб перевернути її</p>
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">💗</div><h4>1. Емпатичний рефреймінг потреб учнів</h4><small>Перевернути →</small></div>
+                <div class="flip__face flip__back"><b>Від звинувачення до редизайну</b>Педагог припиняє трактувати низьку залученість чи поведінкові складнощі школярів як їхні особистісні вади чи брак старанності. Складнощі переосмислюються як показник невідповідності наявного дидактичного дизайну реальним потребам здобувача, що стимулює перепроєктування уроку.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🧪</div><h4>2. Адаптивна експертиза через експеримент</h4><small>Перевернути →</small></div>
+                <div class="flip__face flip__back"><b>Урок як «педагогічний прототип»</b>Вчитель відмовляється від монолітного поурочного плану, сприймаючи дидактичні матеріали як прототипи. Це дає право на швидку гнучку корекцію безпосередньо в ході уроку (reflection-in-action) на основі зчитування реакції класу.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🤝</div><h4>3. Колаборативне осмислення в PLC</h4><small>Перевернути →</small></div>
+                <div class="flip__face flip__back"><b>Спільноти практики (Е. Венгер, 1998)</b>Дизайн-мислення долає професійну ізольованість вчителів. У професійних спільнотах (PLC) педагоги спільно формулюють виклики, проводять брейнштормінг та діляться перевіреними артефактами занять.</div>
+              </div></div>
+            </div>
+
+            <h3>Фреймворк DT-TPACK: синтез технологій, педагогіки та предмету</h3>
+            <p>Інтеграція дизайн-мислення у відому модель <b>TPACK</b> (Technological Pedagogical Content Knowledge — Мішра і Келер) створює практичну модель <b>DT-TPACK</b> (Tseng et al., 2019; Avsec, 2023). Натисніть на елементи схеми:</p>
+            <div data-switch="dttpack" class="diagram">
+              <div class="donut" style="grid-template-columns: 1fr 1fr">
+                <svg viewBox="0 0 520 380" role="img" aria-label="Схема DT-TPACK">
+                  <circle cx="260" cy="190" r="175" fill="none" stroke="#9b5cf6" stroke-width="3" stroke-dasharray="8 6"/>
+                  <circle class="svg-hit" data-key="tk" cx="195" cy="145" r="105" fill="#4dabf7" fill-opacity=".5"/>
+                  <circle class="svg-hit" data-key="pk" cx="325" cy="145" r="105" fill="#ff6b9a" fill-opacity=".5"/>
+                  <circle class="svg-hit" data-key="ck" cx="260" cy="250" r="105" fill="#51cf66" fill-opacity=".5"/>
+                  <circle class="svg-hit" data-key="dttpack" cx="260" cy="182" r="42" fill="#5b5bf0" stroke="#fff" stroke-width="3"/>
+                  <text x="135" y="115" font-size="15" font-weight="800" fill="#1d1d35" pointer-events="none">Технології (TK)</text>
+                  <text x="315" y="115" font-size="15" font-weight="800" fill="#1d1d35" pointer-events="none">Педагогіка (PK)</text>
+                  <text x="215" y="315" font-size="15" font-weight="800" fill="#1d1d35" pointer-events="none">Предмет (CK)</text>
+                  <text x="260" y="187" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" pointer-events="none">DT-TPACK</text>
+                </svg>
+                <div>
+                  <div class="detail" style="--dc:#5b5bf0" data-pane="dttpack" hidden><div class="en">Ядро моделі · DT-TPACK</div><h4>Людиноцентричний синтез</h4><p>Педагог застосовує цифрові інструменти не формально, а як <b>людиноцентричний міст</b> для подолання конкретного когнітивного бар'єру дитини в конкретній навчальній темі (Tseng et al., 2019; Avsec, 2023).</p></div>
+                  <div class="detail" style="--dc:#4dabf7" data-pane="tk" hidden><div class="en">Technological Knowledge</div><h4>Технологічні знання (TK)</h4><p>Володіння цифровими сервісами (Figma, інтерактивні дошки, симулятори, ШІ) та розуміння їхніх дидактичних можливостей і обмежень.</p></div>
+                  <div class="detail" style="--dc:#ff6b9a" data-pane="pk" hidden><div class="en">Pedagogical Knowledge</div><h4>Педагогічні знання (PK)</h4><p>Методи фасилітації, формувального оцінювання, організації командної роботи та підтримки психологічної безпеки в класі.</p></div>
+                  <div class="detail" style="--dc:#51cf66" data-pane="ck" hidden><div class="en">Content Knowledge</div><h4>Предметні знання (CK)</h4><p>Глибоке розуміння змісту навчальної дисципліни (зокрема інформатики), її понять, алгоритмів і типових помилок учнів.</p></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. IDEO & RIVERDALE -->
+          <section class="l-section" id="ideo">
+            <h2><span class="n">02</span>Інструментарій IDEO &amp; Riverdale: 5 фаз педагогічного проєктування</h2>
+            <p>Розроблений дизайн-агенцією <b>IDEO</b> у співпраці з педагогами <b>Riverdale Country School</b> (Нью-Йорк), посібник «Design Thinking for Educators Toolkit» адаптує промисловий дизайн безпосередньо до реалій школи та пропонує маршрут із п'яти послідовних фаз.</p>
+            <p class="hint">Перемикайте фази, щоб переглянути ключове питання, дії вчителя та артефакт етапу</p>
+
+            <div class="diagram" data-stepper>
+              <div class="stepper__nav">
+                <button class="stepper__btn" type="button"><small>Фаза 1</small>🔍 Discovery</button>
+                <button class="stepper__btn" type="button"><small>Фаза 2</small>🗺️ Interpretation</button>
+                <button class="stepper__btn" type="button"><small>Фаза 3</small>💡 Ideation</button>
+                <button class="stepper__btn" type="button"><small>Фаза 4</small>🧪 Experimentation</button>
+                <button class="stepper__btn" type="button"><small>Фаза 5</small>🌱 Evolution</button>
+              </div>
+
+              <div class="stepper__panel">
+                <div class="detail" style="--dc:var(--c-empathy)">
+                  <div class="en">Фаза 1 · Discovery (Дослідження)</div>
+                  <h4>«Я маю виклик. Як мені до нього підійти?»</h4>
+                  <div class="kv">
+                    <div><small>Ключове питання</small><p>Що насправді відбувається з учнями на уроці та перерві?</p></div>
+                    <div><small>Дії та інструменти</small><p>Емпатичні спостереження за учнями; короткі бесіди з тихими учнями; фіксація контексту.</p></div>
+                    <div><small>Результат етапу</small><p>Щоденник спостережень, автентичні цитати та історії учнів.</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="stepper__panel">
+                <div class="detail" style="--dc:var(--c-define)">
+                  <div class="en">Фаза 2 · Interpretation (Інтерпретація)</div>
+                  <h4>«Я дізнався щось нове. Що це означає?»</h4>
+                  <div class="kv">
+                    <div><small>Ключове питання</small><p>Які приховані потреби стоять за поведінкою учнів?</p></div>
+                    <div><small>Дії та інструменти</small><p>Складання Карти Емпатії (Empathy Map); пошук прихованих патернів; формулювання запитань «Як ми можемо...?» (HMW).</p></div>
+                    <div><small>Результат етапу</small><p>Чітко сформульований інсайт та робоче питання HMW.</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="stepper__panel">
+                <div class="detail" style="--dc:#f0b400">
+                  <div class="en">Фаза 3 · Ideation (Генерація ідей)</div>
+                  <h4>«Я бачу можливість. Що ми створимо?»</h4>
+                  <div class="kv">
+                    <div><small>Ключове питання</small><p>Як по-новому організувати пояснення, практику чи оцінювання?</p></div>
+                    <div><small>Дії та інструменти</small><p>Швидкий брейнштормінг із колегами; прийом «Crazy 8s»; заборона критики; розвиток ідей («Yes, and...»).</p></div>
+                    <div><small>Результат етапу</small><p>Банк із 20–30 варіантів завдань, форм оцінювання чи перепланування.</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="stepper__panel">
+                <div class="detail" style="--dc:var(--c-prototype)">
+                  <div class="en">Фаза 4 · Experimentation (Експеримент)</div>
+                  <h4>«У мене є ідея. Як мені її втілити?»</h4>
+                  <div class="kv">
+                    <div><small>Ключове питання</small><p>Як швидко перевірити ідею на найближчому занятті?</p></div>
+                    <div><small>Дії та інструменти</small><p>Створення чернетки уроку на 15 хвилин; створення простого паперового шаблону чи нової форми критеріїв.</p></div>
+                    <div><small>Результат етапу</small><p>Низькоточний педагогічний прототип для тестування в класі.</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="stepper__panel">
+                <div class="detail" style="--dc:var(--c-test)">
+                  <div class="en">Фаза 5 · Evolution (Еволюція)</div>
+                  <h4>«Я спробував нове. Як це розвивати?»</h4>
+                  <div class="kv">
+                    <div><small>Ключове питання</small><p>Що спрацювало, а що потребує ітерації?</p></div>
+                    <div><small>Дії та інструменти</small><p>Проведення пілоту; збір фідбеку від дітей («I like..., I wish..., What if...?»); аналіз результатів; доопрацювання.</p></div>
+                    <div><small>Результат етапу</small><p>Адаптоване, стале педагогічне рішення, готове до масштабування.</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stepper__controls">
+                <button class="btn btn--ghost btn--sm" type="button" data-prev>← Попередня фаза</button>
+                <button class="btn btn--primary btn--sm" type="button" data-next>Наступна фаза →</button>
+              </div>
+            </div>
+
+            <h3>2.1. Формулювання запитань «How Might We...?» (HMW)</h3>
+            <p>Запитання HMW є каталізатором переходу від аналізу проблем до творчої генерації. Формула <b>«Як ми можемо...»</b> передбачає оптимізм (ми віримо, що рішення можливе) та командну співпрацю.</p>
+            <div class="compare">
+              <div class="bad">
+                <h4>❌ Слабке HMW (маніпуляція, фіксація на формі)</h4>
+                <p style="margin:0">«Як нам змусити учнів читати параграф підручника?»</p>
+              </div>
+              <div class="good">
+                <h4>✅ Людиноцентричне HMW (внутрішня мотивація та інсайт)</h4>
+                <p style="margin:0">«Як ми можемо допомогти семикласникам відчути себе дослідниками під час вивчення історичних джерел?»</p>
+              </div>
+            </div>
+
+            <div class="builder">
+              <div class="en" style="color:var(--c-primary);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase">Інтерактивний конструктор запитань HMW для уроку</div>
+              <div class="builder__row">
+                <label>Хто (учні / група)
+                  <input id="hmw-who" value="восьмикласникам на уроці інформатики">
+                </label>
+                <label>Бажана дія / стан
+                  <input id="hmw-act" value="не боятися експериментувати з інтерфейсом Figma">
+                </label>
+                <label>Контекст / інсайт
+                  <input id="hmw-ctx" value="під час створення першого власного макета">
+                </label>
+              </div>
+              <div class="builder__out" id="hmw-out"></div>
+            </div>
+          </section>
+
+          <!-- 3. UDL -->
+          <section class="l-section" id="udl">
+            <h2><span class="n">03</span>Інклюзивний та адаптивний педагогічний дизайн</h2>
+            <p>Застосування дизайн-мислення в умовах інклюзивного класу дозволяє реалізувати принципи <b>Універсального Дизайну для Навчання (Universal Design for Learning, UDL)</b>. Емпатичне дослідження виявляє індивідуальні сенсорні, комунікативні та когнітивні бар'єри дітей із особливими освітніми потребами (ООП), зокрема з розладами аутистичного спектра (РАС) чи синдромом дефіциту уваги.</p>
+            <p class="hint">Натисніть на картку, щоб перевернути її</p>
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🛋️</div><h4>Просторові мікропрототипи</h4><small>Сенсорне розвантаження →</small></div>
+                <div class="flip__face flip__back"><b>«Тихий куточок» у класі</b>Швидке облаштування зони сенсорного розвантаження за допомогою ширми, навушників та м'якого освітлення для учнів із сенсорною чутливістю.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🃏</div><h4>Візуалізація інструкцій</h4><small>Зниження тривожності →</small></div>
+                <div class="flip__face flip__back"><b>Піктографічні розклади</b>Прототипування візуальних розкладів уроку та покрокових карток завдань, що роблять хід заняття передбачуваним і знижують тривожність.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🎭</div><h4>Варіативність вибору</h4><small>Принцип UDL →</small></div>
+                <div class="flip__face flip__back"><b>Різні способи демонстрації знань</b>Учень отримує право показати розуміння теми через зручний для себе формат: малюнок, аудіозапис, 3D-макет, інтерактивний прототип чи усний виступ.</div>
+              </div></div>
+            </div>
+          </section>
+
+          <!-- 4. БАР'ЄРИ -->
+          <section class="l-section" id="barriers">
+            <h2><span class="n">04</span>Системні бар'єри вчителів та стратегії оптимізації</h2>
+            <p>Систематичний огляд М. Харабі (Harabi, 2026) виокремлює структурні, оцінювальні, ресурсні та культурні бар'єри, з якими стикаються педагоги при впровадженні дизайн-мислення. Оберіть категорію бар'єру:</p>
+            <div data-switch class="challenge">
+              <div class="challenge__list">
+                <button class="challenge__btn" data-key="b1"><span>⏱️</span>Структурні бар'єри (Час і Програма)</button>
+                <button class="challenge__btn" data-key="b2"><span>📊</span>Оцінювальні бар'єри (Тести)</button>
+                <button class="challenge__btn" data-key="b3"><span>📦</span>Ресурсні бар'єри (Матеріали)</button>
+                <button class="challenge__btn" data-key="b4"><span>🏛️</span>Культурні бар'єри (Опір середовища)</button>
+              </div>
+              <div>
+                <div class="challenge__card" data-pane="b1" hidden>
+                  <div class="challenge__row"><small>Категорія</small><div><b>Структурні бар'єри (Час і Програма)</b></div></div>
+                  <div class="challenge__row"><small>Типові перешкоди</small><div>Перевантажений навчальний план, 45-хвилинні уроки, брак часу на прототипування.</div></div>
+                  <div class="challenge__row is-solution"><small>✓ Стратегія оптимізації</small><div><b>Інтеграція в чинну програму:</b> не додавати окремий курс, а проводити експрес-дизайн (15–20 хв) у межах планової теми; використовувати спарені уроки.</div></div>
+                </div>
+                <div class="challenge__card" data-pane="b2" hidden>
+                  <div class="challenge__row"><small>Категорія</small><div><b>Оцінювальні бар'єри (Тести)</b></div></div>
+                  <div class="challenge__row"><small>Типові перешкоди</small><div>Тиск стандартизованих іспитів, що вимагають запам'ятовування, а не креативності.</div></div>
+                  <div class="challenge__row is-solution"><small>✓ Стратегія оптимізації</small><div><b>Дворівневе оцінювання:</b> формувальне оцінювання процесу мислення (рубрики співпраці й ітерацій) + оцінювання академічних знань.</div></div>
+                </div>
+                <div class="challenge__card" data-pane="b3" hidden>
+                  <div class="challenge__row"><small>Категорія</small><div><b>Ресурсні бар'єри (Матеріали)</b></div></div>
+                  <div class="challenge__row"><small>Типові перешкоди</small><div>Відсутність спеціалізованих мейкерспейсів, дорогих цифрових пристроїв чи інструментів.</div></div>
+                  <div class="challenge__row is-solution"><small>✓ Стратегія оптимізації</small><div><b>Низькотехнологічне прототипування («Rapid Low-Tech Prototyping»):</b> картон, вторинні матеріали, канцелярські стікери, безкоштовні онлайн-сервіси.</div></div>
+                </div>
+                <div class="challenge__card" data-pane="b4" hidden>
+                  <div class="challenge__row"><small>Категорія</small><div><b>Культурні бар'єри (Опір середовища)</b></div></div>
+                  <div class="challenge__row"><small>Типові перешкоди</small><div>Страх втратити дисципліну в класі, скепсис колег та адміністрації до «шумних» занять.</div></div>
+                  <div class="challenge__row is-solution"><small>✓ Стратегія оптимізації</small><div><b>Відкриті двері та міні-демонстрації:</b> запрошення колег на етап тестування, демонстрація зростання академічної мотивації учнів.</div></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 1.3</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=dt-teachers#tests" style="white-space:nowrap">Пройти тест з теми 1.3 →</a>
+            </div>
+          </section>
+
+          <!-- 6. ДЖЕРЕЛА -->
+          <section class="l-section" id="sources">
+            <h2><span class="n">06</span>Список рекомендованих джерел</h2>
+            <ol class="sources">
+              <li>Avsec, S. (2023). Design Thinking to Envision More Sustainable Technology-Enhanced Teaching. Sustainability, 15(2), 1163.</li>
+              <li>Baran, E., &amp; AlZoubi, D. (2024). Design Thinking in Teacher Education: Morphing Preservice Teachers' Mindsets. JRTE, 56(1).</li>
+              <li>Harabi, M. (2026). Design Thinking in Teacher Education: A Systematic Literature Review. European Journal of Education Studies, 13(6), 162–185.</li>
+              <li>IDEO &amp; Riverdale Country School (2011). Design Thinking for Educators Toolkit (2nd ed.).</li>
+              <li>Kalantzis, M., &amp; Cope, B. (2010). The Teacher as Designer: Pedagogy in the New Media Age. E-Learning and Digital Media, 7(3), 200–222.</li>
+              <li>Retna, K. S. (2019). Thinking about 'Design Thinking': A Study of Teacher Experiences. In Teachers' Perceptions, Experience and Learning, Routledge.</li>
+              <li>Schön, D. A. (1983). The Reflective Practitioner: How Professionals Think in Action. Basic Books.</li>
+              <li>Tseng, J. J., Cheng, Y. S., &amp; Yeh, H. N. (2019). How Pre-Service English Teachers Enact TPACK: A Design Thinking Approach. Computers &amp; Education, 128, 171–182.</li>
+              <li>Wenger, E. (1998). Communities of Practice: Learning, Meaning, and Identity. Cambridge University Press.</li>
+            </ol>
+
+            <div class="lesson-pager">
+              <a href="dt-students.html"><small>← Попередня тема</small><b>1.2 Дизайн-мислення для учнів</b></a>
+              <a href="dt-schools.html" class="next"><small>Наступна тема →</small><b>1.4 Дизайн-мислення для шкіл</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний конструктор HMW */
+    const hmwUpd = () => {
+      const v = (id) => document.getElementById(id).value.trim() || "…";
+      document.getElementById("hmw-out").textContent =
+        `«Як ми можемо допомогти ${v("hmw-who")} ${v("hmw-act")} ${v("hmw-ctx")}?»`;
+    };
+    ["hmw-who", "hmw-act", "hmw-ctx"].forEach((id) => document.getElementById(id).addEventListener("input", hmwUpd));
+    hmwUpd();
+  </script>
+</body>
+</html>

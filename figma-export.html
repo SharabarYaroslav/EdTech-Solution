@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Експорт Шарів, Фреймів та Оптимізація Активів — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Формати експорту PNG, JPG, SVG, PDF у Figma, щільність пікселів (@1x, @2x, @3x), габаритні суфікси (512w, 1024h) та оптимізація векторного SVG.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.13</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 13</div>
+          <h1 class="lesson-hero__title">Експорт Шарів, Фреймів та Оптимізація Активів</h1>
+          <p class="lesson-hero__lead">Критерії вибору форматів PNG, JPG, SVG та PDF, системне масштабування щільності пікселів (@1x, @2x, @3x), суфікси габаритів (512w, 1024h) та фронтенд-оптимізація векторного коду.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-export.jpg" alt="Центральний 3D-актив у кільцях масштабування 1x/2x/3x, що розходиться на 4 картки форматів: PNG з альфа-шахівницею, фото JPG, криву Безьє SVG та багатосторінковий PDF">
+            <button class="hotspot" style="left:38%;top:31%" data-icon="🏁" data-title="PNG (Растр із прозорим альфа-каналом)" data-text="Зберігає напівпрозорість та м'які тіні без втрати чіткості. Ідеальний для растрових ілюстрацій, аватарів і скріншотів інтерфейсу."></button>
+            <button class="hotspot" style="left:62%;top:31%" data-icon="🏞️" data-title="JPG (Фотографічне стиснення без прозорості)" data-text="Забезпечує мінімальну вагу файлу для великих фотографій та фонових банерів, де прозорий фон не потрібен."></button>
+            <button class="hotspot" style="left:38%;top:68%" data-icon="✒️" data-title="SVG (Масштабований векторний код)" data-text="Світовий стандарт для іконок, логотипів та UI-графіки вебу. Підтримує Outline Text, Include ID, Simplify Stroke та CSS currentColor."></button>
+            <button class="hotspot" style="left:62%;top:69%" data-icon="📄" data-title="PDF (Векторна документація та поліграфія)" data-text="Багатосторінковий векторний експорт презентаційних слайдів, дизайн-специфікацій та макетів для друку."></button>
+            <button class="hotspot" style="left:50%;top:12%" data-icon="🔍" data-title="Щільність пікселів: 1x, 2x, 3x, 4x та 512w" data-text="Концентричні кільця символізують масштабування для Retina/OLED дисплеїв (@2x, @3x) та точний експорт за фіксованою шириною (512w)."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Вивчіть інженерну підготовку графічних активів для фронтенд- та мобільної розробки.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="4" data-suffix=" формати">0</strong><span>Базовий стек експорту Figma: растрові PNG / JPG та векторні SVG / PDF</span></div>
+        <div class="stat"><strong>1x · 2x · 3x</strong><span>Обов'язкова тріада масштабів растрових активів для сучасних мобільних екранів</span></div>
+        <div class="stat"><strong>512w / 1024h</strong><span>Габаритні суфікси для точного масштабування за фіксованою шириною чи висотою</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#formats">1. Формати експорту та критерії</a>
+          <a href="#density">2. Масштабування та щільність пікселів</a>
+          <a href="#svg">3. Специфікації векторного SVG</a>
+          <a href="#calculator">4. Інтерактивний генератор Export Preset</a>
+          <a href="#checklist">5. Практична вправа</a>
+          <a href="#quiz">6. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація ✓</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ФОРМАТИ ЕКСПОРТУ ТА КРИТЕРІЇ ВИБОРУ -->
+          <section class="l-section" id="formats">
+            <h2><span class="n">01</span>Формати експорту та критерії вибору</h2>
+            <p>Figma надає інженерний інструментарій експорту графічних активів через панель <b>Export</b> у правому сайдбарі (або масовий експорт через <span class="kbd">Shift + Cmd/Ctrl + E</span>). Правильний вибір формату гарантує максимальну чіткість відображення та мінімальну вагу кінцевого цифрового продукту:</p>
+            <ul>
+              <li><b>PNG</b> використовується для растрової графіки з прозорим альфа-каналом (3D-ілюстрації, елементи з м'якими тінями, скріншоти інтерфейсу).</li>
+              <li><b>JPG</b> застосовується для фотографічних зображень без прозорості з високим коефіцієнтом компресії.</li>
+              <li><b>SVG</b> є світовим стандартом для векторних іконок, логотипів та інтерфейсних елементів вебу.</li>
+              <li><b>PDF</b> використовується для векторних презентацій, дизайн-специфікацій та поліграфії.</li>
+            </ul>
+          </section>
+
+          <!-- 2. СИСТЕМНЕ МАСШТАБУВАННЯ ТА ЩІЛЬНІСТЬ ПІКСЕЛІВ -->
+          <section class="l-section" id="density">
+            <h2><span class="n">02</span>Системне масштабування та щільність пікселів</h2>
+            <p>Для растрових форматів (<b>PNG, JPG</b>) доступне експортування у різних масштабах щільності пікселів: <code>0.5x, 1x, 2x, 3x, 4x</code>. Системні суфікси масштабування (наприклад, <code>@2x</code> або <code>@3x</code>) автоматично додаються до назв збережених файлів, що необхідно для екранів <b>Apple Retina</b> та сучасних мобільних пристроїв високої щільності.</p>
+            <p>Також підтримується точне масштабування за габаритами за допомогою суфіксів фіксованої ширини (наприклад, <b><code>512w</code></b>) або висоти (<b><code>1024h</code></b>).</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Формат</th><th>Підтримувані параметри</th><th>Рекомендована сфера застосування</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>PNG</td>
+                    <td>Масштаби <code>0.5x – 4x</code>, альфа-канал прозорості.</td>
+                    <td>Растрові ілюстрації, напівпрозорі графічні активи, скріншоти інтерфейсу.</td>
+                  </tr>
+                  <tr>
+                    <td>JPG</td>
+                    <td>Масштаби <code>0.5x – 4x</code>, налаштування стиснення.</td>
+                    <td>Фотографії, важкі фонові зображення, де прозорість не вимагається.</td>
+                  </tr>
+                  <tr>
+                    <td>SVG</td>
+                    <td><code>Outline Text</code>, <code>Include ID</code>, <code>Simplify Stroke</code>.</td>
+                    <td>Векторні іконки, логотипи, масштабована векторна графіка для фронтенд-верстки.</td>
+                  </tr>
+                  <tr>
+                    <td>PDF</td>
+                    <td>Векторний багатосторінковий експорт документа.</td>
+                    <td>Презентаційні слайди, дизайн-специфікації, друковані брошури та макети.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. СПЕЦИФІКАЦІЇ ЕКСПОРТУ ВЕКТОРНОГО SVG -->
+          <section class="l-section" id="svg">
+            <h2><span class="n">03</span>Специфікації експорту векторного SVG</h2>
+            <p>При експорті в <b>SVG</b> інспектор Figma надає три спеціалізовані опції оптимізації вихідного XML-коду:</p>
+            <ul>
+              <li><b>Outline Text</b> — конвертує текстові шари у замкнені векторні криві, гарантуючи ідентичне відображення логотипа навіть за відсутності фірмового шрифту у системі користувача.</li>
+              <li><b>Include "id" Attribute</b> — додає імена шарів як атрибути <code>id="..."</code> до SVG-тегів для прямої анімації чи маніпуляцій через CSS та JavaScript.</li>
+              <li><b>Simplify Stroke</b> — математично спрощує векторні точки обводок для зменшення розміру файлу.</li>
+            </ul>
+
+            <div class="callout callout--tip">
+              <div class="callout__title">💻 Порада для фронтенд-оптимізації: fill="currentColor"</div>
+              <p>При експорті іконок у <b>SVG</b> обов'язково перевіряйте, щоб у них не було зафіксованих жорстких кольорів заливки, якщо розробники планують фарбувати їх динамічно (наприклад, при ховері або перемиканні теми) через CSS-властивість <code>fill="currentColor"</code>.</p>
+            </div>
+          </section>
+
+          <!-- 4. ІНТЕРАКТИВНИЙ КАЛЬКУЛЯТОР EXPORT PRESET -->
+          <section class="l-section" id="calculator">
+            <h2><span class="n">04</span>Інтерактивний симулятор панелі Export</h2>
+            <p>Оберіть базовий розмір фрейму, цільовий формат, масштаб щільності пікселів (<code>1x, 2x, 3x, 512w</code>) та прапорці SVG, щоб побачити згенеровані імена файлів, підсумкову роздільну здатність у пікселях та чистий код:</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Базовий розмір фрейму у Figma (1x)
+                  <select id="ex-base">
+                    <option value="24x24">Іконка UI — 24 × 24 px</option>
+                    <option value="120x120" selected>Аватар / Ілюстрація — 120 × 120 px</option>
+                    <option value="1440x900">Десктопний екран — 1440 × 900 px</option>
+                  </select>
+                </label>
+                <label>Формат експорту (Format)
+                  <select id="ex-fmt">
+                    <option value="png" selected>PNG (Растр + Прозорість)</option>
+                    <option value="jpg">JPG (Фото без прозорості)</option>
+                    <option value="svg">SVG (Чистий векторний код)</option>
+                    <option value="pdf">PDF (Векторний документ)</option>
+                  </select>
+                </label>
+                <label>Масштаб / Суфікс (Scale)
+                  <select id="ex-scale">
+                    <option value="1">1x (Стандартна щільність)</option>
+                    <option value="2" selected>2x (@2x Retina Display)</option>
+                    <option value="3">3x (@3x Super Retina / OLED)</option>
+                    <option value="512w">512w (Фіксована ширина 512px)</option>
+                  </select>
+                </label>
+                <label>Опція SVG: Outline Text + currentColor
+                  <select id="ex-svg-opt">
+                    <option value="clean" selected>Увімкнено (Outline Text + currentColor)</option>
+                    <option value="raw">Вимкнено (Сирий текст &lt;text&gt; та HEX)</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="flex-direction:column;gap:12px">
+                <div id="ex-out" style="width:100%;max-width:560px;background:var(--c-surface);border:1.5px solid var(--c-border);border-radius:14px;padding:16px 18px;font-size:13.5px;line-height:1.65"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">05</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-export"></div>
+          </section>
+
+          <!-- 6. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">06</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.13</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-export#tests" style="white-space:nowrap">Пройти тест з теми 2.13 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-structure.html"><small>← Попередня тема</small><b>2.12 Структура Організації Проєкту та Стандарти Handoff</b></a>
+              <a href="figma-animation.html" class="next"><small>Наступна тема →</small><b>2.14 Інтерактивне Прототипування та Анімація</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний симулятор панелі Export */
+    (function () {
+      const baseEl = document.getElementById("ex-base");
+      const fmtEl = document.getElementById("ex-fmt");
+      const scaleEl = document.getElementById("ex-scale");
+      const svgOptEl = document.getElementById("ex-svg-opt");
+      const out = document.getElementById("ex-out");
+
+      function render() {
+        const [bw, bh] = baseEl.value.split("x").map(Number);
+        const fmt = fmtEl.value;
+        const sc = scaleEl.value;
+
+        let outW = bw, outH = bh, suffix = "";
+        if (sc === "512w") {
+          outW = 512;
+          outH = Math.round((bh / bw) * 512);
+          suffix = "-512w";
+        } else {
+          const factor = Number(sc);
+          outW = bw * factor;
+          outH = bh * factor;
+          suffix = factor > 1 ? `@${factor}x` : "";
+        }
+
+        const fileName = `asset-hero${fmt === "svg" || fmt === "pdf" ? "" : suffix}.${fmt}`;
+        let extra = "";
+        if (fmt === "svg") {
+          extra = svgOptEl.value === "clean"
+            ? `<div><b>Оптимізація SVG:</b> <code>&lt;path d="..." fill="currentColor"/&gt;</code> (Outline Text ✓, Simplify Stroke ✓ — готово до фарбування через CSS)</div>`
+            : `<div><b>Сирий SVG:</b> <code>&lt;text font-family="Inter"&gt;...&lt;/text&gt;</code> (⚠️ Ризик зсуву шрифту на пристроях без Inter!)</div>`;
+        } else if (fmt === "png") {
+          extra = `<div><b>Канал прозорості:</b> RGBA (32-bit Alpha Channel збережено ✓)</div>`;
+        } else if (fmt === "jpg") {
+          extra = `<div><b>Компресія:</b> RGB без прозорості (прозорі пікселі заміняться білим фоном)</div>`;
+        } else {
+          extra = `<div><b>Документ:</b> Багатосторінковий векторний контейнер CMYK/RGB для презентацій та друку</div>`;
+        }
+
+        out.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--c-border);padding-bottom:8px;margin-bottom:8px">
+            <span>📄 Файл: <code style="color:var(--c-primary);font-weight:800">${fileName}</code></span>
+            <span class="chip">${fmt.toUpperCase()}</span>
+          </div>
+          <div><b>Вихідна геометрія у Figma:</b> ${bw} × ${bh} px → <b>Експортований розмір:</b> <span style="color:var(--c-primary);font-weight:800">${fmt === "svg" || fmt === "pdf" ? "Незалежний вектор (∞)" : `${outW} × ${outH} px`}</span></div>
+          ${extra}
+        `;
+      }
+
+      [baseEl, fmtEl, scaleEl, svgOptEl].forEach((el) => el.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

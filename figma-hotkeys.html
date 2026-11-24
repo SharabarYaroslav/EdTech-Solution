@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гарячі клавіші та швидкісна навігація — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Системні клавіатурні скорочення macOS та Windows для прискорення розробки у Figma на 35–40%, модифікатори Nudge та інспектування відступів.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.2</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 02</div>
+          <h1 class="lesson-hero__title">Гарячі клавіші та швидкісна навігація</h1>
+          <p class="lesson-hero__lead">Системні клавіатурні скорочення macOS та Windows для прискорення розробки на 35–40%, векторні режими та модифікатори точного позиціонування (Nudge).</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-hotkeys.jpg" alt="Ергономічна клавіатура з гарячими клавішами Figma та індикаторами відстаней">
+            <button class="hotspot" style="left:24%;top:32%" data-icon="⬛" data-title="F / Shift + S — Frame та Section" data-text="Миттєвий виклик інструмента Frame (F) або Section (Shift + S) без руху курсора до верхнього тулбару."></button>
+            <button class="hotspot" style="left:48%;top:54%" data-icon="⌨️" data-title="Базові клавіші R, L, O, T, V, K" data-text="Прямокутник (R), Лінія (L), Еліпс (O), Текст (T), Переміщення (V) та Масштабування (K) викликаються автоматично лівою рукою."></button>
+            <button class="hotspot" style="left:75%;top:30%" data-icon="📏" data-title="Option / Alt — Вимірювання дистанцій" data-text="Утримування Option (macOS) або Alt (Windows) при наведенні курсора відображає точні відстані у пікселях червоними напрямними."></button>
+            <button class="hotspot" style="left:28%;top:72%" data-icon="📦" data-title="Shift + A — Auto Layout" data-text="Головний рефлекс компоновки: миттєве огортання виділених шарів у динамічний Flexbox-контейнер."></button>
+            <button class="hotspot" style="left:72%;top:72%" data-icon="💎" data-title="Opt+Cmd+K / Ctrl+Alt+K — Компонент" data-text="Перетворення обраного фрейму на майстер-компонент дизайн-системи одним акордом клавіш."></button>
+            <button class="hotspot" style="left:52%;top:22%" data-icon="🎯" data-title="Стрілки та Shift + Стрілки (Nudge)" data-text="Small Nudge зсуває об'єкт на 1px, а Big Nudge (Shift + Стрілки) — на 8px для ідеальної синхронізації з 8-Point Grid."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дізнайтеся про ключові комбінації швидкісної верстки.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="40" data-suffix="%">0</strong><span>Скорочення часу збірки екранів завдяки впевненому володінню хоткеями (35–40%)</span></div>
+        <div class="stat"><strong data-count="8" data-suffix=" px">0</strong><span>Рекомендований крок Big Nudge для синхронізації з базовою 8-Point Grid</span></div>
+        <div class="stat"><strong data-count="1" data-suffix=" px">0</strong><span>Крок точного позиціонування Small Nudge при натисканні клавіш стрілок</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#principle">1. Принцип оптимізації</a>
+          <a href="#table">2. Таблиця скорочень</a>
+          <a href="#nudge">3. Точне позиціонування (Nudge)</a>
+          <a href="#checklist">4. Практична вправа</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші ✓</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ПРИНЦИП -->
+          <section class="l-section" id="principle">
+            <h2><span class="n">01</span>Принцип оптимізації праці в цифровому дизайні</h2>
+            <p>Використання гарячих клавіш у Figma є фундаментальним фактором підвищення професійної швидкості. Завдяки усуненню зайвих рухів курсора до тулбару дизайнер зберігає фокус на композиції та логіці інтерфейсу. Емпіричні дослідження показують, що впевнене володіння базовими комбінаціями <b>скорочує час збірки екранів орієнтовно на 35–40%</b> та суттєво зменшує втому руки.</p>
+            <p>Всі системні комбінації клавіш у Figma уніфіковані за позиційною схемою між платформами <b>macOS</b> та <b>Windows</b>, де клавіша <span class="kbd">Command (⌘)</span> відповідає <span class="kbd">Ctrl</span>, а <span class="kbd">Option (⌥)</span> — <span class="kbd">Alt</span>.</p>
+
+            <div class="compare">
+              <div class="bad">
+                <h4>🍎 macOS модифікатори</h4>
+                <p style="margin:0"><span class="kbd">Cmd (⌘)</span> — системна дія · <span class="kbd">Opt (⌥)</span> — альтернатива / вимірювання / дублювання · <span class="kbd">Shift (⇧)</span> — пропорції / великий крок.</p>
+              </div>
+              <div class="good">
+                <h4>🪟 Windows модифікатори</h4>
+                <p style="margin:0"><span class="kbd">Ctrl</span> — системна дія · <span class="kbd">Alt</span> — альтернатива / вимірювання / дублювання · <span class="kbd">Shift</span> — пропорції / великий крок.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. ТАБЛИЦЯ СКОРОЧЕНЬ -->
+          <section class="l-section" id="table">
+            <h2><span class="n">02</span>Зведена таблиця базових та системних скорочень</h2>
+            <p>Нижче наведено верифіковану специфікацію найважливіших комбінацій для створення геометричних примітивів, трансформації векторів, керування Auto Layout та перемикання режимів інспектування. Скористайтеся фільтром категорій:</p>
+
+            <div class="tabs" data-table-filter="#hk-table" style="justify-content:flex-start;margin-bottom:6px">
+              <button class="tab is-active" data-filter="all">Усі категорії</button>
+              <button class="tab" data-filter="tools">Основні інструменти</button>
+              <button class="tab" data-filter="vector">Векторний режим</button>
+              <button class="tab" data-filter="layout">Компоновка (Layout)</button>
+              <button class="tab" data-filter="comp">Компоненти й позиціонування</button>
+            </div>
+
+            <div class="table-wrap">
+              <table class="data-table" id="hk-table">
+                <thead>
+                  <tr><th>Категорія дій</th><th>Операція / Інструмент</th><th>macOS</th><th>Windows</th></tr>
+                </thead>
+                <tbody>
+                  <tr data-tags="tools">
+                    <td>Основні інструменти</td>
+                    <td>Move (Переміщення) / Scale (Масштаб)</td>
+                    <td><span class="kbd">V</span> / <span class="kbd">K</span></td>
+                    <td><span class="kbd">V</span> / <span class="kbd">K</span></td>
+                  </tr>
+                  <tr data-tags="tools">
+                    <td>Основні інструменти</td>
+                    <td>Frame (Створити фрейм) / Section (Секція)</td>
+                    <td><span class="kbd">F</span> / <span class="kbd">Shift + S</span></td>
+                    <td><span class="kbd">F</span> / <span class="kbd">Shift + S</span></td>
+                  </tr>
+                  <tr data-tags="tools">
+                    <td>Основні інструменти</td>
+                    <td>Прямокутник / Лінія / Еліпс</td>
+                    <td><span class="kbd">R</span> / <span class="kbd">L</span> / <span class="kbd">O</span></td>
+                    <td><span class="kbd">R</span> / <span class="kbd">L</span> / <span class="kbd">O</span></td>
+                  </tr>
+                  <tr data-tags="tools">
+                    <td>Основні інструменти</td>
+                    <td>Перо (Pen) / Олівець (Pencil)</td>
+                    <td><span class="kbd">P</span> / <span class="kbd">Shift + P</span></td>
+                    <td><span class="kbd">P</span> / <span class="kbd">Shift + P</span></td>
+                  </tr>
+                  <tr data-tags="tools">
+                    <td>Основні інструменти</td>
+                    <td>Текст (Text) / Коментар (Comment)</td>
+                    <td><span class="kbd">T</span> / <span class="kbd">C</span></td>
+                    <td><span class="kbd">T</span> / <span class="kbd">C</span></td>
+                  </tr>
+                  <tr data-tags="vector">
+                    <td>Векторний режим</td>
+                    <td>Вхід у Vector Edit Mode</td>
+                    <td><span class="kbd">Enter</span></td>
+                    <td><span class="kbd">Enter</span></td>
+                  </tr>
+                  <tr data-tags="vector">
+                    <td>Векторний режим</td>
+                    <td>Bend Tool (Згин) / Paint Bucket (Відро)</td>
+                    <td><span class="kbd">Cmd (hover)</span> / <span class="kbd">Shift + B</span></td>
+                    <td><span class="kbd">Ctrl (hover)</span> / <span class="kbd">Shift + B</span></td>
+                  </tr>
+                  <tr data-tags="vector">
+                    <td>Векторний режим</td>
+                    <td>Lasso Tool (Ласо) / Cut Tool (Ножиці)</td>
+                    <td><span class="kbd">Q</span> / <span class="kbd">X</span></td>
+                    <td><span class="kbd">Q</span> / <span class="kbd">X</span></td>
+                  </tr>
+                  <tr data-tags="layout">
+                    <td>Компоновка (Layout)</td>
+                    <td>Застосувати / Видалити Auto Layout</td>
+                    <td><span class="kbd">Shift + A</span> / <span class="kbd">Opt + Shift + A</span></td>
+                    <td><span class="kbd">Shift + A</span> / <span class="kbd">Alt + Shift + A</span></td>
+                  </tr>
+                  <tr data-tags="layout">
+                    <td>Компоновка (Layout)</td>
+                    <td>Групувати / Розгрупувати шари</td>
+                    <td><span class="kbd">Cmd + G</span> / <span class="kbd">Cmd + Shift + G</span></td>
+                    <td><span class="kbd">Ctrl + G</span> / <span class="kbd">Ctrl + Shift + G</span></td>
+                  </tr>
+                  <tr data-tags="layout">
+                    <td>Компоновка (Layout)</td>
+                    <td>Перемкнути Dev Mode (Режим коду)</td>
+                    <td><span class="kbd">Shift + D</span></td>
+                    <td><span class="kbd">Shift + D</span></td>
+                  </tr>
+                  <tr data-tags="comp">
+                    <td>Компоненти</td>
+                    <td>Створити компонент (Create Component)</td>
+                    <td><span class="kbd">Opt + Cmd + K</span></td>
+                    <td><span class="kbd">Ctrl + Alt + K</span></td>
+                  </tr>
+                  <tr data-tags="comp">
+                    <td>Позиціонування</td>
+                    <td>Малий зсув (1px) / Великий зсув (8–10px)</td>
+                    <td><span class="kbd">Стрілки</span> / <span class="kbd">Shift + Стрілки</span></td>
+                    <td><span class="kbd">Стрілки</span> / <span class="kbd">Shift + Стрілки</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. NUDGE -->
+          <section class="l-section" id="nudge">
+            <h2><span class="n">03</span>Системні модифікатори точного позиціонування (Nudge)</h2>
+            <p>Керування координатами здійснюється клавішами стрілок: стандартне натискання виконує <b>малий зсув (Small Nudge — 1px)</b>, а комбінація з <span class="kbd">Shift</span> реалізує <b>великий зсув (Big Nudge</b> — за замовчуванням 10px, рекомендується переналаштувати на <b>8px</b> у меню Preferences для синхронізації з 8-Point Grid).</p>
+            <p>Утримування клавіші <span class="kbd">Option</span> (macOS) або <span class="kbd">Alt</span> (Windows) при наведенні курсора на сусідній елемент відображає точні числові дистанції між об'єктами у пікселях червоними напрямними.</p>
+
+            <!-- Інтерактивний тренажер Nudge -->
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Крок Big Nudge (Preferences → Nudge Amount)
+                  <select id="nudge-step">
+                    <option value="8" selected>8 px (8-Point Grid стандарт)</option>
+                    <option value="10">10 px (за замовчуванням)</option>
+                  </select>
+                </label>
+                <div>
+                  <label style="display:block;margin-bottom:6px;font-size:13px;font-weight:700;color:var(--c-muted)">Small Nudge (1px)</label>
+                  <div style="display:flex;gap:6px">
+                    <button class="btn btn--ghost btn--sm" type="button" data-nudge="-1,0">← 1px</button>
+                    <button class="btn btn--ghost btn--sm" type="button" data-nudge="1,0">→ 1px</button>
+                    <button class="btn btn--ghost btn--sm" type="button" data-nudge="0,-1">↑ 1px</button>
+                    <button class="btn btn--ghost btn--sm" type="button" data-nudge="0,1">↓ 1px</button>
+                  </div>
+                </div>
+                <div>
+                  <label style="display:block;margin-bottom:6px;font-size:13px;font-weight:700;color:var(--c-muted)">Big Nudge (Shift + Стрілка)</label>
+                  <div style="display:flex;gap:6px">
+                    <button class="btn btn--primary btn--sm" type="button" data-bignudge="-1,0">⇧←</button>
+                    <button class="btn btn--primary btn--sm" type="button" data-bignudge="1,0">⇧→</button>
+                    <button class="btn btn--primary btn--sm" type="button" data-bignudge="0,-1">⇧↑</button>
+                    <button class="btn btn--primary btn--sm" type="button" data-bignudge="0,1">⇧↓</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nudge-arena" id="nudge-arena">
+                <div class="nudge-box" id="nudge-a" style="left:64px;top:78px;background:var(--c-primary)">Card A</div>
+                <div class="nudge-box" id="nudge-b" style="left:256px;top:78px;background:#1d1d35">Card B</div>
+                <div class="nudge-line" id="nudge-line" style="top:109px;height:2px"></div>
+                <div class="nudge-badge" id="nudge-dist" style="top:92px">128 px</div>
+              </div>
+              <p class="muted" style="font-size:13px;margin:10px 0 0" id="nudge-coords">Координати Card A: X = 64px, Y = 78px · Дистанція Option/Alt до Card B: 128px (кратно 8px ✓)</p>
+            </div>
+
+            <div class="callout callout--fact">
+              <div class="callout__title">🛠️ Інженерний лайфхак</div>
+              <p>Перейдіть у <b>Main Menu &gt; Preferences &gt; Nudge Amount</b> і встановіть параметр <b>Big Nudge на рівно 8</b>. Відтепер кожне натискання <span class="kbd">Shift + Стрілка</span> переміщуватиме об'єкт на строго кратний крок базової 8-піксельної дизайн-системи.</p>
+            </div>
+          </section>
+
+          <!-- 4. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">04</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-hotkeys"></div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.2</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-hotkeys#tests" style="white-space:nowrap">Пройти тест з теми 2.2 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-intro.html"><small>← Попередня тема</small><b>2.1 Знайомство з Figma</b></a>
+              <a href="figma-fonts.html" class="next"><small>Наступна тема →</small><b>2.3 Гарнітури, шрифти та типографічний рушій</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний тренажер Nudge */
+    (function () {
+      const boxA = document.getElementById("nudge-a");
+      const line = document.getElementById("nudge-line");
+      const badge = document.getElementById("nudge-dist");
+      const coords = document.getElementById("nudge-coords");
+      const stepSel = document.getElementById("nudge-step");
+      let x = 64, y = 78;
+      const bx = 256;
+      const render = () => {
+        x = Math.max(8, Math.min(184, x));
+        y = Math.max(16, Math.min(140, y));
+        boxA.style.left = x + "px";
+        boxA.style.top = y + "px";
+        const rightA = x + 64;
+        const dist = bx - rightA;
+        line.style.left = rightA + "px";
+        line.style.width = Math.max(0, dist) + "px";
+        line.style.top = (y + 31) + "px";
+        badge.style.left = (rightA + dist / 2) + "px";
+        badge.style.top = (y + 14) + "px";
+        badge.textContent = dist + " px";
+        const ok8 = dist % 8 === 0;
+        coords.textContent = `Координати Card A: X = ${x}px, Y = ${y}px · Дистанція Option/Alt до Card B: ${dist}px (${ok8 ? "кратно 8px ✓" : "не кратно 8px ✗"})`;
+      };
+      document.querySelectorAll("[data-nudge]").forEach((b) => b.addEventListener("click", () => {
+        const [dx, dy] = b.dataset.nudge.split(",").map(Number);
+        x += dx; y += dy; render();
+      }));
+      document.querySelectorAll("[data-bignudge]").forEach((b) => b.addEventListener("click", () => {
+        const step = Number(stepSel.value);
+        const [dx, dy] = b.dataset.bignudge.split(",").map(Number);
+        x += dx * step; y += dy * step; render();
+      }));
+      render();
+    })();
+  </script>
+</body>
+</html>

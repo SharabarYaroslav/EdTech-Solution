@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адаптивні Сітки та Інтерактивні Компоненти — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Покроковий математичний розрахунок адаптивної 12-колонкової сітки 1440px, двовимірний Grid Auto Layout з частками fr, інтерактивні компоненти та прототипування мікровзаємодій у Figma.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs">
+            <a href="index.html">Головна</a><span>/</span>
+            <a href="course.html?s=ui">Секція 3. UI елементи</a><span>/</span>
+            <span>Тема 3.1</span>
+          </nav>
+          <div class="lesson-hero__series">UI Architecture &amp; Interface Engineering · Модуль 3.1</div>
+          <h1 class="lesson-hero__title">Адаптивні Сітки (Layout Grids, Grid Auto Layout) та Інтерактивні Компоненти</h1>
+          <p class="lesson-hero__lead">Математичний розрахунок доступного простору 12-колонкової сітки на полотні 1440px, двовимірне керування макетом у Grid Auto Layout, дробні частки (fr) та створення мікровзаємодій як єдиного джерела правди (Single Source of Truth).</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/ui-grids.jpg" alt="3D візуалізація адаптивного артборду з 12-колонковою сіткою, бенто-блоками Grid Auto Layout та інтерактивною карткою станів компонента">
+            <button class="hotspot" style="left:26%;top:50%" data-icon="📐" data-title="12-колонкова сітка (Layout Guides)" data-text="Індустріальний десктопний стандарт (1440px): 12 колонок шириною 96.3px, 11 відступів Gutter по 20px та бічні поля Margin по 32px."></button>
+            <button class="hotspot" style="left:53%;top:32%" data-icon="🧩" data-title="Двовимірний потік Grid Auto Layout" data-text="Керування макетом одночасно по горизонталі й вертикалі за допомогою доріжок (Tracks), дробових часток fr та об'єднання комірок (Span)."></button>
+            <button class="hotspot" style="left:58%;top:58%" data-icon="🔲" data-title="Розтягування комірок (Span across cells)" data-text="Параметри Column span та Row span дозволяють дочірнім елементам перекривати кілька доріжок для створення журнальних бенто-сіток."></button>
+            <button class="hotspot" style="left:76%;top:35%" data-icon="⚡" data-title="Інтерактивний компонент (Single Source of Truth)" data-text="Прототипні зв'язки (While hovering, On click) замкнені всередині набору варіантів, тому всі екземпляри на екранах реагують автоматично."></button>
+            <button class="hotspot" style="left:72%;top:68%" data-icon="🔄" data-title="Матриця станів (Default, Hover, Pressed)" data-text="Компонентний сет містить стани кнопки, які плавно трансформуються за допомогою Smart Animate (Ease out, 200ms) без дублювання фреймів."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дослідіть взаємозв'язок адаптивних сіток і компонентної логіки.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>1440 px</strong><span>Базова ширина десктопного макета в інженерному стандарті вебдизайну</span></div>
+        <div class="stat"><strong>1156 px</strong><span>Корисна робоча площа (Available Space) для розміщення 12 адаптивних колонок</span></div>
+        <div class="stat"><strong>1 vs 32</strong><span>Економія ресурсів: 1 інтерактивний компонент замінює 32 дубльовані екрани прототипу</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#role">1. Роль сіток в адаптивному дизайні</a>
+          <a href="#calc">2. Математичний розрахунок сітки 1440px</a>
+          <a href="#calculator-widget">3. Інтерактивний калькулятор сітки</a>
+          <a href="#grid-al">4. Двовимірний потік Grid Auto Layout</a>
+          <a href="#interactive-comp">5. Інтерактивні компоненти та практикум</a>
+          <a href="#checklist">6. Практична вправа</a>
+          <a href="#quiz">7. Самоперевірка</a>
+          <a href="#sources">8. Джерела та література</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 3 · Усі 3 уроки</div>
+            <a href="ui-grids.html" class="is-active">3.1 Адаптивні сітки та інтерактивні компоненти ✓</a>
+            <a href="ui-typography.html">3.2 Типографіка та шрифтові пари</a>
+            <a href="ui-tokens.html">3.3 Стилі, змінні та токени</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. РОЛЬ СІТОК -->
+          <section class="l-section" id="role">
+            <h2><span class="n">01</span>Роль сіток (Grid Systems) в адаптивному вебдизайні</h2>
+            <p>Модульна сітка є фундаментальним структурним каркасом цифрового інтерфейсу. Вона забезпечує суворе вирівнювання візуальних елементів, задає математично вивірений візуальний ритм і формує передбачувану поведінку інтерфейсу на різних роздільних здатностях екранів.</p>
+            <p>У сучасній цифровій індустрії затверджено золотий стандарт кількості колонок залежно від формфактора цільового пристрою:</p>
+
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🖥️</div><h4>Desktop (1440px)</h4><small>12 колонок →</small></div>
+                <div class="flip__face flip__back"><b>Індустріальний десктопний стандарт</b>Число 12 має максимальну кількість цілих дільників (1, 2, 3, 4, 6), що дозволяє без залишку конструювати макети на 2 половини, 3 третини, 4 чверті або 6 карток.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">📱</div><h4>Tablet (768–1024px)</h4><small>6 або 8 колонок →</small></div>
+                <div class="flip__face flip__back"><b>Планшетні розкладки</b>Забезпечують збалансовану щільність інформації: триколонкові десктопні блоки трансформуються у двоколонкові або стек 1 + 2.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">📲</div><h4>Mobile (375–430px)</h4><small>4 колонки →</small></div>
+                <div class="flip__face flip__back"><b>Мобільні екрани</b>Компактне одно- або двоколонкове подання з бічними полями безпеки 16px або 20px, що виключає випадковий скрол за межі вікна.</div>
+              </div></div>
+            </div>
+
+            <div class="callout callout--fact">
+              <div class="callout__title">💡 Чому саме 12 колонок для десктопу?</div>
+              <p>12 ділиться на 2 (по 6 колонок = 50%), на 3 (по 4 колонки = 33.3%), на 4 (по 3 колонки = 25%) та на 6 (по 2 колонки = 16.6%). Жодна інша базова кількість колонок не дає такої гнучкості для побудови асиметричних інформаційних панелей, каталогів і сайдбарів.</p>
+            </div>
+          </section>
+
+          <!-- 2. МАТЕМАТИЧНИЙ РОЗРАХУНОК СІТКИ -->
+          <section class="l-section" id="calc">
+            <h2><span class="n">02</span>Покроковий математичний розрахунок адаптивної сітки (Полотно 1440px)</h2>
+            <p>Щоб сітка функціонувала адаптивно та безпомилково передавалася у верстку розробникам, дизайнер повинен спиратися на чітке математичне співвідношення між доступним простором для контенту (Available Space) та технічними відступами (Unavailable Space).</p>
+
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>№</th>
+                    <th>Параметр</th>
+                    <th>Формула / Розрахунок</th>
+                    <th>Результат</th>
+                    <th>Інженерне призначення в UI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>1</b></td>
+                    <td><b>Total Area</b></td>
+                    <td>Ширина базового десктопного фрейму</td>
+                    <td><code>1440 px</code></td>
+                    <td>Загальна ширина робочого артборду для проектування під стандартні дисплеї.</td>
+                  </tr>
+                  <tr>
+                    <td><b>2</b></td>
+                    <td><b>Margins (Поля)</b></td>
+                    <td>2 поля по краях полотна: <code>2 × 32 px</code></td>
+                    <td><code>64 px</code></td>
+                    <td>Зовнішні зони безпеки, що відокремлюють контент від фізичних рамок вікна браузера.</td>
+                  </tr>
+                  <tr>
+                    <td><b>3</b></td>
+                    <td><b>Gutters (Відступи)</b></td>
+                    <td>11 інтервалів між 12 колонками: <code>11 × 20 px</code></td>
+                    <td><code>220 px</code></td>
+                    <td>Фіксований внутрішній повітряний простір, що виключає візуальне злиття сусідніх карток.</td>
+                  </tr>
+                  <tr>
+                    <td><b>4</b></td>
+                    <td><b>Unavailable Space</b></td>
+                    <td>Сума полів і міжколонників: <code>64 + 220</code></td>
+                    <td><code>284 px</code></td>
+                    <td>Технічний резерв, повністю недоступний для розміщення контентних колонок.</td>
+                  </tr>
+                  <tr>
+                    <td><b>5</b></td>
+                    <td><b>Available Space</b></td>
+                    <td>Загальна ширина мінус технічний простір: <code>1440 - 284</code></td>
+                    <td><code>1156 px</code></td>
+                    <td>Чиста корисна ширина, яка рівномірно ділиться між 12 робочими колонками.</td>
+                  </tr>
+                  <tr>
+                    <td><b>6</b></td>
+                    <td><b>Column Width</b></td>
+                    <td>Корисна площа ділиться на 12 колонок: <code>1156 / 12</code></td>
+                    <td><code>96.3 px</code></td>
+                    <td>Точна ширина однієї колонки в математичному розрахунку сітки.</td>
+                  </tr>
+                  <tr>
+                    <td><b>7</b></td>
+                    <td><b>3-Column Module</b></td>
+                    <td><code>(3 × 96.3 px) + (2 відступи × 20 px) = 288.9 + 40</code></td>
+                    <td><code>329 px</code></td>
+                    <td>Ширина стандартної триколонкової картки (округлена для піксельної точності).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout callout--tip">
+              <div class="callout__title">🎯 Налаштування Constraints для триколонкових модулів</div>
+              <p>Щоб блок шириною <b>329px</b> адаптивно реагував на зміну ширини екрана, виділіть його і призначте прив'язку <b>Left &amp; Right</b> (затиснувши <code>Shift</code> у панелі Constraints). Завдяки цьому при розтягуванні або звуженні батьківського фрейму сітка та вкладені модулі масштабуватимуться пропорційно й синхронно.</p>
+            </div>
+          </section>
+
+          <!-- 3. ІНТЕРАКТИВНИЙ КАЛЬКУЛЯТОР СІТКИ -->
+          <section class="l-section" id="calculator-widget">
+            <h2><span class="n">03</span>Інтерактивний калькулятор адаптивної сітки</h2>
+            <p>Скористайтеся живим інженерним калькулятором: змініть ширину полотна, параметри полів чи міжколонкових відступів і спостерігайте за автоматичним перерахунком ширини колонок та модулів.</p>
+
+            <div class="meter" style="background:var(--c-surface);border:1.5px solid var(--c-border);border-radius:14px;padding:22px">
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:20px">
+                <div>
+                  <label style="font-size:12px;font-weight:800;color:var(--c-muted);text-transform:uppercase">Ширина полотна (px):</label>
+                  <input type="number" id="calc-canvas" value="1440" min="320" max="2560" step="10" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-bg);color:var(--c-text);font-weight:700;margin-top:6px">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:800;color:var(--c-muted);text-transform:uppercase">Кількість колонок:</label>
+                  <select id="calc-cols" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-bg);color:var(--c-text);font-weight:700;margin-top:6px">
+                    <option value="12" selected>12 колонок (Desktop)</option>
+                    <option value="8">8 колонок (Tablet)</option>
+                    <option value="6">6 колонок (Phablet)</option>
+                    <option value="4">4 колонки (Mobile)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:800;color:var(--c-muted);text-transform:uppercase">Поля Margin (px):</label>
+                  <input type="number" id="calc-margin" value="32" min="0" max="200" step="4" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-bg);color:var(--c-text);font-weight:700;margin-top:6px">
+                </div>
+                <div>
+                  <label style="font-size:12px;font-weight:800;color:var(--c-muted);text-transform:uppercase">Відступи Gutter (px):</label>
+                  <input type="number" id="calc-gutter" value="20" min="0" max="100" step="2" style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-bg);color:var(--c-text);font-weight:700;margin-top:6px">
+                </div>
+              </div>
+
+              <!-- Візуальна схема сітки -->
+              <div id="grid-visualizer" style="height:48px;display:flex;gap:4px;padding:4px;background:rgba(91,92,240,0.08);border-radius:8px;border:1px dashed var(--c-primary);margin-bottom:18px"></div>
+
+              <!-- Результати -->
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;padding:16px;background:var(--c-surface-2);border-radius:10px">
+                <div><span style="font-size:12px;color:var(--c-muted)">Unavailable Space:</span><div id="res-unavail" style="font-size:18px;font-weight:800;color:var(--c-text)">284 px</div></div>
+                <div><span style="font-size:12px;color:var(--c-muted)">Available Space:</span><div id="res-avail" style="font-size:18px;font-weight:800;color:var(--c-primary)">1156 px</div></div>
+                <div><span style="font-size:12px;color:var(--c-muted)">Column Width:</span><div id="res-col" style="font-size:18px;font-weight:800;color:#10b981">96.3 px</div></div>
+                <div><span style="font-size:12px;color:var(--c-muted)">3-Column Module:</span><div id="res-module" style="font-size:18px;font-weight:800;color:var(--c-accent)">329 px</div></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. GRID AUTO LAYOUT -->
+          <section class="l-section" id="grid-al">
+            <h2><span class="n">04</span>Двовимірний потік Grid Auto Layout у Figma</h2>
+            <p>Традиційний Auto Layout у Figma підтримував виключно односпрямовані потоки: або строго горизонтальний ряд, або вертикальну колонку. Революційне оновлення <b>Grid Auto Layout</b> запровадило повноцінне двовимірне керування макетом одночасно по рядках і стовпчиках (tracks), що є ідеальним рішенням для конструювання складних таблиць, дашбордів, бенто-сіток (bento boxes) та адаптивних галерей.</p>
+
+            <div class="cards cards--2">
+              <div class="card">
+                <span class="card__icon">🎛️</span>
+                <h4 class="card__title">Керування доріжками (Tracks)</h4>
+                <p class="card__text">Кількість колонок задається явним числовим значенням або селектором сітки. Параметр <b>Number of rows</b> за замовчуванням має статус <code>Auto</code>: рядки автоматично генеруються чи схлопуються залежно від фактичної кількості об'єктів у комірках.</p>
+              </div>
+              <div class="card">
+                <span class="card__icon">📐</span>
+                <h4 class="card__title">CSS Shorthand для Padding</h4>
+                <p class="card__text">Проміжки регулюються індивідуально (Gap between rows та Gap between columns). Внутрішні відступи підтримують лаконічний синтаксис CSS shorthand: введення <code>16, 24</code> автоматично встановлює 16px по вертикалі та 24px по горизонталі.</p>
+              </div>
+              <div class="card">
+                <span class="card__icon">⚖️</span>
+                <h4 class="card__title">Дробові частки (fr units)</h4>
+                <p class="card__text">Окрім режимів Fixed і Hug, Grid Auto Layout підтримує гнучкі частки <code>1fr</code>, <code>2fr</code>. Якщо одна колонка має розмір 2fr, а дві сусідні по 1fr, перша колонка гарантовано забиратиме рівно 50% вільного простору фрейму.</p>
+              </div>
+              <div class="card">
+                <span class="card__icon">🔲</span>
+                <h4 class="card__title">Розтягування комірок (Span)</h4>
+                <p class="card__text">Параметри <b>Column span</b> та <b>Row span</b> дозволяють розтягувати будь-яку дочірню картку на 2 або більше комірок. Завдяки цьому легко створюються стильні асиметричні журнальні розкладки без вкладених контейнерів-милиць.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. ІНТЕРАКТИВНІ КОМПОНЕНТИ ТА ПРАКТИКУМ -->
+          <section class="l-section" id="interactive-comp">
+            <h2><span class="n">05</span>Інтерактивні компоненти (Interactive Components) та мікровзаємодії</h2>
+            <p><b>Інтерактивні компоненти</b> усувають необхідність плодити десятки фреймів заради демонстрації найпростіших анімацій. Вони дозволяють налаштовувати прототипні переходи (hover, click, focus, pressed) безпосередньо <b>всередині компонентного сета між його варіантами</b>. Кожен екземпляр (instance), винесений на робочий екран, автоматично оживає в режимі презентації.</p>
+
+            <div class="callout callout--fact">
+              <div class="callout__title">📊 Порівняння інженерної ефективності</div>
+              <p>Уявіть чеклист із <b>5 інтерактивними чекбоксами</b>. Без інтерактивних компонентів, щоб показати всі комбінації позначених і непозначених станів, дизайнеру довелося б продублювати екран <b>32 рази</b> ($2^5$) і протягнути <b>160 ручних зв'язків</b> у прототипі! З інтерактивними компонентами створюється <b>1 компонент із 2 варіантами</b> (Checked/Unchecked) та 2 зв'язками всередині нього. Будь-яка кількість чекбоксів працює автоматично!</p>
+            </div>
+
+            <h3>Практикум: Створення інтерактивної кнопки (Interactive Button)</h3>
+            <div class="stepper" style="margin:20px 0">
+              <div class="step">
+                <div class="step__num">1</div>
+                <div>
+                  <strong>Створення базового шару та Auto Layout</strong>
+                  <p>Напишіть текст «Оформити замовлення», натисніть <code>Shift + A</code> для огортання в Auto Layout, встановіть відступи 12px зверху/знизу та 24px з боків, задайте фірмовий фоновий колір та радіус скруглення 10px.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">2</div>
+                <div>
+                  <strong>Конвертація в компонент та створення варіантів</strong>
+                  <p>Натисніть <code>Ctrl + Alt + K</code> (або <code>Cmd + Option + K</code> на Mac). У правій панелі натисніть <b>Add Variant (+)</b> і створіть 4 стани: <code>Default</code>, <code>Hover</code> (яскравіша заливка), <code>Pressed</code> (масштаб -2px або зміщення вниз на 1px) та <code>Disabled</code> (прозорість 40%).</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">3</div>
+                <div>
+                  <strong>Лінкування станів у режимі Prototype</strong>
+                  <p>Перейдіть у вкладку <b>Prototype</b> (<code>Shift + E</code>). Протягніть стрілку від варіанта <i>Default</i> до <i>Hover</i> із тригером <b>While hovering</b> (діє під час наведення курсора), дією <b>Change to</b> та анімацією <b>Smart Animate (Ease out, 200ms)</b>.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">4</div>
+                <div>
+                  <strong>Зв'язування кліку та тестування</strong>
+                  <p>Протягніть стрілку від варіанта <i>Hover</i> до <i>Pressed</i> із тригером <b>On click</b>. Перетягніть екземпляр кнопки у ваш дизайн-макет і запустіть режим Present (<code>Ctrl + Alt + Enter</code>) — кнопка реагує на курсор миттєво без дублювання екранів!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Живий демо-віджет кнопки -->
+            <div style="background:var(--c-surface);border:1.5px solid var(--c-border);border-radius:12px;padding:24px;text-align:center;margin-top:20px">
+              <h4 style="margin-bottom:8px">Спробуйте мікровзаємодію інтерактивної кнопки в дії:</h4>
+              <p style="font-size:13px;color:var(--c-muted);margin-bottom:18px">Наведіть курсор (Hover), натисніть мишею (Pressed) або перемкніть чекбокс Disabled:</p>
+              <div style="display:inline-flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center">
+                <button type="button" id="interactive-demo-btn" class="btn btn--primary" style="padding:14px 28px;font-size:15px;font-weight:700;box-shadow:0 6px 18px rgba(91,92,240,0.3);transition:all .2s cubic-bezier(0.34,1.56,0.64,1);cursor:pointer">Оформити замовлення →</button>
+                <label style="display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer">
+                  <input type="checkbox" id="toggle-disabled-btn"> Режим Disabled
+                </label>
+              </div>
+              <div id="btn-state-indicator" style="margin-top:14px;font-size:12px;font-weight:800;color:var(--c-primary);letter-spacing:.05em;text-transform:uppercase">Поточний стан: DEFAULT</div>
+            </div>
+          </section>
+
+          <!-- 6. ІНЖЕНЕРНИЙ ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">06</span>Практична вправа</h2>
+            <div class="exercise" data-ex="ui-grids"></div>
+          </section>
+
+          <!-- 7. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">07</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 3.1</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> (5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=ui-grids#tests" style="white-space:nowrap">Пройти тест з теми 3.1 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-section.html"><small>← Секція 2</small><b>2.15 Section та середовище Dev Mode</b></a>
+              <a href="ui-typography.html" class="next"><small>Наступна тема →</small><b>3.2 Типографіка, шрифтові пари та текстова ієрархія</b></a>
+            </div>
+          </section>
+
+          <!-- 8. ДЖЕРЕЛА -->
+          <section class="l-section" id="sources">
+            <h2><span class="n">08</span>Джерела та рекомендовані матеріали</h2>
+            <ol class="sources">
+              <li>
+                <strong>Figma Grid Layout: Step-by-Step Guide to Calculate Responsive Grid Layouts</strong>
+                <p>Автор: Joshua Dimkpa · DEV Community. Покроковий математичний розбір доступного й недоступного простору полотна, розрахунок колонок та Constraints.</p>
+              </li>
+              <li>
+                <strong>Implementing Grids and Layouts in Figma: Using grid systems and applying layouts to designs</strong>
+                <p>Автор: Pooja Verma · Видання: Code Accelerator. Практичні прийоми налаштування сіток, вирівнювання елементів і комбінування з Auto Layout.</p>
+              </li>
+              <li>
+                <strong>Use the grid auto layout flow</strong>
+                <p>Видавництво: Figma Learn Help Center. Офіційне керівництво з параметрів доріжок, відступів Padding/Gap, часток fr та розтягування (Span).</p>
+              </li>
+              <li>
+                <strong>Figma Interactive Components: Build Buttons, Toggles &amp; Menus</strong>
+                <p>Автор: Pawan Swami · Code Accelerator. Створення інтерактивних кнопок, тоґлів і дропдаунів з анімацією Smart Animate.</p>
+              </li>
+              <li>
+                <strong>Interactive components fundamentals</strong>
+                <p>Видавництво: Figma Learn Help Center. Концепція Single Source of Truth, оптимізація прототипів та полегшення developer handoff.</p>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний калькулятор сітки */
+    (function() {
+      const cCanvas = document.getElementById("calc-canvas");
+      const cCols = document.getElementById("calc-cols");
+      const cMargin = document.getElementById("calc-margin");
+      const cGutter = document.getElementById("calc-gutter");
+      const rUnavail = document.getElementById("res-unavail");
+      const rAvail = document.getElementById("res-avail");
+      const rCol = document.getElementById("res-col");
+      const rModule = document.getElementById("res-module");
+      const visualizer = document.getElementById("grid-visualizer");
+
+      function recalc() {
+        if (!cCanvas || !cCols || !cMargin || !cGutter) return;
+        const total = parseFloat(cCanvas.value) || 1440;
+        const cols = parseInt(cCols.value, 10) || 12;
+        const margin = parseFloat(cMargin.value) || 0;
+        const gutter = parseFloat(cGutter.value) || 0;
+
+        const totalMargins = margin * 2;
+        const totalGutters = (cols - 1) * gutter;
+        const unavail = totalMargins + totalGutters;
+        const avail = Math.max(0, total - unavail);
+        const colW = cols > 0 ? avail / cols : 0;
+        const mod3 = (colW * 3) + (gutter * 2);
+
+        rUnavail.textContent = unavail.toFixed(1) + " px";
+        rAvail.textContent = avail.toFixed(1) + " px";
+        rCol.textContent = colW.toFixed(1) + " px";
+        rModule.textContent = mod3.toFixed(1) + " px";
+
+        // Відмалювати міні-візуалізатор
+        let html = "";
+        for (let i = 0; i < cols; i++) {
+          html += `<div style="flex:1;background:rgba(91,92,240,0.4);border-radius:3px;height:100%"></div>`;
+        }
+        visualizer.innerHTML = html;
+      }
+
+      [cCanvas, cCols, cMargin, cGutter].forEach(el => el?.addEventListener("input", recalc));
+      recalc();
+
+      // Демонстраційна інтерактивна кнопка
+      const demoBtn = document.getElementById("interactive-demo-btn");
+      const toggleDis = document.getElementById("toggle-disabled-btn");
+      const stateInd = document.getElementById("btn-state-indicator");
+
+      if (demoBtn && toggleDis && stateInd) {
+        demoBtn.addEventListener("mouseenter", () => {
+          if (!demoBtn.disabled) stateInd.textContent = "Поточний стан: HOVER (Smart Animate)";
+        });
+        demoBtn.addEventListener("mouseleave", () => {
+          if (!demoBtn.disabled) stateInd.textContent = "Поточний стан: DEFAULT";
+        });
+        demoBtn.addEventListener("mousedown", () => {
+          if (!demoBtn.disabled) {
+            demoBtn.style.transform = "scale(0.96)";
+            stateInd.textContent = "Поточний стан: PRESSED (Click trigger)";
+          }
+        });
+        demoBtn.addEventListener("mouseup", () => {
+          if (!demoBtn.disabled) {
+            demoBtn.style.transform = "none";
+            stateInd.textContent = "Поточний стан: HOVER";
+          }
+        });
+        toggleDis.addEventListener("change", () => {
+          demoBtn.disabled = toggleDis.checked;
+          if (demoBtn.disabled) {
+            demoBtn.style.opacity = "0.4";
+            demoBtn.style.cursor = "not-allowed";
+            stateInd.textContent = "Поточний стан: DISABLED (Прозорість 40%)";
+          } else {
+            demoBtn.style.opacity = "1";
+            demoBtn.style.cursor = "pointer";
+            stateInd.textContent = "Поточний стан: DEFAULT";
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

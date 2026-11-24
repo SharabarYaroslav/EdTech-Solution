@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Відеоматеріали та курси Figma — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Відеоматеріали, повний безкоштовний курс Figma для початківців, експрес-інтенсиви та практичні майстер-класи з дизайну сайтів від провідних авторів.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container">
+        <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><span>Відеокурси</span></nav>
+        <h1 class="page-hero__title">Відеоматеріали та практичні курси</h1>
+        <p class="page-hero__text">Повний структурований курс Figma для початківців, тематичні майстер-класи з розробки сайтів та практичні воркшопи від українських UI/UX дизайнерів.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Головний банер базового плейліста -->
+        <div class="video-hero-banner reveal">
+          <div>
+            <span class="video-hero-banner__badge">🎓 Офіційний курс · Плейліст на YouTube</span>
+            <h2 class="video-hero-banner__title">Курс/Уроки по Figma | Безкоштовні уроки для початківців UI/UX дизайн</h2>
+            <p class="video-hero-banner__desc">
+              10 повноцінних відеоуроків від автора <b>Ерік Цуриков (Хроніки веб-дизайнера)</b>: від знайомства з інтерфейсом та Community до створення інтерактивних прототипів, роботи у FigJam та тестування AI-функцій.
+            </p>
+          </div>
+          <div class="video-hero-banner__actions">
+            <a href="https://www.youtube.com/playlist?list=PLfRInF5PWqfcL4L9a_8EdwmMjhKFiW6zd" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              Відкрити плейліст ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Таби категорій -->
+        <div class="tabs" style="margin-bottom:28px">
+          <button type="button" class="tab video-tab is-active" data-target="all">Усі відео (13)</button>
+          <button type="button" class="tab video-tab" data-target="playlist">Курс по Figma (10)</button>
+          <button type="button" class="tab video-tab" data-target="intensive">Інтенсив & Майстер-класи (2)</button>
+          <button type="button" class="tab video-tab" data-target="landing">Дизайн лендингу (1)</button>
+        </div>
+
+        <!-- Сітка відеокарток (генерується динамічно з js/videos.js) -->
+        <div class="grid grid--3" id="videos-grid"></div>
+
+        <!-- Блок дотримання авторських прав та ліцензійна інформація -->
+        <div id="copyright-root"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/videos.js"></script>
+</body>
+</html>

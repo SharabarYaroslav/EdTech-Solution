@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Позиціонування та Математика Constraints — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Принцип дії Constraints (Прив'язок) по осях X та Y у Figma, матриця поведінки при ресайзингу, Scale та взаємодія з Auto Layout.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.8</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 08</div>
+          <h1 class="lesson-hero__title">Позиціонування та Математика Constraints</h1>
+          <p class="lesson-hero__lead">Система просторових прив'язок по горизонтальній (X) та вертикальній (Y) осях, матриця поведінки при зміні розмірів екрана та архітектурні пріоритети Auto Layout.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-positioning.jpg" alt="3D UI-полотно з дочірніми елементами, закріпленими пунктирними лініями прив'язок Constraints до країв та центру фрейму">
+            <button class="hotspot" style="left:33%;top:32%" data-icon="↖️" data-title="Left & Top (Прив'язка за замовчуванням)" data-text="Зберігає незмінною дистанцію у пікселях від лівої та верхньої граней фрейму (логотип у шапці, аватар профілю, верхнє меню)."></button>
+            <button class="hotspot" style="left:50%;top:50%" data-icon="🎯" data-title="Center / Center (Центрування по осях)" data-text="Утримує об'єкт рівно по центру осі при розтягуванні екрана, пропорційно змінюючи бічні відступи (модальні вікна, попапи, 404)."></button>
+            <button class="hotspot" style="left:35%;top:69%" data-icon="↔️" data-title="Left & Right (Динамічне розтягування ширини)" data-text="Фіксує обидва бокові відступи, змушуючи сам елемент змінювати ширину разом із батьківським фреймом (банери, пошукові інпути, Navbar)."></button>
+            <button class="hotspot" style="left:69%;top:69%" data-icon="↘️" data-title="Right & Bottom (Правий нижній кут)" data-text="Фіксує елемент біля правого та нижнього країв в'юпорту — класичне рішення для плаваючої кнопки чату (FAB) або стрілки «Нагору»."></button>
+            <button class="hotspot" style="left:65%;top:45%" data-icon="📐" data-title="Scale (Пропорційне масштабування у %)" data-text="Габарити та відступи об'єкта змінюються у відсотковому відношенні до розмірів батьківського контейнера (фонові ілюстрації, графічні сітки)."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Натискайте на маркери, щоб побачити дію кожного режиму Constraints.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="2" data-suffix=" осі">0</strong><span>Незалежне налаштування прив'язок по горизонталі (X) та вертикалі (Y)</span></div>
+        <div class="stat"><strong data-count="5" data-suffix=" режимів">0</strong><span>Матриця поведінки на кожній осі: Left/Top, Right/Bottom, Left&amp;Right, Center, Scale</span></div>
+        <div class="stat"><strong>Frame Only</strong><span>Constraints працюють лише у звичайних фреймах або з Ignore Auto Layout</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#principle">1. Принцип дії Constraints</a>
+          <a href="#matrix">2. Матриця режимів прив'язки</a>
+          <a href="#simulator">3. Інтерактивний симулятор Constraints</a>
+          <a href="#priority">4. Пріоритети та Auto Layout</a>
+          <a href="#checklist">5. Практична вправа</a>
+          <a href="#quiz">6. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints ✓</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ПРИНЦИП ДІЇ CONSTRAINTS -->
+          <section class="l-section" id="principle">
+            <h2><span class="n">01</span>Принцип дії Constraints (Прив'язок)</h2>
+            <p>Інструмент <b>Constraints (Обмеження / Прив'язки)</b> визначає математичну модель поведінки дочірніх об'єктів у момент, коли змінюються габарити їхнього батьківського контейнера. Це базовий механізм перевірки адаптивності макета при переході між різними роздільними здатностями екранів (наприклад, від <code>iPhone SE</code> до <code>iPad Pro</code> або <code>Desktop 1920px</code>).</p>
+            <p>Налаштування прив'язок розділені на дві <b>абсолютно незалежні координатні осі</b>: горизонтальну (<b>X — Horizontal</b>) та вертикальну (<b>Y — Vertical</b>). Критичною архітектурною умовою є те, що батьківським елементом обов'язково має виступати <b>звичайний Frame</b>: у групах (<code>Group</code>) система прив'язок відсутня, а всередині активних контейнерів <code>Auto Layout</code> вона автоматично деактивується.</p>
+          </section>
+
+          <!-- 2. МАТРИЦЯ РЕЖИМІВ ТА СЦЕНАРІЇ ЗАСТОСУВАННЯ -->
+          <section class="l-section" id="matrix">
+            <h2><span class="n">02</span>Матриця режимів та сценарії застосування</h2>
+            <p>На правій панелі інспектора інтерактивний хрестоподібний віджет дозволяє зафіксувати дистанцію об'єкта відносно граней або центру батьківського фрейму:</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Режим прив'язки</th><th>Геометрична поведінка при ресайзингу</th><th>Типовий елемент інтерфейсу</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Left / Top</td>
+                    <td>Зберігає стабільний відступ від лівого або верхнього краю.</td>
+                    <td>Логотип у шапці сайту, верхнє меню, іконка профілю.</td>
+                  </tr>
+                  <tr>
+                    <td>Right / Bottom</td>
+                    <td>Зберігає стабільний відступ від правого або нижнього краю.</td>
+                    <td>Кнопка кошика, плаваюча кнопка чату (FAB), стрілка «Нагору».</td>
+                  </tr>
+                  <tr>
+                    <td>Left &amp; Right (або Top &amp; Bottom)</td>
+                    <td>Змінює ширину (або висоту) самого елемента, зберігаючи фіксованими обидва крайові відступи до меж фрейму.</td>
+                    <td>Текстові банери на всю ширину, пошукові інпути, фонові плашки підвалів, розділювачі.</td>
+                  </tr>
+                  <tr>
+                    <td>Center</td>
+                    <td>Утримує об'єкт рівно по центру осі, змінюючи бічні відступи.</td>
+                    <td>Модальні вікна (Pop-ups), іконка завантаження, головний заголовок 404.</td>
+                  </tr>
+                  <tr>
+                    <td>Scale</td>
+                    <td>Масштабує розміри та позицію об'єкта пропорційно у <code>%</code>.</td>
+                    <td>Фонові векторні плями, графічні сітки, складні адаптивні ілюстрації.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. ІНТЕРАКТИВНИЙ СИМУЛЯТОР CONSTRAINTS -->
+          <section class="l-section" id="simulator">
+            <h2><span class="n">03</span>Інтерактивний симулятор Constraints</h2>
+            <p>Оберіть режим прив'язки по осі <b>X (Horizontal)</b> та осі <b>Y (Vertical)</b> або скористайтеся готовими пресетами елементів UI, а потім змінюйте ширину та висоту батьківського фрейму повзунками:</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Вісь X (Horizontal Constraint)
+                  <select id="cs-x">
+                    <option value="left">Left (Лівий край)</option>
+                    <option value="right">Right (Правий край)</option>
+                    <option value="both" selected>Left &amp; Right (Розтягування ширини)</option>
+                    <option value="center">Center (По центру X)</option>
+                    <option value="scale">Scale (Пропорційно у %)</option>
+                  </select>
+                </label>
+                <label>Вісь Y (Vertical Constraint)
+                  <select id="cs-y">
+                    <option value="top" selected>Top (Верхній край)</option>
+                    <option value="bottom">Bottom (Нижній край)</option>
+                    <option value="both">Top &amp; Bottom (Розтягування висоти)</option>
+                    <option value="center">Center (По центру Y)</option>
+                    <option value="scale">Scale (Пропорційно у %)</option>
+                  </select>
+                </label>
+                <label>Швидкий UI-сценарій
+                  <select id="cs-preset">
+                    <option value="navbar" selected>🧭 Фіксований Navbar (Left &amp; Right + Top)</option>
+                    <option value="fab">💬 Плаваюча кнопка чату FAB (Right + Bottom)</option>
+                    <option value="modal">🪟 Модальне вікно (Center + Center)</option>
+                    <option value="scale">🖼️ Адаптивний банер у % (Scale + Scale)</option>
+                  </select>
+                </label>
+                <label>Ширина батьківського Frame: <b id="cs-w-val">440 px</b>
+                  <input type="range" id="cs-w" min="260" max="580" step="10" value="440">
+                </label>
+                <label>Висота батьківського Frame: <b id="cs-h-val">210 px</b>
+                  <input type="range" id="cs-h" min="150" max="260" step="10" value="210">
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="min-height:280px;flex-direction:column;gap:12px">
+                <div id="cs-parent" style="width:440px;height:210px;background:var(--c-surface);border:2px solid var(--c-primary);border-radius:14px;position:relative;box-shadow:var(--shadow-s);overflow:hidden">
+                  <!-- Пунктирні лінії прив'язки -->
+                  <div id="cs-pin-x" style="position:absolute;border-top:2px dashed #ec4899;pointer-events:none"></div>
+                  <div id="cs-pin-y" style="position:absolute;border-left:2px dashed #ec4899;pointer-events:none"></div>
+                  <!-- Дочірній об'єкт -->
+                  <div id="cs-child" style="position:absolute;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;box-shadow:0 8px 20px rgba(79,70,229,0.28);text-align:center;padding:6px">
+                    UI Object
+                  </div>
+                </div>
+                <div id="cs-info" style="font-size:13px;font-weight:700;color:var(--c-muted)"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. АРХІТЕКТУРНІ ПРІОРИТЕТИ ТА AUTO LAYOUT -->
+          <section class="l-section" id="priority">
+            <h2><span class="n">04</span>Архітектурні пріоритети та Auto Layout</h2>
+            <p>У сучасній методології Figma інструмент <b>Auto Layout</b> перебирає на себе основну роль побудови потокових інтерфейсів (використовуючи власні правила <code>Hug</code> та <code>Fill</code>). Механізм <b>Constraints</b> при цьому залишається незамінним у двох фундаментальних випадках:</p>
+            <ol>
+              <li>При створенні головного кореневого фрейму екрана (<b>Root Frame</b>), де необхідно зафіксувати навігаційну панель зверху або таб-бар знизу екрана при скролі.</li>
+              <li>Коли конкретному елементу всередині Auto Layout увімкнено режим <b>Absolute Positioning (Ignore Auto Layout)</b> — у цей момент панель Constraints миттєво активується для цього шару, дозволяючи закріпити його у будь-якому кутку динамічної картки.</li>
+            </ol>
+
+            <div class="callout callout--warn">
+              <div class="callout__title">⚠️ Ключовий інженерний нюанс: Left &amp; Right проти Scale</div>
+              <p>Режим <b>Left &amp; Right</b> змінює лише габаритні межі контейнера (<code>Bounding Box</code>), але <b>не масштабує</b> внутрішній векторний малюнок іконки чи товщину обводки. Для пропорційного розтягування складної графіки чи герба використовуйте режим <b>Scale</b> або інструмент <b>Scale Tool (<span class="kbd">K</span>)</b>.</p>
+            </div>
+          </section>
+
+          <!-- 5. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">05</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-positioning"></div>
+          </section>
+
+          <!-- 6. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">06</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.8</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-positioning#tests" style="white-space:nowrap">Пройти тест з теми 2.8 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-layout-grid.html"><small>← Попередня тема</small><b>2.7 Layout Guides та 8-Point Grid System</b></a>
+              <a href="figma-components.html" class="next"><small>Наступна тема →</small><b>2.9 Компоненти, Варіанти та Component Properties</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний симулятор Constraints */
+    (function () {
+      const xSel = document.getElementById("cs-x");
+      const ySel = document.getElementById("cs-y");
+      const preset = document.getElementById("cs-preset");
+      const wRange = document.getElementById("cs-w");
+      const hRange = document.getElementById("cs-h");
+      const parent = document.getElementById("cs-parent");
+      const child = document.getElementById("cs-child");
+      const pinX = document.getElementById("cs-pin-x");
+      const pinY = document.getElementById("cs-pin-y");
+      const info = document.getElementById("cs-info");
+
+      const baseW = 440, baseH = 210;
+
+      function render() {
+        const W = Number(wRange.value);
+        const H = Number(hRange.value);
+        const cx = xSel.value;
+        const cy = ySel.value;
+        document.getElementById("cs-w-val").textContent = W + " px";
+        document.getElementById("cs-h-val").textContent = H + " px";
+        parent.style.width = W + "px";
+        parent.style.height = H + "px";
+
+        let left = 24, width = 130, top = 20, height = 44;
+
+        if (cx === "left") {
+          left = 24; width = 130;
+        } else if (cx === "right") {
+          width = 130; left = W - 24 - width;
+        } else if (cx === "both") {
+          left = 24; width = Math.max(60, W - 48);
+        } else if (cx === "center") {
+          width = 150; left = Math.round((W - width) / 2);
+        } else if (cx === "scale") {
+          left = Math.round(W * (24 / baseW));
+          width = Math.round(W * (160 / baseW));
+        }
+
+        if (cy === "top") {
+          top = 20; height = 44;
+        } else if (cy === "bottom") {
+          height = 44; top = H - 20 - height;
+        } else if (cy === "both") {
+          top = 20; height = Math.max(40, H - 40);
+        } else if (cy === "center") {
+          height = 64; top = Math.round((H - height) / 2);
+        } else if (cy === "scale") {
+          top = Math.round(H * (24 / baseH));
+          height = Math.round(H * (60 / baseH));
+        }
+
+        child.style.left = left + "px";
+        child.style.top = top + "px";
+        child.style.width = width + "px";
+        child.style.height = height + "px";
+        child.textContent = `${width} × ${height} px`;
+
+        // Показ пунктирних ліній прив'язки
+        pinX.style.top = (top + height / 2) + "px";
+        pinX.style.left = "0px";
+        pinX.style.width = W + "px";
+        pinY.style.left = (left + width / 2) + "px";
+        pinY.style.top = "0px";
+        pinY.style.height = H + "px";
+
+        info.textContent = `Координати дочірнього шару: X = ${left}px, Y = ${top}px · Габарити: W = ${width}px, H = ${height}px (Прив'язка: ${cx.toUpperCase()} / ${cy.toUpperCase()})`;
+      }
+
+      preset.addEventListener("change", () => {
+        const v = preset.value;
+        if (v === "navbar") { xSel.value = "both"; ySel.value = "top"; }
+        else if (v === "fab") { xSel.value = "right"; ySel.value = "bottom"; }
+        else if (v === "modal") { xSel.value = "center"; ySel.value = "center"; }
+        else if (v === "scale") { xSel.value = "scale"; ySel.value = "scale"; }
+        render();
+      });
+
+      [xSel, ySel, wRange, hRange].forEach((el) => el.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

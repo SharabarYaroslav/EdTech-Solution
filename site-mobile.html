@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мобільний застосунок у Figma: ергономіка, HIG та MD3 — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Ергономіка та проектування нативних мобільних застосунків у Figma: гайдлайни Apple HIG і Google Material Design 3, Thumb Zone, Touch Targets 44pt/48dp, 4-колонкові сітки та Safe Area.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs">
+            <a href="index.html">Головна</a><span>/</span>
+            <a href="course.html?s=sites">Секція 4. Лендинги та багатосторінкові сайти</a><span>/</span>
+            <span>Тема 4.4</span>
+          </nav>
+          <div class="lesson-hero__series">Mobile Ergonomics &amp; HIG/MD3 · Модуль 4.4</div>
+          <h1 class="lesson-hero__title">Ергономіка та проектування нативних мобільних застосунків у Figma</h1>
+          <p class="lesson-hero__lead">Гайдлайни Apple HIG та Google Material Design 3, концепція «зони великого пальця» (Thumb Zone), сенсорні мішені 44pt/48dp, 4-колонкова сітка та системні зони Safe Area.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/site-mobile.jpg" alt="3D візуалізація руки зі смартфоном, на екрані якого позначено зони досяжності великого пальця, 4-колонкову сітку та нижню панель навігації">
+            <button class="hotspot" style="left:62%;top:30%" data-icon="🔴" data-title="Важкодоступна зона (Hard-to-reach)" data-text="Верх екрана — лише заголовки, статусний рядок і рідкісні або деструктивні дії."></button>
+            <button class="hotspot" style="left:56%;top:44%" data-icon="🟡" data-title="Зона розтягування (Stretch)" data-text="Середня третина: скролінг контенту, картки та вторинні дії."></button>
+            <button class="hotspot" style="left:46%;top:62%" data-icon="🟢" data-title="Природна зона (Natural)" data-text="Нижня третина, досяжна без зусиль: таб-бар, первинні кнопки, елементи вибору."></button>
+            <button class="hotspot" style="left:40%;top:73%" data-icon="📱" data-title="Bottom Navigation / Tab Bar" data-text="Оптимально 4–5 пунктів; під ним — Bottom Safe Area 34pt для Home Indicator."></button>
+            <button class="hotspot" style="left:27%;top:50%" data-icon="👆" data-title="Touch Target 44 × 44" data-text="Іконка може бути 24px, але клікабельний фрейм — не менше 44×44pt (iOS) або 48×48dp (Android)."></button>
+            <button class="hotspot" style="left:72%;top:50%" data-icon="🔀" data-title="Компоненти + Boolean Variables" data-text="Перемикачі, інпути та Bottom Sheets збираються з Component Variants і булевих змінних для станів."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дослідіть ергономіку мобільного інтерфейсу.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>75%+</strong><span>Користувачів керують смартфоном великим пальцем однієї руки</span></div>
+        <div class="stat"><strong>44pt / 48dp</strong><span>Мінімальна сенсорна мішень за Apple HIG та Material Design 3</span></div>
+        <div class="stat"><strong>18%</strong><span>Мобільних застосунків повністю відповідають стандартам WCAG</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#native">1. Нативне середовище та гайдлайни</a>
+          <a href="#thumb">2. Thumb Zone та навігація</a>
+          <a href="#targets">3. Сенсорні мішені (Touch Targets)</a>
+          <a href="#grid">4. 4-колонкова сітка</a>
+          <a href="#components">5. Компоненти та емпіричні інсайти</a>
+          <a href="#safe">6. Safe Area Insets</a>
+          <a href="#practice">7. Практична вправа</a>
+          <a href="#quiz">8. Самоперевірка</a>
+          <a href="#sources">9. Джерела</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 4 · Усі 5 уроків</div>
+            <a href="site-landing.html">4.1 Розробка Landing Page</a>
+            <a href="site-multipage.html">4.2 Розробка Multi-page website</a>
+            <a href="site-shop.html">4.3 Інтернет-магазин</a>
+            <a href="site-mobile.html" class="is-active">4.4 Мобільний застосунок ✓</a>
+            <a href="site-specs.html">4.5 Матриця специфікацій і Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1 -->
+          <section class="l-section" id="native">
+            <h2><span class="n">01</span>Специфіка нативного середовища та людино-орієнтовані гайдлайни</h2>
+            <p>Мобільні інтерфейси докорінно відрізняються від десктопного вебу: обмежений розмір екрана, специфіка фізичного утримання пристрою та сенсорна взаємодія пальцями без точного курсора миші. Інтерфейси спираються на стандарти операційних систем:</p>
+            <div class="compare">
+              <div><h4>🍎 Apple Human Interface Guidelines (HIG)</h4><p>Платформа iOS / iPadOS. Мінімальна мішень 44×44pt, Tab Bar, навігаційні стеки, Dynamic Island і Safe Area.</p></div>
+              <div><h4>🤖 Google Material Design 3 (MD3)</h4><p>Платформа Android. Мішень 48×48dp, Navigation Bar, Floating Action Button, динамічні кольори Material You.</p></div>
+            </div>
+          </section>
+
+          <!-- 2 -->
+          <section class="l-section" id="thumb">
+            <h2><span class="n">02</span>Концепція «зони великого пальця» (Thumb Zone) та навігація</h2>
+            <p>Понад <b>75%</b> користувачів взаємодіють зі смартфоном великим пальцем однієї руки. Тому екран ділиться на три ергономічні зони. Перетягніть елементи інтерфейсу на екрані телефона в правильні зони — симулятор оцінить ергономіку розкладки.</p>
+
+            <div class="wg">
+              <div class="thumb">
+                <div>
+                  <div class="phone" id="phone">
+                    <div class="phone__notch"></div>
+                    <div class="phone__zones" id="phone-zones">
+                      <div class="z-hard">Hard-to-reach</div>
+                      <div class="z-stretch">Stretch</div>
+                      <div class="z-natural">Natural</div>
+                    </div>
+                    <div class="phone__screen" id="phone-screen"></div>
+                  </div>
+                  <label style="display:flex;gap:8px;justify-content:center;align-items:center;margin-top:12px;font-size:14px;font-weight:600"><input type="checkbox" id="zones-toggle" checked> Показати зони</label>
+                </div>
+                <div>
+                  <div class="wg__title">Розмістіть елементи</div>
+                  <div class="wg__sub">Перетягуйте кнопки мишею або пальцем. Оцінка оновлюється миттєво.</div>
+                  <div class="thumb__list" id="thumb-list"></div>
+                  <div id="thumb-verdict" class="wg-verdict"></div>
+                  <button type="button" class="btn btn--ghost btn--sm" id="thumb-reset" style="margin-top:12px">↺ Перемішати</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🟢</div><h4>Natural Zone</h4><small>Нижня третина →</small></div>
+                <div class="flip__face flip__back"><b>Природна зона</b>Досягається без зусиль. Тут — Bottom Navigation Bar / Tab Bar, первинні кнопки, елементи вибору та списки.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🟡</div><h4>Stretch Zone</h4><small>Середня третина →</small></div>
+                <div class="flip__face flip__back"><b>Зона розтягування</b>Вимагає зміни положення пальця. Для скролінгу контенту, карток і вторинних дій.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🔴</div><h4>Hard-to-reach</h4><small>Верхня частина →</small></div>
+                <div class="flip__face flip__back"><b>Важкодоступна зона</b>Інформаційні заголовки, статусний рядок, рідкісні й деструктивні дії (вихід, видалення) — захист від випадкових натискань.</div>
+              </div></div>
+            </div>
+          </section>
+
+          <!-- 3 -->
+          <section class="l-section" id="targets">
+            <h2><span class="n">03</span>Стандарти сенсорних мішеней (Touch Targets)</h2>
+            <p>Недостатній розмір клікабельної площі призводить до помилок вводу, роздратування та падіння утримання користувачів (Retention Rate).</p>
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead><tr><th>Платформа / Стандарт</th><th>Мінімальна мішень</th><th>Відступ між цілями</th><th>Реалізація у Figma</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Apple iOS (HIG)</b></td><td><code>44 × 44 pt</code></td><td>Мінімум 8 pt</td><td>Іконка 24px, але фрейм-контейнер 44×44px</td></tr>
+                  <tr><td><b>Google Android (MD3)</b></td><td><code>48 × 48 dp</code></td><td>Мінімум 8 dp</td><td>Стандарт для FAB та інпутів</td></tr>
+                  <tr><td><b>WCAG 2.1 Level AAA</b></td><td><code>44 × 44 CSS px</code></td><td>Виключає випадкові дотики</td><td>Обов'язково для людей із порушеннями моторики</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="wg">
+              <div class="wg__title">👆 Перевірка невидимого Touch Target</div>
+              <div class="wg__sub">Задайте розмір іконки та внутрішній Padding контейнера Auto Layout — рожева рамка показує фактичну клікабельну площу.</div>
+              <div class="wg__controls">
+                <label>Розмір іконки (px)<input type="number" id="tt-icon" value="20" min="12" max="48" step="2"></label>
+                <label>Padding контейнера (px)<input type="number" id="tt-pad" value="4" min="0" max="24" step="2"></label>
+              </div>
+              <div class="tt-stage"><div class="tt-box" id="tt-box"><div class="tt-icon" id="tt-ic">🔍</div></div></div>
+              <div id="tt-verdict" class="wg-verdict"></div>
+            </div>
+
+            <div class="callout callout--tip">
+              <div class="callout__title">🫥 Правило невидимого Touch Target</div>
+              <p>Для іконки пошуку 20×20px використовуйте невидимий внутрішній контейнер Auto Layout фіксованого розміру 44×44px або відповідний Padding. Це гарантує відповідність Apple HIG без спотворення візуального масштабу іконки.</p>
+            </div>
+          </section>
+
+          <!-- 4 -->
+          <section class="l-section" id="grid">
+            <h2><span class="n">04</span>Технічне налаштування 4-колонкової сітки у Figma</h2>
+            <p>Мобільний лейаут будується на фреймі еталонного пристрою — наприклад, <b>iPhone 15 / 15 Pro: 393×852px</b> або 390×844px — і 4-колонковій системі сітки:</p>
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead><tr><th>Параметр</th><th>Значення у Figma</th><th>Функціональне призначення</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Type</b></td><td><code>Columns (Stretch)</code></td><td>Адаптивне заповнення ширини між полями</td></tr>
+                  <tr><td><b>Count</b></td><td><code>4</code></td><td>Оптимальна кількість модулів для компактного екрана</td></tr>
+                  <tr><td><b>Margin</b></td><td><code>16px</code> (або 24px)</td><td>Безпечна зона від рамок і заокруглень дисплея</td></tr>
+                  <tr><td><b>Gutter</b></td><td><code>16px</code></td><td>Інтервал між колонками, кратний 8pt</td></tr>
+                  <tr><td><b>Baseline Grid</b></td><td><code>4px / 8px Rows</code></td><td>Вертикальне позиціонування типографіки</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout callout--fact">
+              <div class="callout__title">🧮 Розрахунок для 393px</div>
+              <p>Корисна ширина: 393 − 2×16 − 3×16 = <b>313px</b>; ширина колонки ≈ <b>78.25px</b>. Картка на 2 колонки = 2×78.25 + 16 ≈ <b>172.5px</b>.</p>
+            </div>
+          </section>
+
+          <!-- 5 -->
+          <section class="l-section" id="components">
+            <h2><span class="n">05</span>Компонентна архітектура та емпіричні інсайти</h2>
+            <p>Мобільні компоненти (Bottom Sheets, Input Fields, Tab Bars) створюються комбінацією <b>Component Variants</b> і <b>Boolean Variables</b>: булеві змінні керують видимістю повідомлень про помилки та системних іконок без зайвих варіантів.</p>
+            <p>Емпіричні стандарти на базі аналізу <b>44 мобільних продуктів</b>:</p>
+            <div class="cards cards--2">
+              <div class="card"><span class="card__icon">🚪</span><h4 class="card__title">Онбординг: 0–2 екрани</h4><p class="card__text">Середнє в топових продуктах — 2.43 екрана. Більша кількість свідчить про недостатню інтуїтивність інтерфейсу.</p></div>
+              <div class="card"><span class="card__icon">🧭</span><h4 class="card__title">Навігація: 4–5 табів</h4><p class="card__text">Середнє — 4.30 таба. Обмеження до 4–5 пунктів зберігає достатню зону дотику для пальця.</p></div>
+              <div class="card"><span class="card__icon">♿</span><h4 class="card__title">Доступність</h4><p class="card__text">Лише 18% застосунків повністю відповідають WCAG; Dark Mode підтримують 45%, офлайн-режим — 30%.</p></div>
+              <div class="card"><span class="card__icon">📈</span><h4 class="card__title">Кореляції успіху</h4><p class="card__text">Кількість завантажень пов'язана з гнучкими налаштуваннями приватності (r = 0.472) та рейтингами (r = 0.410).</p></div>
+            </div>
+          </section>
+
+          <!-- 6 -->
+          <section class="l-section" id="safe">
+            <h2><span class="n">06</span>Системні зони: Safe Area Insets (iOS / Android)</h2>
+            <p>Мобільні інтерфейси не можуть займати всю фізичну висоту екрана без урахування апаратних вирізів і системних жестів:</p>
+            <div class="kv" style="grid-template-columns:repeat(2,1fr)">
+              <div><small>Top Safe Area · 44–59pt</small><p>Відступ під Dynamic Island або системний рядок стану (час, акумулятор, зв'язок).</p></div>
+              <div><small>Bottom Safe Area · 34pt</small><p>Відступ під Home Indicator, щоб натискання таб-бару не спричиняли випадкового виходу з програми.</p></div>
+            </div>
+          </section>
+
+          <!-- 7 -->
+          <section class="l-section" id="practice">
+            <h2><span class="n">07</span>Практична вправа</h2>
+            <div class="exercise" data-ex="site-mobile"></div>
+          </section>
+
+          <!-- 8 -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">08</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 4.4</div>
+                <p style="margin:0">Тестові завдання розміщено в Центрі тестування у вкладці <b>«Практика → Тести»</b> (5 запитань із миттєвою перевіркою).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=site-mobile#tests" style="white-space:nowrap">Пройти тест з теми 4.4 →</a>
+            </div>
+            <div class="lesson-pager">
+              <a href="site-shop.html"><small>← Попередня тема</small><b>4.3 Інтернет-магазин</b></a>
+              <a href="site-specs.html" class="next"><small>Наступна тема →</small><b>4.5 Матриця специфікацій і Dev Mode</b></a>
+            </div>
+          </section>
+
+          <!-- 9 -->
+          <section class="l-section" id="sources">
+            <h2><span class="n">09</span>Джерела та рекомендовані матеріали</h2>
+            <ol class="sources">
+              <li><strong>Проектування цифрових продуктів у Figma. Модуль 04: Mobile Ergonomics &amp; HIG/MD3</strong><p>Методичний посібник курсу. <a href="pdfs/04_mobile_apps_ergonomics_figma.pdf" target="_blank" rel="noopener">Завантажити PDF ↗</a></p></li>
+              <li><strong>Apple Human Interface Guidelines: Layout; Accessibility</strong><p>Офіційні вимоги до мішеней 44×44pt, Safe Area та навігації iOS.</p></li>
+              <li><strong>Google Material Design 3: Accessibility — Touch targets; Navigation bar</strong><p>Стандарт 48×48dp та компоненти навігації Android.</p></li>
+              <li><strong>Hoober S. How Do Users Really Hold Mobile Devices?</strong><p>UXmatters, 2013. Емпіричне дослідження способів утримання смартфона та зон досяжності.</p></li>
+              <li><strong>W3C WCAG 2.1 — Success Criterion 2.5.5 Target Size</strong><p>Вимога рівня AAA щодо мінімального розміру цілі 44×44 CSS px.</p></li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    (function () {
+      /* Thumb Zone simulator: zone 0 = hard, 1 = stretch, 2 = natural */
+      const ELS = [
+        { t: "Tab Bar", want: [2] },
+        { t: "Купити", want: [2] },
+        { t: "Заголовок екрана", want: [0] },
+        { t: "Видалити акаунт", want: [0] },
+        { t: "Стрічка карток", want: [1] },
+        { t: "Фільтр списку", want: [1, 2] },
+      ];
+      const ZN = ["Hard-to-reach", "Stretch", "Natural"];
+      const phone = document.getElementById("phone"), screen = document.getElementById("phone-screen");
+      const list = document.getElementById("thumb-list"), verdict = document.getElementById("thumb-verdict");
+      let pos = [];
+      function shuffle() {
+        pos = ELS.map((_, i) => ({ x: 50, y: 12 + i * 14.5 }));
+        for (let i = pos.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pos[i].y, pos[j].y] = [pos[j].y, pos[i].y]; }
+        draw();
+      }
+      function zoneOf(y) { return y < 33.3 ? 0 : y < 66.6 ? 1 : 2; }
+      function draw() {
+        screen.innerHTML = ELS.map((e, i) => `<div class="phone__el" data-i="${i}" style="left:${pos[i].x}%;top:${pos[i].y}%">${e.t}</div>`).join("");
+        score();
+      }
+      function score() {
+        let ok = 0;
+        list.innerHTML = ELS.map((e, i) => {
+          const z = zoneOf(pos[i].y), good = e.want.includes(z); if (good) ok++;
+          return `<div class="thumb__item"><span>${e.t} → ${ZN[z]}</span><b class="${good ? "ok" : "bad"}">${good ? "✔" : "✖"}</b></div>`;
+        }).join("");
+        verdict.className = "wg-verdict " + (ok === ELS.length ? "ok" : ok >= 4 ? "mid" : "bad");
+        verdict.textContent = ok === ELS.length ? "🏆 Ергономічна розкладка: первинні дії в природній зоні, деструктивні — у важкодоступній." : `Правильно розміщено ${ok} з ${ELS.length}. Первинні дії — донизу, деструктивні — догори.`;
+      }
+      let drag = null;
+      screen.addEventListener("pointerdown", (e) => {
+        const el = e.target.closest(".phone__el"); if (!el) return;
+        drag = +el.dataset.i; el.setPointerCapture(e.pointerId);
+      });
+      screen.addEventListener("pointermove", (e) => {
+        if (drag === null) return;
+        const r = phone.getBoundingClientRect();
+        pos[drag].x = Math.min(85, Math.max(15, ((e.clientX - r.left) / r.width) * 100));
+        pos[drag].y = Math.min(95, Math.max(5, ((e.clientY - r.top) / r.height) * 100));
+        const el = screen.querySelector(`[data-i="${drag}"]`);
+        el.style.left = pos[drag].x + "%"; el.style.top = pos[drag].y + "%";
+        score();
+      });
+      ["pointerup", "pointercancel"].forEach((ev) => screen.addEventListener(ev, () => (drag = null)));
+      document.getElementById("thumb-reset").addEventListener("click", shuffle);
+      document.getElementById("zones-toggle").addEventListener("change", (e) => (document.getElementById("phone-zones").style.opacity = e.target.checked ? 1 : 0));
+      shuffle();
+
+      /* Touch target */
+      const ti = document.getElementById("tt-icon"), tp = document.getElementById("tt-pad");
+      const box = document.getElementById("tt-box"), ic = document.getElementById("tt-ic"), tv = document.getElementById("tt-verdict");
+      function tt() {
+        const s = +ti.value || 0, p = +tp.value || 0, tot = s + p * 2;
+        ic.style.width = ic.style.height = s + "px";
+        box.style.width = box.style.height = tot + "px";
+        if (tot >= 48) { tv.className = "wg-verdict ok"; tv.textContent = `✅ Площа ${tot}×${tot}px — відповідає і Apple HIG (44pt), і Material Design 3 (48dp).`; }
+        else if (tot >= 44) { tv.className = "wg-verdict mid"; tv.textContent = `⚠️ Площа ${tot}×${tot}px — відповідає Apple HIG та WCAG AAA, але менша за 48dp Material Design 3.`; }
+        else { tv.className = "wg-verdict bad"; tv.textContent = `❌ Площа ${tot}×${tot}px замала. Потрібен Padding щонайменше ${Math.ceil((44 - s) / 2)}px для 44pt.`; }
+      }
+      [ti, tp].forEach((el) => el.addEventListener("input", tt));
+      tt();
+    })();
+  </script>
+</body>
+</html>

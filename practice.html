@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практика та Тести — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Центр тестування та самоперевірки за всіма секціями курсу (Дизайн-мислення, Занурення у Figma), практичні завдання та тренажери.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container">
+        <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><span>Практика</span></nav>
+        <h1 class="page-hero__title">Практика та Центр тестування</h1>
+        <p class="page-hero__text">Єдиний банк тестової самоперевірки з усіх модулів курсу, практичні завдання у Figma та тренажер гарячих клавіш.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container page-layout">
+        <aside class="sidebar">
+          <div class="sidebar__title">Види практики</div>
+          <a href="#tests">📝 Тести (Секції 1–4 · 27 тем)</a>
+          <a href="#figma">🎨 Figma (ознайомлення з програмою)</a>
+          <a href="#hotkeys">⌨️ Гарячі клавіші</a>
+        </aside>
+        <div>
+          <article class="content-block reveal" id="tests">
+            <div class="content-block__num">Практика 1 · Єдиний банк самоперевірки</div>
+            <h2>Тести та самоперевірка за модулями курсу</h2>
+            <p class="card__text">Оберіть секцію курсу та тему, щоб перевірити знання. Результати проходження кожного модульного тесту автоматично зберігаються у вашому браузері. Ви також можете перемкнутися в режим <b>«📋 Усі тести списком»</b> для наскрізного огляду всіх запитань секції.</p>
+            <div id="tests-hub"></div>
+          </article>
+
+          <article class="content-block reveal" id="figma">
+            <div class="hk-card-head">
+              <div class="hk-card-head__left">
+                <span class="content-block__num" style="margin:0">Практика 2 · Інтерактивне середовище Figma UI3 + Наставник</span>
+                <h2 style="margin:0;font-size:17px">Figma (ознайомлення з програмою)</h2>
+              </div>
+              <button type="button" class="hk-wide-toggle-btn" id="fgs-wide-top-btn">⛶ Широкоекранний режим</button>
+            </div>
+            <div id="figma-studio-root"></div>
+          </article>
+
+          <article class="content-block reveal" id="hotkeys">
+            <div class="hk-card-head">
+              <div class="hk-card-head__left">
+                <span class="content-block__num" style="margin:0">Практика 3 · 16 комбінацій</span>
+                <h2 style="margin:0;font-size:17px">Тренажер гарячих клавіш Figma</h2>
+              </div>
+              <button type="button" class="hk-wide-toggle-btn" id="hk-wide-top-btn">⛶ Широкоекранний режим</button>
+            </div>
+            <div id="hotkeys-game-root"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/tests.js"></script>
+  <script src="js/figma-studio.js"></script>
+  <script src="js/hotkeys-game.js"></script>
+</body>
+</html>

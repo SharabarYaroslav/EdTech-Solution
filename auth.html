@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вхід / Реєстрація — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="hero" style="padding-bottom:110px">
+      <div class="hero__bg"><div class="grid-pattern"></div><div class="blob blob--1"></div><div class="blob blob--2"></div></div>
+      <div class="container auth">
+        <div class="auth__card reveal">
+          <div class="tabs" data-tabs="auth">
+            <button class="tab is-active" data-target="login">Вхід</button>
+            <button class="tab" data-target="register">Реєстрація</button>
+          </div>
+
+          <!-- Вхід -->
+          <form class="form" data-panel-group="auth" data-panel="login" id="login-form">
+            <label>Email<input type="email" placeholder="you@example.com" required></label>
+            <label>Пароль<input type="password" placeholder="••••••••" required></label>
+            <button class="btn btn--primary" type="submit">Увійти</button>
+            <p class="form__note">Немає акаунта? Перейдіть на вкладку «Реєстрація».</p>
+          </form>
+
+          <!-- Реєстрація -->
+          <form class="form" data-panel-group="auth" data-panel="register" id="register-form" hidden>
+            <div class="avatar-upload">
+              <span class="avatar" id="avatar-preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <label class="btn btn--ghost btn--sm" style="display:inline-flex">Завантажити аватар
+                <input type="file" accept="image/*" id="avatar-input">
+              </label>
+            </div>
+            <label>Ім'я<input type="text" name="name" placeholder="Ваше ім'я" required></label>
+            <label>Email<input type="email" placeholder="you@example.com" required></label>
+            <label>Пароль<input type="password" placeholder="Мінімум 8 символів" minlength="8" required></label>
+            <button class="btn btn--primary" type="submit">Зареєструватися</button>
+            <p class="form__note">Демо-режим: дані зберігаються лише у вашому браузері.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script>
+    /* Демо-логіка реєстрації (без сервера): ім'я та аватар зберігаються в localStorage */
+    let avatarData = null;
+    document.getElementById("avatar-input").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        avatarData = reader.result;
+        document.getElementById("avatar-preview").innerHTML = `<img src="${avatarData}" alt="Аватар">`;
+      };
+      reader.readAsDataURL(file);
+    });
+    document.getElementById("register-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = e.target.name.value;
+      try {
+        localStorage.setItem("edtech-user", JSON.stringify({ name, avatar: avatarData }));
+      } catch {
+        // Завелике зображення — зберігаємо лише ім'я
+        localStorage.setItem("edtech-user", JSON.stringify({ name, avatar: null }));
+      }
+      location.href = "index.html";
+    });
+    document.getElementById("login-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

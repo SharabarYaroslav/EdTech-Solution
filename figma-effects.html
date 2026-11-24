@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ефекти для Шарів та Стилістика Glassmorphism — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Drop Shadow, Inner Shadow, Layer Blur, Background Blur, багаторівнева система Elevation System, формула матового скла Glassmorphism та GPU-навантаження.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.11</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 11</div>
+          <h1 class="lesson-hero__title">Ефекти для Шарів та Стилістика Glassmorphism</h1>
+          <p class="lesson-hero__lead">Просторова глибина вздовж осі Z, параметричні тіні (Drop Shadow, Inner Shadow), розмиття (Layer Blur, Background Blur), формула матового скла та GPU-навантаження.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-effects.jpg" alt="3D композиція ефектів шарів: матове скло Glassmorphism над неоновими сферами, багаторівневі картки з Drop Shadow та втиснутий перемикач з Inner Shadow">
+            <button class="hotspot" style="left:50%;top:46%" data-icon="🧊" data-title="Background Blur (Матове скло Glassmorphism)" data-text="Розмиває всі підкладкові шари безпосередньо під напівпрозорим об'єктом (радіус 16–32px при Opacity заливки 10–20%)."></button>
+            <button class="hotspot" style="left:63%;top:27%" data-icon="✨" data-title="Тонка світлова грань (1px Stroke, 20% Opacity)" data-text="Напівпрозора біла обводка підкреслює заломлення світла на гранях скляної картки або навігаційного бару."></button>
+            <button class="hotspot" style="left:55%;top:64%" data-icon="🌈" data-title="Layer Blur (Розмиття самого об'єкта)" data-text="Рівномірно розмиває векторний або растровий шар, створюючи м'які градієнтні світлові плями та атмосферне світіння на фоні."></button>
+            <button class="hotspot" style="left:23%;top:38%" data-icon="📚" data-title="Drop Shadow та Soft Elevation (Вісь Z)" data-text="Зовнішня тінь піднімає картку чи модальне вікно над площиною. Для м'якості поєднують 2–3 тіні з малим та великим Blur."></button>
+            <button class="hotspot" style="left:79%;top:49%" data-icon="🕳️" data-title="Inner Shadow (Внутрішня тінь заглиблення)" data-text="Формує оптичну ілюзію вдавленої поверхні: ідеально підходить для інпутів форми, треків повзунків та натиснутих кнопок."></button>
+            <button class="hotspot" style="left:42%;top:74%" data-icon="🎨" data-title="Тонована тінь та Color Variables" data-text="Уникайте чистого чорного (#000000): додавайте 5–10% відтінку фону та прив'язуйте колір тіні до Color Variables для темної теми."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Вивчіть чотири типи Layer Effects та формулу Glassmorphism.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="4" data-suffix=" ефекти">0</strong><span>Фундаментальні типи: Drop Shadow, Inner Shadow, Layer Blur та Background Blur</span></div>
+        <div class="stat"><strong>16–32 px</strong><span>Оптимальний радіус Background Blur для стилю матового скла (Glassmorphism)</span></div>
+        <div class="stat"><strong>&lt; 40 px</strong><span>Безпечний поріг радіуса Blur на великих фреймах без перевантаження GPU</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#depth">1. Просторова глибина вздовж осі Z</a>
+          <a href="#params">2. Параметри тіней та розмиття</a>
+          <a href="#glass">3. Формула Glassmorphism і GPU</a>
+          <a href="#sandbox">4. Лабораторія Glassmorphism &amp; Elevation</a>
+          <a href="#checklist">5. Практична вправа</a>
+          <a href="#quiz">6. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism ✓</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ПРОСТОРОВА ГЛИБИНА ТА СИМУЛЯЦІЯ ДЖЕРЕЛ СВІТЛА -->
+          <section class="l-section" id="depth">
+            <h2><span class="n">01</span>Просторова глибина та симуляція джерел світла</h2>
+            <p>Ефекти шарів (<b>Layer Effects</b>) додають цифровому інтерфейсу відчуття тривимірної глибини вздовж <b>осі Z</b>, імітують фізичну поведінку світла та формують чітку візуальну ієрархію між площинами (наприклад, відокремлюють плаваюче модальне вікно чи дропдаун від базової поверхні сторінки).</p>
+            <p>Figma пропонує чотири фундаментальні типи ефектів: <b>Drop Shadow</b> (зовнішня тінь), <b>Inner Shadow</b> (внутрішня тінь заглиблення), <b>Layer Blur</b> (розмиття самого об'єкта) та <b>Background Blur</b> (розмиття шарів, що знаходяться безпосередньо під напівпрозорим об'єктом). Усі ефекти підтримують зв'язування з <b>Color Variables</b>, забезпечуючи коректну трансформацію відтінку тіні у темній темі.</p>
+          </section>
+
+          <!-- 2. ПАРАМЕТРИЧНІ НАЛАШТУВАННЯ ТІНЕЙ ТА РОЗМИТТЯ -->
+          <section class="l-section" id="params">
+            <h2><span class="n">02</span>Параметричні налаштування тіней та розмиття</h2>
+            <p>Кожна тінь регулюється шістьма параметрами: зсув <b>X</b> та <b>Y</b> (напрямок джерела світла), <b>Blur</b> (радіус оптичного розсіювання), <b>Spread</b> (геометричне розширення або стиснення тіні перед розмиттям), а також <b>Color</b> та <b>Opacity</b> (колірний тон і непрозорість).</p>
+            <p>Для створення реалістичних «м'яких» тіней (<b>Soft Elevation</b>) фахівці рекомендують накладати <b>два або три ефекти Drop Shadow одночасно</b>: один із малим <code>Blur</code> для акцентування зони контакту з поверхнею, другий — з великим розмиттям і низькою прозорістю для об'ємного атмосферного розсіювання.</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Тип ефекту</th><th>Параметри налаштування</th><th>Візуальний ефект та UI призначення</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Drop Shadow</td>
+                    <td><code>X, Y, Blur, Spread, Color, Opacity</code></td>
+                    <td>Зовнішня тінь. Піднімає елемент над площиною. Використовується для карток, кнопок, дропдаунів, модальних вікон.</td>
+                  </tr>
+                  <tr>
+                    <td>Inner Shadow</td>
+                    <td><code>X, Y, Blur, Spread, Color, Opacity</code></td>
+                    <td>Внутрішня тінь. Створює відчуття заглибленості в поверхню. Застосовується для натиснутих кнопок, інпутів, перемикачів.</td>
+                  </tr>
+                  <tr>
+                    <td>Layer Blur</td>
+                    <td><code>Blur (радіус у px)</code></td>
+                    <td>Рівномірно розмиває весь вміст шару (вектори, текст, растр). Використовується для створення світлових градієнтних плям.</td>
+                  </tr>
+                  <tr>
+                    <td>Background Blur</td>
+                    <td><code>Blur (радіус у px)</code></td>
+                    <td>Розмиває всі підкладкові шари під об'єктом. Ключовий елемент стилю матового скла (Glassmorphism), штор та панелей навігації.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. ФОРМУЛА GLASSMORPHISM ТА НАВАНТАЖЕННЯ НА GPU -->
+          <section class="l-section" id="glass">
+            <h2><span class="n">03</span>Формула Glassmorphism та навантаження на GPU</h2>
+            <p>Стиль <b>Glassmorphism</b> (матове напівпрозоре скло) будується на комбінації трьох обов'язкових правил:</p>
+            <ol>
+              <li>Ефект <b>Background Blur</b> із радіусом <b>16–32px</b>.</li>
+              <li>Напівпрозора біла або темна заливка самого шару з <b>Opacity 10–20%</b> (якщо непрозорість перевищить 20%, розмиття фону стане непомітним).</li>
+              <li>Тонка напівпрозора біла обводка (<b>1px, 20% Opacity</b>) для підкреслення світлових граней скла.</li>
+            </ol>
+            <p>Слід враховувати, що надмірне використання ефектів Blur зі значеннями <b>понад 40px</b> на великих фреймах суттєво підвищує навантаження на графічний процесор (<b>GPU</b>) під час панорамування складних полотен та прокрутки вебсторінки.</p>
+
+            <div class="callout callout--tip">
+              <div class="callout__title">🎨 Порада з реалістичності тіней</div>
+              <p>Уникайте використання чистих чорних тіней (<code>#000000</code>) із високою непрозорістю. У реальному світі тінь завжди вбирає відтінок навколишнього середовища. Додайте в тінь <b>5–10% відтінку кольору фону</b> (наприклад, глибокого індиго <code>#1E1B4B</code>) для створення органічного відчуття глибини.</p>
+            </div>
+          </section>
+
+          <!-- 4. ІНТЕРАКТИВНА ЛАБОРАТОРІЯ GLASSMORPHISM & ELEVATION -->
+          <section class="l-section" id="sandbox">
+            <h2><span class="n">04</span>Інтерактивна лабораторія: Glassmorphism &amp; Elevation System</h2>
+            <p>Налаштуйте радіус <b>Background Blur</b>, непрозорість заливки (<b>Fill Opacity</b>), рівень висоти тіні (<b>Elevation Level</b>) або перемкніть картку у режим втиснутої поверхні (<b>Inner Shadow</b>):</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Рівень тіні (Elevation System)
+                  <select id="ef-elev">
+                    <option value="low">Low Elevation (Y=2, Blur=4)</option>
+                    <option value="med" selected>Medium Elevation (Y=8, Blur=16)</option>
+                    <option value="high">High Elevation (Y=16, Blur=32)</option>
+                    <option value="inner">Inner Shadow (Заглиблена поверхня)</option>
+                  </select>
+                </label>
+                <label>Background Blur: <b id="ef-blur-val">20 px</b>
+                  <input type="range" id="ef-blur" min="0" max="48" step="2" value="20">
+                </label>
+                <label>Fill Opacity (Непрозорість скла): <b id="ef-op-val">16%</b>
+                  <input type="range" id="ef-op" min="5" max="85" step="5" value="16">
+                </label>
+                <label>Грань скла (Stroke 1px, 25% White)
+                  <select id="ef-stroke">
+                    <option value="on" selected>Увімкнено (чітка скляна грань)</option>
+                    <option value="off">Вимкнено (без контуру)</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="flex-direction:column;gap:14px">
+                <div style="width:100%;max-width:520px;height:210px;border-radius:18px;position:relative;overflow:hidden;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 55%,#4c1d95 100%);display:flex;align-items:center;justify-content:center">
+                  <!-- Світлові плями з Layer Blur на підкладці -->
+                  <div style="position:absolute;width:130px;height:130px;border-radius:50%;background:#ec4899;filter:blur(22px);left:14%;top:16%;opacity:.85"></div>
+                  <div style="position:absolute;width:140px;height:140px;border-radius:50%;background:#38bdf8;filter:blur(24px);right:14%;bottom:10%;opacity:.85"></div>
+                  <div style="position:absolute;width:90px;height:90px;border-radius:50%;background:#facc15;filter:blur(18px);left:46%;top:52%;opacity:.75"></div>
+
+                  <!-- Скляна картка -->
+                  <div id="ef-card" style="position:relative;z-index:2;width:320px;padding:20px 22px;border-radius:16px;color:#fff;transition:all .18s ease">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                      <span style="font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.85">Glassmorphism UI</span>
+                      <span id="ef-gpu" style="font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;background:rgba(16,185,129,.28);color:#a7f3d0">GPU OK</span>
+                    </div>
+                    <div style="font-weight:800;font-size:17px;margin-bottom:4px">Матове оптичне скло</div>
+                    <div style="font-size:12.5px;opacity:.88" id="ef-sub">Background Blur розмиває кольорові сфери позаду картки.</div>
+                  </div>
+                </div>
+                <div id="ef-css" style="font-size:12.5px;font-weight:700;color:var(--c-muted);text-align:center"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">05</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-effects"></div>
+          </section>
+
+          <!-- 6. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">06</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.11</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-effects#tests" style="white-space:nowrap">Пройти тест з теми 2.11 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-styles.html"><small>← Попередня тема</small><b>2.10 Styles, Змінні (Variables) та Design Tokens</b></a>
+              <a href="figma-structure.html" class="next"><small>Наступна тема →</small><b>2.12 Структура Організації Проєкту та Стандарти Handoff</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивна лабораторія Glassmorphism & Elevation */
+    (function () {
+      const elev = document.getElementById("ef-elev");
+      const blur = document.getElementById("ef-blur");
+      const op = document.getElementById("ef-op");
+      const stroke = document.getElementById("ef-stroke");
+      const card = document.getElementById("ef-card");
+      const gpu = document.getElementById("ef-gpu");
+      const sub = document.getElementById("ef-sub");
+      const cssOut = document.getElementById("ef-css");
+
+      const shadows = {
+        low: "0 2px 4px rgba(15, 23, 42, 0.22)",
+        med: "0 8px 16px rgba(15, 23, 42, 0.30), 0 2px 4px rgba(15, 23, 42, 0.16)",
+        high: "0 16px 32px rgba(15, 23, 42, 0.42), 0 4px 8px rgba(15, 23, 42, 0.22)",
+        inner: "inset 0 4px 10px rgba(15, 23, 42, 0.55)"
+      };
+
+      function render() {
+        const b = Number(blur.value);
+        const o = Number(op.value);
+        const el = elev.value;
+        document.getElementById("ef-blur-val").textContent = b + " px";
+        document.getElementById("ef-op-val").textContent = o + "%";
+
+        card.style.backdropFilter = `blur(${b}px)`;
+        card.style.webkitBackdropFilter = `blur(${b}px)`;
+        card.style.background = `rgba(255, 255, 255, ${(o / 100).toFixed(2)})`;
+        card.style.color = o > 55 ? "#1e1b4b" : "#ffffff";
+        card.style.border = stroke.value === "on" ? "1px solid rgba(255, 255, 255, 0.28)" : "1px solid transparent";
+        card.style.boxShadow = shadows[el];
+
+        if (b > 40) {
+          gpu.textContent = "⚠️ High GPU Load (>40px)";
+          gpu.style.background = "rgba(244,63,94,.32)";
+          gpu.style.color = "#fecdd3";
+        } else {
+          gpu.textContent = "✓ GPU Optimal";
+          gpu.style.background = "rgba(16,185,129,.28)";
+          gpu.style.color = o > 55 ? "#065f46" : "#a7f3d0";
+        }
+
+        if (o > 25) {
+          sub.textContent = `Увага: непрозорість заливки (${o}%) перевищує 20% — ефект матового скла перекривається білим тоном!`;
+        } else {
+          sub.textContent = `Еталонний Glassmorphism: Background Blur ${b}px + Fill Opacity ${o}% + Elevation (${el.toUpperCase()}).`;
+        }
+
+        cssOut.innerHTML = `CSS-еквівалент: <code>backdrop-filter: blur(${b}px); background: rgba(255,255,255,${(o / 100).toFixed(2)}); box-shadow: ${shadows[el]};</code>`;
+      }
+
+      [elev, blur, op, stroke].forEach((x) => x.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

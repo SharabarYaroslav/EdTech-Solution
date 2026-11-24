@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Розробка Multi-page website у Figma — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Системне проектування багатосторінкових сайтів у Figma: інформаційна архітектура, модульні сітки, дворівневі дизайн-токени, Variable Modes, Header з Mega Menu та правило 3 кліків.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs">
+            <a href="index.html">Головна</a><span>/</span>
+            <a href="course.html?s=sites">Секція 4. Лендинги та багатосторінкові сайти</a><span>/</span>
+            <span>Тема 4.2</span>
+          </nav>
+          <div class="lesson-hero__series">Multi-page Systems &amp; Variables · Модуль 4.2</div>
+          <h1 class="lesson-hero__title">Системне проектування багатосторінкових сайтів (Multi-page Websites) у Figma</h1>
+          <p class="lesson-hero__lead">Інформаційна архітектура (IA), модульні сітки, дворівнева система дизайн-токенів (Primitives та Semantics), режими Figma Variables і наскрізні компоненти Header з Mega Menu та Footer.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/site-multipage.jpg" alt="3D візуалізація карти багатосторінкового сайту з шапкою Mega Menu, хлібними крихтами, футером та панеллю токенів Light/Dark">
+            <button class="hotspot" style="left:54%;top:21%" data-icon="🧭" data-title="Header з Mega Menu" data-text="Складний компонент із варіантами відкриття дропдауну, зібраний на Auto Layout із прив'язкою колонок до змінних сітки."></button>
+            <button class="hotspot" style="left:46%;top:26%" data-icon="🍞" data-title="Хлібні крихти (Breadcrumbs)" data-text="Обов'язкові на сторінках 2-го рівня і глибше: горизонтальний Auto Layout для швидкого повернення."></button>
+            <button class="hotspot" style="left:56%;top:40%" data-icon="🧱" data-title="Багатоколонковий Footer" data-text="Глобальні інформаційні рівні; тексти та стани посилань керуються Component Properties (Text, Boolean, Instance Swap)."></button>
+            <button class="hotspot" style="left:28%;top:57%" data-icon="🌳" data-title="Інформаційна архітектура" data-text="Home → Category → Subcategory → Document: будь-яка сторінка досяжна максимум за 3 кліки."></button>
+            <button class="hotspot" style="left:75%;top:50%" data-icon="🔗" data-title="Аліаси токенів Light / Dark" data-text="Семантичні змінні посилаються на примітиви; зміна режиму на контейнері миттєво перефарбовує всі дочірні шари."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дослідіть архітектуру багатосторінкового сайту.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>3 кліки</strong><span>Максимальна глибина шляху від Головної до будь-якого документа</span></div>
+        <div class="stat"><strong>2 рівні</strong><span>Архітектура токенів: Primitives (значення) та Semantics (призначення)</span></div>
+        <div class="stat"><strong>4 типи</strong><span>Даних Figma Variables: Color, Number, String, Boolean</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#challenges">1. Архітектурні виклики</a>
+          <a href="#variables">2. Від стилів до Variables</a>
+          <a href="#tokens">3. Primitives та Semantics</a>
+          <a href="#modes">4. Режими Light/Dark і Density</a>
+          <a href="#system">5. Header, Mega Menu, Footer</a>
+          <a href="#ia">6. Правило 3 кліків</a>
+          <a href="#practice">7. Практична вправа</a>
+          <a href="#quiz">8. Самоперевірка</a>
+          <a href="#sources">9. Джерела</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 4 · Усі 5 уроків</div>
+            <a href="site-landing.html">4.1 Розробка Landing Page</a>
+            <a href="site-multipage.html" class="is-active">4.2 Розробка Multi-page website ✓</a>
+            <a href="site-shop.html">4.3 Інтернет-магазин</a>
+            <a href="site-mobile.html">4.4 Мобільний застосунок</a>
+            <a href="site-specs.html">4.5 Матриця специфікацій і Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1 -->
+          <section class="l-section" id="challenges">
+            <h2><span class="n">01</span>Специфіка та архітектурні виклики багатосторінкових сайтів</h2>
+            <p>Корпоративні екосистеми, освітні платформи, аналітичні портали та медіа оперують <b>сотнями екранів</b> і складною інформаційною архітектурою (IA). Головні загрози — фрагментація користувацького досвіду (<b>UX Fragmentation</b>) та втрата стилістичної узгодженості між сторінками (<b>Cross-page Consistency</b>).</p>
+            <p>Якщо кольори, сітки та компоненти не централізовані в єдиній дизайн-системі, будь-яка глобальна зміна перетворюється на неконтрольовану ручну працю. Для керування складністю інтерфейс спирається на <b>модульні та ієрархічні сітки</b>, що ділять фрейм на функціональні зони: масиви тексту, дашборди, картки каталогів і системні віджети.</p>
+          </section>
+
+          <!-- 2 -->
+          <section class="l-section" id="variables">
+            <h2><span class="n">02</span>Парадигмальний перехід: від статичних стилів до Figma Variables</h2>
+            <p>Класичні стилі (Color, Text, Effect Styles) зберігають лише фіксовані параметри й не підтримують динамічне перемикання контекстів. <b>Figma Variables</b> дозволили створювати справжні дизайн-токени, що синхронізуються з кодовою базою фронтенду.</p>
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead><tr><th>Характеристика</th><th>Класичні стилі (Styles)</th><th>Figma Variables (токени)</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Типи даних</b></td><td>Колір, текст, ефекти, сітки (фіксовані зв'язки)</td><td>Color, Number, String, Boolean (атомарні значення)</td></tr>
+                  <tr><td><b>Режими (Modes)</b></td><td>Не підтримуються — потрібно дублювати сторінки</td><td>Light/Dark, Brand A/B, Mobile/Desktop</td></tr>
+                  <tr><td><b>Аліасинг</b></td><td>Відсутній, кожен стиль автономний</td><td>Змінна може посилатися на іншу змінну</td></tr>
+                  <tr><td><b>Логіка прототипу</b></td><td>Неможливо</td><td>Умовні вирази, лічильники та формули</td></tr>
+                  <tr><td><b>Синхронізація з кодом</b></td><td>Ручний експорт</td><td>Пряме відображення у W3C Design Tokens / JSON</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3 -->
+          <section class="l-section" id="tokens">
+            <h2><span class="n">03</span>Дворівнева архітектура дизайн-токенів: Primitives та Semantics</h2>
+            <div class="cards cards--2">
+              <div class="card">
+                <span class="card__icon">🎨</span>
+                <h4 class="card__title">Примітивні токени (Primitives)</h4>
+                <p class="card__text">Абсолютні числові й колірні значення без контекстного змісту: <code>color/blue/500 = #1E88E5</code>, <code>color/gray/900 = #0F172A</code>, <code>space/16 = 16px</code>. Зберігаються в одному режимі й <b>не застосовуються</b> безпосередньо до шарів.</p>
+              </div>
+              <div class="card">
+                <span class="card__icon">🏷️</span>
+                <h4 class="card__title">Семантичні токени (Semantic)</h4>
+                <p class="card__text">Рівень бізнес-логіки: описують роль елемента й посилаються на примітиви через аліаси — <code>surface/background</code>, <code>surface/card</code>, <code>text/primary</code>, <code>border/focus</code>.</p>
+              </div>
+            </div>
+            <div class="callout callout--warn">
+              <div class="callout__title">⚠️ Правило масштабованого токенінгу</div>
+              <p>Ніколи не призначайте примітиви (наприклад, <code>blue/500</code>) безпосередньо шарам. Використовуйте семантичні аліаси: <code>color/action/primary → blue/500</code>. Тоді оновлення палітри чи новий брендинг вимагає зміни лише одного референсу.</p>
+            </div>
+          </section>
+
+          <!-- 4 -->
+          <section class="l-section" id="modes">
+            <h2><span class="n">04</span>Режими змінних (Variable Modes): Light/Dark та щільність інтерфейсу</h2>
+            <p>Режими дозволяють задати різні значення однієї змінної залежно від контексту. Перемкніть режим на «батьківському фреймі» нижче — усі дочірні елементи миттєво адаптуються, а шари продовжують посилатися на ті самі семантичні змінні.</p>
+
+            <div class="wg">
+              <div class="seg" id="mode-seg">
+                <button type="button" class="is-active" data-mode="light">☀️ Light Mode</button>
+                <button type="button" data-mode="dark">🌙 Dark Mode</button>
+              </div>
+              <div class="seg" id="density-seg" style="margin-left:8px">
+                <button type="button" class="is-active" data-d="comfortable">Comfortable</button>
+                <button type="button" data-d="compact">Compact</button>
+              </div>
+              <div class="tk-demo">
+                <div class="tk-preview" id="tk-preview">
+                  <div class="tk-preview__crumbs" data-role="muted">Головна › Курси › Figma</div>
+                  <h4 data-role="text">Освітня платформа</h4>
+                  <p data-role="muted">Підпис та метадані сторінки</p>
+                  <div class="tk-preview__card" id="tk-card">
+                    <h4 data-role="text" style="font-size:15px">Картка курсу</h4>
+                    <p data-role="muted">12 уроків · 4 години</p>
+                    <span class="tk-preview__btn">Почати навчання</span>
+                  </div>
+                </div>
+                <div class="tk-list" id="tk-list"></div>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead><tr><th>Семантична змінна</th><th>Light Mode</th><th>Dark Mode</th><th>Призначення</th></tr></thead>
+                <tbody>
+                  <tr><td><code>surface/background</code></td><td>#FFFFFF (white)</td><td>#0F172A (slate/900)</td><td>Основний фон сторінки</td></tr>
+                  <tr><td><code>surface/card</code></td><td>#F8FAFC (slate/50)</td><td>#1E293B (slate/800)</td><td>Поверхня блоків і карток</td></tr>
+                  <tr><td><code>text/primary</code></td><td>#0F172A (slate/900)</td><td>#F8FAFC (slate/50)</td><td>Основний текст і H1–H3</td></tr>
+                  <tr><td><code>text/muted</code></td><td>#64748B (slate/500)</td><td>#94A3B8 (slate/400)</td><td>Підписи, метадані, хлібні крихти</td></tr>
+                  <tr><td><code>border/subtle</code></td><td>#E2E8F0 (slate/200)</td><td>#334155 (slate/700)</td><td>Розділювальні лінії таблиць і карток</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout callout--fact">
+              <div class="callout__title">📐 Режими просторової щільності (Density Modes)</div>
+              <p>Той самий підхід застосовується до числових змінних відступів Auto Layout: <b>Comfortable</b> — для публічних і маркетингових сторінок, <b>Compact</b> — для кабінетів, таблиць і дашбордів. Відступи масштабуються без ручної переробки макетів.</p>
+            </div>
+          </section>
+
+          <!-- 5 -->
+          <section class="l-section" id="system">
+            <h2><span class="n">05</span>Наскрізні системні компоненти: Header з Mega Menu та Footer</h2>
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🧭</div><h4>Header</h4><small>Варіанти відкриття →</small></div>
+                <div class="flip__face flip__back"><b>Головний навігаційний модуль</b>Складний компонент із варіантами Mega Menu (Closed / Open). Дропдауни збираються на Auto Layout з колонками, прив'язаними до змінних сітки.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🔎</div><h4>Global Search</h4><small>Пошук у шапці →</small></div>
+                <div class="flip__face flip__back"><b>Наскрізний пошук</b>Пошуковий рядок у шапці з інтерактивними підказками та фільтрацією категорій.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🧱</div><h4>Footer</h4><small>Component Properties →</small></div>
+                <div class="flip__face flip__back"><b>Багатоколонковий футер</b>Про компанію, продукти, юридичні документи, локалізація. Тексти та стани посилань — через Text, Boolean та Instance Swap Properties.</div>
+              </div></div>
+            </div>
+          </section>
+
+          <!-- 6 -->
+          <section class="l-section" id="ia">
+            <h2><span class="n">06</span>Інформаційна архітектура: правило 3 кліків та хлібні крихти</h2>
+            <p>Ефективність навігації оцінюється швидкістю пошуку цільової сторінки. Будь-який документ має бути досяжним максимум за <b>3 переходи</b> від Головної: <code>Home → Category → Subcategory → Document</code>. Пройдіть шлях у симуляторі та спостерігайте за хлібними крихтами:</p>
+
+            <div class="wg">
+              <div class="wg__title">🗺️ Симулятор навігаційного шляху</div>
+              <div class="ia-path" id="ia-path"></div>
+              <div class="ia-crumbs" id="ia-crumbs"></div>
+              <div id="ia-verdict" class="wg-verdict"></div>
+              <button type="button" class="btn btn--ghost btn--sm" id="ia-reset" style="margin-top:12px">↺ Повернутися на Головну</button>
+            </div>
+
+            <div class="callout callout--tip">
+              <div class="callout__title">👥 Командний регламент у Figma</div>
+              <p>Бібліотека змінних публікується окремим файлом <b>Team Library</b>, а дизайнерам відкривається доступ лише до семантичних токенів через налаштування <b>Scoping</b> (приховування примітивів із панелі вибору).</p>
+            </div>
+          </section>
+
+          <!-- 7 -->
+          <section class="l-section" id="practice">
+            <h2><span class="n">07</span>Практична вправа</h2>
+            <div class="exercise" data-ex="site-multipage"></div>
+          </section>
+
+          <!-- 8 -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">08</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 4.2</div>
+                <p style="margin:0">Тестові завдання розміщено в Центрі тестування у вкладці <b>«Практика → Тести»</b> (5 запитань із миттєвою перевіркою).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=site-multipage#tests" style="white-space:nowrap">Пройти тест з теми 4.2 →</a>
+            </div>
+            <div class="lesson-pager">
+              <a href="site-landing.html"><small>← Попередня тема</small><b>4.1 Розробка Landing Page</b></a>
+              <a href="site-shop.html" class="next"><small>Наступна тема →</small><b>4.3 Інтернет-магазин</b></a>
+            </div>
+          </section>
+
+          <!-- 9 -->
+          <section class="l-section" id="sources">
+            <h2><span class="n">09</span>Джерела та рекомендовані матеріали</h2>
+            <ol class="sources">
+              <li><strong>Проектування цифрових продуктів у Figma. Модуль 02: Multi-page Websites</strong><p>Методичний посібник курсу. <a href="pdfs/02_multipage_websites_figma_guide.pdf" target="_blank" rel="noopener">Завантажити PDF ↗</a></p></li>
+              <li><strong>Figma Learn: Guide to variables in Figma; Modes for variables</strong><p>Офіційна документація про типи змінних, аліаси, режими та Scoping.</p></li>
+              <li><strong>W3C Design Tokens Community Group — Design Tokens Format Module</strong><p>Специфікація формату обміну дизайн-токенами (JSON) між дизайном і кодом.</p></li>
+              <li><strong>Rosenfeld L., Morville P., Arango J. Information Architecture: For the Web and Beyond</strong><p>O'Reilly Media. Фундаментальна праця з інформаційної архітектури та навігаційних систем.</p></li>
+              <li><strong>Nielsen Norman Group: Breadcrumbs — 11 Design Guidelines for Desktop and Mobile</strong><p>Рекомендації щодо проектування хлібних крихт.</p></li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    (function () {
+      /* Light / Dark + Density */
+      const TOK = {
+        "surface/background": { light: ["#FFFFFF", "white"], dark: ["#0F172A", "slate/900"] },
+        "surface/card": { light: ["#F8FAFC", "slate/50"], dark: ["#1E293B", "slate/800"] },
+        "text/primary": { light: ["#0F172A", "slate/900"], dark: ["#F8FAFC", "slate/50"] },
+        "text/muted": { light: ["#64748B", "slate/500"], dark: ["#94A3B8", "slate/400"] },
+        "border/subtle": { light: ["#E2E8F0", "slate/200"], dark: ["#334155", "slate/700"] },
+      };
+      const DENS = { comfortable: { pad: 22, card: 18 }, compact: { pad: 12, card: 10 } };
+      let mode = "light", dens = "comfortable";
+      const prev = document.getElementById("tk-preview"), card = document.getElementById("tk-card"), list = document.getElementById("tk-list");
+      function paint() {
+        const v = (k) => TOK[k][mode][0];
+        prev.style.background = v("surface/background");
+        prev.style.borderColor = v("border/subtle");
+        prev.style.padding = DENS[dens].pad + "px";
+        card.style.background = v("surface/card");
+        card.style.borderColor = v("border/subtle");
+        card.style.padding = DENS[dens].card + "px";
+        prev.querySelectorAll('[data-role="text"]').forEach((e) => (e.style.color = v("text/primary")));
+        prev.querySelectorAll('[data-role="muted"]').forEach((e) => (e.style.color = v("text/muted")));
+        list.innerHTML = Object.keys(TOK).map((k) => `<div class="tk-row"><i style="background:${v(k)}"></i><code>${k}</code><span>→ ${TOK[k][mode][1]}</span></div>`).join("") +
+          `<div class="tk-row"><i style="background:var(--grad-soft)"></i><code>space/padding/section</code><span>→ ${DENS[dens].pad}px</span></div>`;
+      }
+      document.getElementById("mode-seg").addEventListener("click", (e) => {
+        const b = e.target.closest("button"); if (!b) return;
+        mode = b.dataset.mode; e.currentTarget.querySelectorAll("button").forEach((x) => x.classList.toggle("is-active", x === b)); paint();
+      });
+      document.getElementById("density-seg").addEventListener("click", (e) => {
+        const b = e.target.closest("button"); if (!b) return;
+        dens = b.dataset.d; e.currentTarget.querySelectorAll("button").forEach((x) => x.classList.toggle("is-active", x === b)); paint();
+      });
+      paint();
+
+      /* IA simulator */
+      const TREE = {
+        "Головна": ["Курси", "Новини", "Про нас"],
+        "Курси": ["Дизайн", "Програмування"], "Новини": ["Події", "Анонси"], "Про нас": ["Команда", "Контакти"],
+        "Дизайн": ["Урок: Figma Variables", "Урок: Auto Layout"], "Програмування": ["Урок: HTML", "Урок: CSS Grid"],
+        "Події": ["Вебінар 12.03"], "Анонси": ["Новий курс"], "Команда": ["Профіль викладача"], "Контакти": ["Форма зв'язку"],
+      };
+      let path = ["Головна"];
+      const pEl = document.getElementById("ia-path"), cEl = document.getElementById("ia-crumbs"), vEl = document.getElementById("ia-verdict");
+      function ia() {
+        const cur = path[path.length - 1], kids = TREE[cur] || [];
+        cEl.innerHTML = path.map((p, i) => i === path.length - 1 ? `<b>${p}</b>` : `<a href="#" data-i="${i}">${p}</a>`).join(" › ");
+        pEl.innerHTML = kids.length ? kids.map((k) => `<button type="button" data-k="${k}">${k}</button>`).join("") : "<em>Ви дісталися цільового документа 🎉</em>";
+        const clicks = path.length - 1;
+        vEl.className = "wg-verdict " + (kids.length ? "mid" : clicks <= 3 ? "ok" : "bad");
+        vEl.textContent = kids.length ? `Глибина: ${clicks} клік(и). Оберіть наступний рівень.` : `✅ Документ знайдено за ${clicks} кліки — правило 3 кліків дотримано. Хлібні крихти дозволяють повернутися на будь-який рівень.`;
+      }
+      pEl.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { path.push(b.dataset.k); ia(); } });
+      cEl.addEventListener("click", (e) => { const a = e.target.closest("a"); if (a) { e.preventDefault(); path = path.slice(0, +a.dataset.i + 1); ia(); } });
+      document.getElementById("ia-reset").addEventListener("click", () => { path = ["Головна"]; ia(); });
+      ia();
+    })();
+  </script>
+</body>
+</html>

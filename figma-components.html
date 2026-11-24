@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Компоненти, Варіанти та Component Properties — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Архітектура Main Component та Instances, Component Sets (Варіанти), 5 типів Component Properties, Interactive Components та оновлення Figma 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.9</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 09</div>
+          <h1 class="lesson-hero__title">Компоненти, Варіанти та Component Properties</h1>
+          <p class="lesson-hero__lead">Принцип DRY (Don't Repeat Yourself), ієрархія Main Component та Instances, 5 типів інженерних властивостей компонентів і інтерактивні стани в прототипах.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-components.jpg" alt="Фіолетовий чотириромбовий символ Main Component, пов'язаний із пунктирним контейнером Variant Set, тумблерами Boolean Property та плитками Instance Swap">
+            <button class="hotspot" style="left:49%;top:27%" data-icon="❖" data-title="Main Component (Чотири заповнені ромби)" data-text="Первинне джерело правди (Single Source of Truth). Будь-яка зміна в еталоні миттєво синхронізується з усіма дочірніми копіями."></button>
+            <button class="hotspot" style="left:26%;top:59%" data-icon="◇" data-title="Instance (Залежний екземпляр)" data-text="Робоча копія компонента у макетах. Підтримує локальні перевизначення (Overrides) тексту, кольорів та іконок без втрати зв'язку з базою."></button>
+            <button class="hotspot" style="left:43%;top:62%" data-icon="🎛️" data-title="Component Set (Пунктирна фіолетова рамка Variants)" data-text="Об'єднує модифікації одного елемента: стани (Default, Hover, Pressed, Disabled) та розміри (S, M, L), підтримуючи переходи Change to."></button>
+            <button class="hotspot" style="left:76%;top:28%" data-icon="🔘" data-title="Boolean Property (Логічний перемикач true/false)" data-text="Керує видимістю внутрішнього шару (наприклад, ShowIcon = true) через тумблер інспектора, скорочуючи кількість варіантів удвічі."></button>
+            <button class="hotspot" style="left:74%;top:63%" data-icon="🔄" data-title="Instance Swap та Preferred Icons" data-text="Дозволяє миттєво замінювати вкладену іконку чи аватар через випадаючий список дозволених компонентів прямо на правій панелі."></button>
+            <button class="hotspot" style="left:58%;top:66%" data-icon="🧩" data-title="Text та Slot Properties" data-text="Text Property виносить редагування підпису в інспектор, а Slot Property створює виділену зону для вставки довільного контенту у картку чи модальне вікно."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Вивчіть будову компонентної дизайн-системи у Figma.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="5" data-suffix=" типів">0</strong><span>Component Properties: Variant, Boolean, Instance Swap, Text та Slot Property</span></div>
+        <div class="stat"><strong>−50%</strong><span>Скорочення матриці варіантів (з 24 до 12) завдяки використанню Boolean Property</span></div>
+        <div class="stat"><strong>2026 Update</strong><span>Повна відкритість структури екземплярів (скасування режиму Simplified Instances)</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#hierarchy">1. Main Component vs Instances</a>
+          <a href="#properties">2. Варіанти та 5 типів Properties</a>
+          <a href="#inspector">3. Інтерактивний інспектор компонента</a>
+          <a href="#evolution">4. Еволюція 2026 та інтерактивність</a>
+          <a href="#checklist">5. Практична вправа</a>
+          <a href="#quiz">6. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти ✓</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. АРХІТЕКТУРА ПЕРЕВИКОРИСТАННЯ: MAIN COMPONENT VS INSTANCES -->
+          <section class="l-section" id="hierarchy">
+            <h2><span class="n">01</span>Архітектура перевикористання: Main Component vs Instances</h2>
+            <p>Компонентна модель Figma реалізує фундаментальний принцип програмування <b>DRY (Don't Repeat Yourself)</b>, забезпечуючи масштабованість інтерфейсів. Система ділиться на два ієрархічні рівні:</p>
+            <ul>
+              <li><b>Main Component (Головний компонент)</b> — маркується фіолетовою іконкою з чотирма заповненими ромбами (❖). Виступає первинним джерелом правди (<i>Single Source of Truth</i>): будь-яка структурна зміна у ньому миттєво транслюється на всі підпорядковані копії у проекті або пов'язаних бібліотеках.</li>
+              <li><b>Instance (Екземпляр)</b> — маркується порожнистим ромбом (◇). Це залежна копія, яка використовується безпосередньо в макетах. Екземпляри підтримують <b>локальні перевизначення (Overrides)</b> — зміну тексту, кольорів заливки, приховування шарів або заміну іконок — без розриву зв'язку з материнським компонентом.</li>
+            </ul>
+          </section>
+
+          <!-- 2. ВАРІАНТИ ТА COMPONENT PROPERTIES -->
+          <section class="l-section" id="properties">
+            <h2><span class="n">02</span>Component Sets (Варіанти) та 5 типів Component Properties</h2>
+            <p>Для групування споріднених станів одного елемента (наприклад, кнопка у станах <code>Default, Hover, Pressed, Disabled</code> та розмірах <code>S, M, L</code>) використовується контейнер <b>Component Set (Варіанти)</b>, окреслений фіолетовою пунктирною рамкою.</p>
+            <p>Щоб уникнути комбінаторного вибуху (створення сотень майже однакових варіантів), сучасна архітектура Figma розділяє налаштування на <b>п'ять спеціалізованих типів Component Properties</b>:</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Тип властивості</th><th>Інженерна механіка та застосування в дизайн-системі</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Variant Property</td>
+                    <td>Керує фундаментальними розмірами, типами та візуальними модифікаціями (<code>State = Default / Hover / Disabled</code>, <code>Size = S / M / L</code>).</td>
+                  </tr>
+                  <tr>
+                    <td>Boolean Property</td>
+                    <td>Логічний перемикач <code>true / false</code>, що керує видимістю конкретного шару (наприклад, <code>ShowIcon = true</code>, <code>HasBadge = false</code>, <code>IsLoading = false</code>).</td>
+                  </tr>
+                  <tr>
+                    <td>Instance Swap</td>
+                    <td>Дозволяє миттєво замінити вкладений підкомпонент через інспектор, обираючи його із попередньо заданого списку <b>Preferred Icons</b>.</td>
+                  </tr>
+                  <tr>
+                    <td>Text Property</td>
+                    <td>Виносить редагування текстового рядка прямо на панель інспектора, усуваючи потребу подвійного кліку вглиб структури шарів.</td>
+                  </tr>
+                  <tr>
+                    <td>Slot Property</td>
+                    <td>Створює всередині компонента виділену вільну зону (слот) для безпечного розміщення довільного стороннього контенту (наприклад, у модальному вікні чи картці).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. ІНТЕРАКТИВНИЙ СТЕНД COMPONENT PROPERTIES INSPECTOR -->
+          <section class="l-section" id="inspector">
+            <h2><span class="n">03</span>Інтерактивний стенд: Інспектор Component Properties</h2>
+            <p>Спробуйте керувати екземпляром компонента <code>Button / Primary</code> так само, як це робить дизайнер або розробник на правій панелі Figma, та подивіться, як <b>Boolean Property</b> оптимізує матрицю варіантів:</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Variant: Type (Тип кнопки)
+                  <select id="cp-type">
+                    <option value="primary" selected>Primary (Акцентна)</option>
+                    <option value="secondary">Secondary (Вторинна)</option>
+                  </select>
+                </label>
+                <label>Variant: Size (Розмір)
+                  <select id="cp-size">
+                    <option value="sm">Small (S · 34px)</option>
+                    <option value="md" selected>Medium (M · 42px)</option>
+                    <option value="lg">Large (L · 50px)</option>
+                  </select>
+                </label>
+                <label>Variant: State (Стан)
+                  <select id="cp-state">
+                    <option value="default" selected>Default</option>
+                    <option value="hover">Hover (Наведення)</option>
+                    <option value="pressed">Pressed (Натиснення)</option>
+                    <option value="disabled">Disabled (Неактивна)</option>
+                  </select>
+                </label>
+                <label>Instance Swap (Іконка з Preferred List)
+                  <select id="cp-icon">
+                    <option value="🚀" selected>🚀 Rocket</option>
+                    <option value="✨">✨ Sparkles</option>
+                    <option value="📥">📥 Download</option>
+                    <option value="🔒">🔒 Lock</option>
+                  </select>
+                </label>
+                <label>Text Property (Підпис кнопки)
+                  <input type="text" id="cp-text" value="Опублікувати урок" style="padding:8px 10px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-surface);color:var(--c-text);font:inherit">
+                </label>
+                <label style="flex-direction:row;align-items:center;justify-content:space-between;padding-top:8px">
+                  <span>Boolean: <code>ShowLeftIcon</code></span>
+                  <input type="checkbox" id="cp-show-icon" checked style="width:18px;height:18px;accent-color:var(--c-primary)">
+                </label>
+                <label style="flex-direction:row;align-items:center;justify-content:space-between">
+                  <span>Boolean: <code>HasCounterBadge</code></span>
+                  <input type="checkbox" id="cp-show-badge" checked style="width:18px;height:18px;accent-color:var(--c-primary)">
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="flex-direction:column;gap:18px">
+                <button id="cp-preview" type="button" style="display:inline-flex;align-items:center;gap:10px;border-radius:12px;font-weight:800;border:2px solid transparent;cursor:pointer;transition:all .18s ease">
+                  <span id="cp-prev-icon">🚀</span>
+                  <span id="cp-prev-label">Опублікувати урок</span>
+                  <span id="cp-prev-badge" style="background:rgba(255,255,255,0.22);padding:2px 8px;border-radius:999px;font-size:12px">PRO</span>
+                </button>
+                <div id="cp-math" style="font-size:13px;font-weight:700;color:var(--c-muted);text-align:center;max-width:520px"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. ЕВОЛЮЦІЯ СИСТЕМИ 2026 ТА INTERACTIVE COMPONENTS -->
+          <section class="l-section" id="evolution">
+            <h2><span class="n">04</span>Еволюція системи (2026) та Interactive Components</h2>
+            <p>З <b>березня 2026 року</b> Figma офіційно скасовує застарілий режим «спрощених екземплярів» (<i>Simplified Instances</i>). Тепер усі властивості та шари відображаються у панелі <b>Properties</b> за замовчуванням, що робить структуру компонента повністю прозорою для дизайнерів та фронтенд-розробників.</p>
+            <p>Функціонал <b>Interactive Components</b> дозволяє зв'язувати варіанти всередині самого <code>Component Set</code> прототипними переходами <code>Change to</code>. Наприклад, налаштувавши перехід <code>While hovering → Change to Hover</code> один раз у материнському наборі, кожна копія кнопки або чекбокса у всьому проекті автоматично стає інтерактивною під час запуску режиму презентації.</p>
+
+            <div class="callout callout--fact">
+              <div class="callout__title">🧮 Оптимізація розміру дизайн-системи: $24 \to 12$</div>
+              <p>Якщо кнопка має <b>2 типи</b> (Primary / Secondary), <b>3 розміри</b> (S / M / L) та <b>4 стани</b> (Default / Hover / Pressed / Disabled), це створює $2 \times 3 \times 4 = 24$ варіанти. Замість того, щоб дублювати їх для версій «з іконкою» та «без іконки» (отримуючи 48 варіантів!), призначте іконці <b>Boolean Property</b> — це скорочує матрицю варіантів рівно вдвічі при збереженні повної гнучкості.</p>
+            </div>
+          </section>
+
+          <!-- 5. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">05</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-components"></div>
+          </section>
+
+          <!-- 6. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">06</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.9</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-components#tests" style="white-space:nowrap">Пройти тест з теми 2.9 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-positioning.html"><small>← Попередня тема</small><b>2.8 Позиціонування та Математика Constraints</b></a>
+              <a href="figma-styles.html" class="next"><small>Наступна тема →</small><b>2.10 Styles, Змінні (Variables) та Design Tokens</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний інспектор Component Properties */
+    (function () {
+      const typeEl = document.getElementById("cp-type");
+      const sizeEl = document.getElementById("cp-size");
+      const stateEl = document.getElementById("cp-state");
+      const iconEl = document.getElementById("cp-icon");
+      const textEl = document.getElementById("cp-text");
+      const showIcon = document.getElementById("cp-show-icon");
+      const showBadge = document.getElementById("cp-show-badge");
+
+      const btn = document.getElementById("cp-preview");
+      const prevIcon = document.getElementById("cp-prev-icon");
+      const prevLabel = document.getElementById("cp-prev-label");
+      const prevBadge = document.getElementById("cp-prev-badge");
+      const mathOut = document.getElementById("cp-math");
+
+      function render() {
+        const t = typeEl.value;
+        const s = sizeEl.value;
+        const st = stateEl.value;
+
+        prevIcon.textContent = iconEl.value;
+        prevIcon.style.display = showIcon.checked ? "inline" : "none";
+        prevBadge.style.display = showBadge.checked ? "inline-block" : "none";
+        prevLabel.textContent = textEl.value || "Button";
+
+        const sizes = {
+          sm: { pad: "8px 14px", fs: "13px" },
+          md: { pad: "11px 20px", fs: "15px" },
+          lg: { pad: "15px 28px", fs: "17px" }
+        };
+        btn.style.padding = sizes[s].pad;
+        btn.style.fontSize = sizes[s].fs;
+
+        if (t === "primary") {
+          btn.style.background = st === "hover" ? "#4338ca" : st === "pressed" ? "#312e81" : "#4f46e5";
+          btn.style.color = "#ffffff";
+          btn.style.borderColor = "transparent";
+          prevBadge.style.background = "rgba(255,255,255,0.22)";
+          prevBadge.style.color = "#fff";
+        } else {
+          btn.style.background = st === "hover" ? "rgba(79,70,229,0.12)" : st === "pressed" ? "rgba(79,70,229,0.22)" : "var(--surface)";
+          btn.style.color = "#4f46e5";
+          btn.style.borderColor = "#4f46e5";
+          prevBadge.style.background = "rgba(79,70,229,0.14)";
+          prevBadge.style.color = "#4f46e5";
+        }
+
+        if (st === "disabled") {
+          btn.style.opacity = "0.42";
+          btn.style.transform = "none";
+        } else {
+          btn.style.opacity = "1";
+          btn.style.transform = st === "pressed" ? "scale(0.97)" : st === "hover" ? "translateY(-1px)" : "none";
+        }
+
+        mathOut.innerHTML = `Економія варіантів: замість <code>2 × 3 × 4 × 2 × 2 = 96</code> варіантів у Component Set достатньо <b>24 базових варіантів</b> + <b>2 Boolean Properties</b> (<code>ShowLeftIcon</code>, <code>HasCounterBadge</code>) + <b>Instance Swap</b> + <b>Text Property</b>.`;
+      }
+
+      [typeEl, sizeEl, stateEl, iconEl, textEl, showIcon, showBadge].forEach((el) => el.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

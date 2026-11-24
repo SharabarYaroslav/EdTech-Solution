@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Структура Організації Проєкту та Стандарти Handoff — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="5-рівнева ієрархія простору у Figma (Workspace > Team > Project > File > Page), архітектура сторінок, стандарт Cover Page 1920x960px та слейш-нотація активів.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.12</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 12</div>
+          <h1 class="lesson-hero__title">Структура Організації Проєкту та Стандарти Handoff</h1>
+          <p class="lesson-hero__lead">П'ятирівнева організаційна ієрархія простору, архітектура сторінок продуктового файлу, стандарт обкладинки Cover Page (1920×960 px) та слейш-синтаксис іменування компонентів.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-structure.jpg" alt="5-рівнева ієрархія папок та файлів Figma, обкладинка Cover Page зі статусом готовності та дерево слейш-компонентів">
+            <button class="hotspot" style="left:29%;top:22%" data-icon="🏢" data-title="Workspace & Team (Корпоративний і командний рівні)" data-text="Верхні рівні ієрархії Figma, що об'єднують продуктові команди та визначають права доступу до бібліотек компанії."></button>
+            <button class="hotspot" style="left:41%;top:38%" data-icon="📁" data-title="Project > File > Page" data-text="Кожен напрям (Project) містить робочі макети (Files), які всередині поділяються на стандартизовані сторінки (Pages)."></button>
+            <button class="hotspot" style="left:73%;top:26%" data-icon="🖼️" data-title="Cover Page (1920 × 960 px · Set as cover)" data-text="Перша сторінка файлу містить стандартизовану обкладинку з назвою проекту, бейджем статусу (In Progress / Review / Approved) та авторами."></button>
+            <button class="hotspot" style="left:67%;top:63%" data-icon="🗺️" data-title="Розмежовані сторінки: Flow, UI Kit, Desktop, Mobile, Archive" data-text="Чіткий поділ сценаріїв (User Flows), локальної дизайн-системи, фінальних екранів та архіву відхилених концептів."></button>
+            <button class="hotspot" style="left:16%;top:55%" data-icon="➗" data-title="Слейш-нотація: Category / Subcategory / Name" data-text="Роздільник «/» у назві компонента (напр., Icons/Navigation/Arrow-Left) автоматично формує вкладені папки в панелі Assets."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дослідіть стандарти організації робочого простору для безшовного Handoff.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="5" data-suffix=" рівнів">0</strong><span>Ієрархія простору: Workspace → Team → Project → File → Page</span></div>
+        <div class="stat"><strong>1920 × 960</strong><span>Стандартний розмір фрейму обкладинки (Cover Page) у пікселях</span></div>
+        <div class="stat"><strong>/ (Slash)</strong><span>Автоматична побудова дерева папок у панелі Assets через роздільник «/»</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#hierarchy">1. П'ятирівнева ієрархія простору</a>
+          <a href="#pages">2. Архітектура сторінок файлу</a>
+          <a href="#slash">3. Слейш-синтаксис та тренажер</a>
+          <a href="#checklist">4. Практична вправа</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff ✓</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. П'ЯТИРІВНЕВА ОРГАНІЗАЦІЙНА ІЄРАРХІЯ ПРОСТОРУ -->
+          <section class="l-section" id="hierarchy">
+            <h2><span class="n">01</span>П'ятирівнева організаційна ієрархія простору</h2>
+            <p>Систематизація робочих файлів у Figma визначає швидкість адаптації нових спеціалістів у команді та прозорість процесу передачі макетів у розробку (<b>Handoff</b>). Ієрархія Figma вибудовується за строгою <b>5-рівневою схемою</b>:</p>
+            <p><b><b>Workspace</b> (корпоративний рівень) → <b>Team</b> (продуктова команда) → <b>Project</b> (напрям або модуль) → <b>File</b> (робочий файл макета) → <b>Page</b> (сторінка файлу).</b></p>
+            <p>Правильний розподіл файлів за проектами усуває хаос у каталозі та полегшує гнучке налаштування прав доступу (<code>Can view</code> / <code>Can edit</code>) для дизайнерів, менеджерів, замовників і розробників.</p>
+          </section>
+
+          <!-- 2. АРХІТЕКТУРА СТОРІНОК УСЕРЕДИНІ ПРОДУКТОВОГО ФАЙЛУ -->
+          <section class="l-section" id="pages">
+            <h2><span class="n">02</span>Архітектура сторінок усередині продуктового файлу</h2>
+            <p>Стандарт продуктового дизайну вимагає чіткої структури сторінок усередині кожного файлу. Перша сторінка обов'язково відводиться під обкладинку (<b>Cover Page</b>) — стандартизований фрейм розміром <b>1920×960 px</b>, що містить назву проекту, статус готовності, версію та контакти лід-дизайнера.</p>
+            <p>Наступні сторінки чітко розмежовують користувацькі шляхи (<b>User Flows</b>), бібліотеку локальних компонентів (<b>Design System</b>), фінальні екрани десктопних і мобільних версій, а також архів застарілих ітерацій.</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Типова сторінка файлу</th><th>Вміст та робоче призначення</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cover (Обкладинка)</td>
+                    <td>Фрейм <b>1920×960 px</b> з бейджем статусу (<code>In Progress</code>, <code>Review</code>, <code>Approved</code>), авторами та посиланням на документацію.</td>
+                  </tr>
+                  <tr>
+                    <td>Flow / Architecture</td>
+                    <td>Діаграми інформаційної архітектури, User Flows та вайрфрейми користувацьких сценаріїв.</td>
+                  </tr>
+                  <tr>
+                    <td>Design System / UI Kit</td>
+                    <td>Локальні компоненти, варіанти, колірні та типографічні токени, специфічні для даного файлу.</td>
+                  </tr>
+                  <tr>
+                    <td>Desktop Screens</td>
+                    <td>Зафіксовані екрани для комп'ютерів, згруповані у Секції за сценаріями використання.</td>
+                  </tr>
+                  <tr>
+                    <td>Mobile Screens</td>
+                    <td>Адаптивні мобільні екрани (iOS / Android) з урахуванням системних гайдлайнів.</td>
+                  </tr>
+                  <tr>
+                    <td>Archive</td>
+                    <td>Проміжні концепти, відхилені варіанти та застарілі макети для збереження історії пошуку рішень.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout callout--tip" style="margin-top:18px">
+              <div class="callout__title">🖼️ Інженерний етикет обкладинки</div>
+              <p>Клацніть правою кнопкою миші на фреймі <b>1920×960 px</b> на першій сторінці та оберіть <b>«Set as cover»</b>. Тепер у загальному каталозі команди цей файл матиме інформативне прев'ю зі статусом готовності макета.</p>
+            </div>
+          </section>
+
+          <!-- 3. СЛЕЙШ-СИНТАКСИС ТА ІНТЕРАКТИВНИЙ КОНСТРУКТОР -->
+          <section class="l-section" id="slash">
+            <h2><span class="n">03</span>Слейш-синтаксис в іменуванні активів та тренажер</h2>
+            <p>Для логічної ієрархії компонентів та стилів застосовується <b>слейш-синтаксис із роздільником «<code>/</code>»</b>. Figma автоматично інтерпретує слеш як створення вкладеної папки в інспекторі активів (<b>Assets</b>) та меню швидкої заміни екземплярів (<b>Instance Swap</b>).</p>
+            <p>Приклад: назва компонента <code>Icons/Navigation/Arrow-Left</code> автоматично розмістить іконку в папку <code>Navigation</code> всередині категорії <code>Icons</code>.</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Назва проекту на Cover Page (1920×960)
+                  <input type="text" id="st-title" value="EdTech LMS · Кабінет вчителя" style="padding:8px 10px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-surface);color:var(--c-text);font:inherit">
+                </label>
+                <label>Бейдж статусу обкладинки (Status)
+                  <select id="st-status">
+                    <option value="wip">🟡 In Progress (У розробці)</option>
+                    <option value="rev">🔵 In Review (На узгодженні)</option>
+                    <option value="ok" selected>🟢 Approved / Ready for Dev</option>
+                  </select>
+                </label>
+                <label>Слейш-шлях компонента (Category / Subcategory / Name)
+                  <input type="text" id="st-slash" value="Icons/Navigation/Arrow-Left" style="padding:8px 10px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-surface);color:var(--c-text);font:inherit">
+                </label>
+                <label>Швидкі пресети слейш-нотації
+                  <select id="st-preset">
+                    <option value="Icons/Navigation/Arrow-Left" selected>Icons/Navigation/Arrow-Left</option>
+                    <option value="Buttons/Primary/Large">Buttons/Primary/Large</option>
+                    <option value="Cards/Course/Module-Item">Cards/Course/Module-Item</option>
+                    <option value="Forms/Inputs/Search-Bar">Forms/Inputs/Search-Bar</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="gap:20px;flex-wrap:wrap">
+                <!-- Міні-прев'ю Cover Page 1920x960 -->
+                <div style="width:280px;height:140px;border-radius:14px;background:linear-gradient(135deg,#1e1b4b,#4338ca);color:#fff;padding:16px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow-m)">
+                  <div style="display:flex;justify-content:space-between;align-items:center">
+                    <span id="st-badge" style="font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px">🟢 Ready for Dev</span>
+                    <span style="font-size:10px;opacity:.7">1920 × 960 px</span>
+                  </div>
+                  <div>
+                    <div id="st-cov-title" style="font-weight:800;font-size:15px;line-height:1.25">EdTech LMS · Кабінет вчителя</div>
+                    <div style="font-size:11px;opacity:.75;margin-top:4px">Set as cover ✓ · v2.4</div>
+                  </div>
+                </div>
+
+                <!-- Дерево Assets -->
+                <div style="flex:1;min-width:230px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:14px;padding:14px 16px;font-size:13px">
+                  <div style="font-weight:800;font-size:12px;color:var(--c-muted);text-transform:uppercase;margin-bottom:8px">Інспектор Assets (Дерево папок):</div>
+                  <div id="st-tree" style="line-height:1.75;font-weight:700"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">04</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-structure"></div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.12</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-structure#tests" style="white-space:nowrap">Пройти тест з теми 2.12 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-effects.html"><small>← Попередня тема</small><b>2.11 Ефекти для Шарів та Glassmorphism</b></a>
+              <a href="figma-export.html" class="next"><small>Наступна тема →</small><b>2.13 Експорт Шарів, Фреймів та Оптимізація Активів</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний тренажер Cover Page та слейш-нотації */
+    (function () {
+      const titleIn = document.getElementById("st-title");
+      const statusIn = document.getElementById("st-status");
+      const slashIn = document.getElementById("st-slash");
+      const presetIn = document.getElementById("st-preset");
+      const badge = document.getElementById("st-badge");
+      const covTitle = document.getElementById("st-cov-title");
+      const tree = document.getElementById("st-tree");
+
+      const badges = {
+        wip: { text: "🟡 In Progress", bg: "rgba(250,204,21,.22)", col: "#fef08a" },
+        rev: { text: "🔵 In Review", bg: "rgba(56,189,248,.24)", col: "#bae6fd" },
+        ok:  { text: "🟢 Ready for Dev", bg: "rgba(16,185,129,.28)", col: "#a7f3d0" }
+      };
+
+      function render() {
+        covTitle.textContent = titleIn.value || "Untitled Project";
+        const b = badges[statusIn.value];
+        badge.textContent = b.text;
+        badge.style.background = b.bg;
+        badge.style.color = b.col;
+
+        const parts = slashIn.value.split("/").map((s) => s.trim()).filter(Boolean);
+        if (!parts.length) {
+          tree.innerHTML = `<span class="muted">Введіть назву через «/»</span>`;
+          return;
+        }
+        tree.innerHTML = parts.map((p, i) => {
+          const indent = i * 18;
+          const isLast = i === parts.length - 1;
+          return `<div style="padding-left:${indent}px;color:${isLast ? "var(--c-primary)" : "var(--c-text)"}">${isLast ? "❖ " : "📂 "}${p}</div>`;
+        }).join("");
+      }
+
+      presetIn.addEventListener("change", () => {
+        slashIn.value = presetIn.value;
+        render();
+      });
+      [titleIn, statusIn, slashIn].forEach((el) => el.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

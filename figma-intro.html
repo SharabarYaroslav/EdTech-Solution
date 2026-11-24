@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Знайомство з Figma та архітектура платформи — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Хмарне ядро Figma, графічний рушій WebGL/WebAssembly, розподілена пам'ять, три зони інтерфейсу та система версійності.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.1</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 01</div>
+          <h1 class="lesson-hero__title">Знайомство з Figma та архітектура платформи</h1>
+          <p class="lesson-hero__lead">Хмарне ядро, графічний рушій WebGL/WebAssembly, розподілена пам'ять, просторова організація робочого середовища та система версійності.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-intro.jpg" alt="Архітектура платформи Figma: хмарне ядро та три зони робочого середовища">
+            <button class="hotspot" style="left:28%;top:46%" data-icon="🗂️" data-title="Left Sidebar (Ліва панель ієрархії)" data-text="Менеджер структури проєкту: ієрархічне дерево шарів (Layers), список сторінок (Pages) та каталог глобальних компонентів і бібліотек (Assets)."></button>
+            <button class="hotspot" style="left:46%;top:55%" data-icon="📐" data-title="Canvas (Безкінечне полотно)" data-text="Двовимірна декартова система координат X та Y із субпіксельною точністю та масштабуванням від 2% до 25600%."></button>
+            <button class="hotspot" style="left:63%;top:66%" data-icon="🎛️" data-title="Right Sidebar (Контекстний інспектор)" data-text="Динамічно перемикається між режимами Design (геометрія, кольори, типографіка), Prototype (міжкадрові зв'язки) та Dev Mode (інспектування коду)."></button>
+            <button class="hotspot" style="left:62%;top:22%" data-icon="☁️" data-title="Real-time Collaboration (Single Source of Truth)" data-text="DOM макета зберігається на хмарних серверах як дерево операторів. Передаються лише легкі операційні дельти змін без конфліктів правок."></button>
+            <button class="hotspot" style="left:45%;top:18%" data-icon="⚡" data-title="Рушій WebGL + WebAssembly (60 fps)" data-text="Модулі C++ скомпільовані у Wasm переносять рендеринг складної сцени безпосередньо на GPU клієнтського комп'ютера."></button>
+            <button class="hotspot" style="left:79%;top:35%" data-icon="🌿" data-title="Named Versions та Branching" data-text="Автозбереження кожного кроку, іменні контрольні точки та ізольовані гілки (Branching) з подальшим злиттям (Merge) після код-рев'ю."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дізнайтеся, як влаштоване хмарне ядро та робочий простір Figma.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="60" data-suffix=" fps">0</strong><span>Стабільна частота рендерингу на GPU завдяки WebGL та WebAssembly</span></div>
+        <div class="stat"><strong data-count="25600" data-suffix="%">0</strong><span>Максимальний масштаб безкінечного полотна (від 2% до 25600%)</span></div>
+        <div class="stat"><strong data-count="3" data-suffix=" зони">0</strong><span>Робочого середовища: Canvas, Left Sidebar та Right Sidebar</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#arch">1. Архітектура та стек</a>
+          <a href="#workspace">2. Робоче середовище</a>
+          <a href="#versioning">3. Контроль версій</a>
+          <a href="#checklist">4. Практична вправа</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma ✓</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. АРХІТЕКТУРА -->
+          <section class="l-section" id="arch">
+            <h2><span class="n">01</span>Фундаментальна архітектура та технологічний стек</h2>
+            <p><b>Figma</b> є провідною хмарною платформою для проєктування цифрових продуктів, інтерфейсів UI/UX та векторної графіки. Архітектурне ядро платформи побудоване на основі низькорівневого графічного рушія <b>WebGL</b> з використанням компіляції модулів <b>C++ у WebAssembly (Wasm)</b>. Це технічне рішення дозволяє перенести рендеринг складної геометричної сцени безпосередньо на графічний процесор (<b>GPU</b>) клієнтського комп'ютера, забезпечуючи стабільну частоту <b>60 fps як у нативному десктопному застосунку, так і у веббраузері</b>.</p>
+            <p>Фундаментальною відмінністю Figma від традиційного ПЗ є модель розподіленої пам'яті та алгоритми синхронізації реального часу (<b>Real-time Collaboration</b>). Об'єктна модель документа (DOM макета) зберігається на хмарних серверах у вигляді дерева операторів. При одночасному внесенні змін декількома дизайнерами система застосовує механізми <b>операційної трансформації</b>, що гарантує безконфліктне узгодження правок та формує єдине джерело правди (<b>Single Source of Truth</b>).</p>
+
+            <p class="hint">Натисніть на ланку конвеєра, щоб переглянути її технічну роль</p>
+            <div data-switch="wasm" class="diagram">
+              <div class="stepper__nav">
+                <button class="stepper__btn" data-key="wasm"><small>Рівень 1</small>⚙️ C++ → WebAssembly</button>
+                <button class="stepper__btn" data-key="webgl"><small>Рівень 2</small>🎮 WebGL → GPU (60 fps)</button>
+                <button class="stepper__btn" data-key="ot"><small>Рівень 3</small>🔄 Операційні дельти</button>
+                <button class="stepper__btn" data-key="ssot"><small>Рівень 4</small>☁️ Single Source of Truth</button>
+              </div>
+              <div class="detail" data-pane="wasm" hidden><div class="en">C++ compiled to Wasm</div><h4>Високопродуктивне ядро у браузері</h4><p>Код C++ компілюється у бінарний формат WebAssembly, що виконується у браузері майже зі швидкістю нативного машинного коду.</p></div>
+              <div class="detail" data-pane="webgl" hidden><div class="en">Hardware-Accelerated Rendering</div><h4>Рендеринг на графічному процесорі (GPU)</h4><p>Низькорівневий рушій WebGL відмальовує тисячі векторних об'єктів та ефектів безпосередньо на відеокарті зі стабільними 60 кадрами/с.</p></div>
+              <div class="detail" data-pane="ot" hidden><div class="en">Operational Transformation</div><h4>Передача легких операційних дельт</h4><p>Замість пересилання важких бінарних файлів через мережу передаються лише компактні дельти змін об'єктного графа (координати, властивості вузла).</p></div>
+              <div class="detail" data-pane="ssot" hidden><div class="en">Distributed DOM Tree</div><h4>Єдине джерело правди для всієї команди</h4><p>Дерево операторів у хмарі миттєво узгоджує одночасні правки дизайнерів, розробників та менеджерів без конфліктів версій.</p></div>
+            </div>
+
+            <div class="callout">
+              <div class="callout__title">🧭 Архітектурний орієнтир</div>
+              <p>Figma не надсилає растрові картинки чи важкі макети через інтернет — передаються лише <b>легкі операційні дельти змін об'єктного графа</b>. Це дозволяє десяткам фахівців без затримок редагувати документ розміром у сотні екранів.</p>
+            </div>
+          </section>
+
+          <!-- 2. ПРОСТОРОВА ОРГАНІЗАЦІЯ -->
+          <section class="l-section" id="workspace">
+            <h2><span class="n">02</span>Просторова організація робочого середовища</h2>
+            <p>Робоче середовище Figma структуровано на три основні взаємопов'язані функціональні зони: безкінечне полотно (<b>Canvas</b>), ліву панель ієрархії (<b>Left Sidebar</b>) та праву контекстну панель (<b>Right Sidebar</b>). Натисніть на зону макета інтерфейсу нижче:</p>
+
+            <div data-switch="canvas" class="diagram">
+              <svg viewBox="0 0 820 330" role="img" aria-label="Інтерактивна схема інтерфейсу Figma">
+                <!-- Верхня панель -->
+                <rect x="10" y="10" width="800" height="36" rx="10" fill="#1d1d35"/>
+                <circle cx="30" cy="28" r="6" fill="#ff6b6b"/><circle cx="48" cy="28" r="6" fill="#ffd43b"/><circle cx="66" cy="28" r="6" fill="#51cf66"/>
+                <text x="410" y="33" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">Toolbar · Move (V) · Frame (F) · Pen (P) · Text (T) · Dev Mode (Shift+D)</text>
+
+                <!-- Left Sidebar -->
+                <g class="svg-hit" data-key="left">
+                  <rect x="10" y="54" width="185" height="266" rx="12" fill="#5b5bf0" fill-opacity=".14" stroke="#5b5bf0" stroke-width="2.5"/>
+                  <text x="26" y="82" font-size="14" font-weight="800" fill="#5b5bf0">Left Sidebar</text>
+                  <rect x="26" y="96" width="150" height="24" rx="6" fill="#fff"/>
+                  <text x="36" y="112" font-size="12" font-weight="700" fill="#1d1d35">📄 Pages (Cover, Flow…)</text>
+                  <rect x="26" y="128" width="150" height="24" rx="6" fill="#fff"/>
+                  <text x="36" y="144" font-size="12" font-weight="700" fill="#1d1d35">📑 Layers (Ієрархія)</text>
+                  <rect x="26" y="160" width="150" height="24" rx="6" fill="#fff"/>
+                  <text x="36" y="176" font-size="12" font-weight="700" fill="#1d1d35">🧩 Assets (Бібліотеки)</text>
+                </g>
+
+                <!-- Canvas -->
+                <g class="svg-hit" data-key="canvas">
+                  <rect x="205" y="54" width="410" height="266" rx="12" fill="#9b5cf6" fill-opacity=".12" stroke="#9b5cf6" stroke-width="2.5"/>
+                  <text x="410" y="84" font-size="15" font-weight="800" fill="#5b5bf0" text-anchor="middle">Canvas (Безкінечне полотно X / Y)</text>
+                  <rect x="265" y="105" width="290" height="175" rx="12" fill="#fff" stroke="#5b5bf0" stroke-width="2"/>
+                  <text x="275" y="125" font-size="11" font-weight="800" fill="#5b5bf0">Frame 1 · Sub-pixel 2% – 25600%</text>
+                  <rect x="285" y="138" width="250" height="58" rx="8" fill="#5b5bf0" fill-opacity=".2"/>
+                  <rect x="285" y="208" width="76" height="52" rx="8" fill="#ff6b9a" fill-opacity=".25"/>
+                  <rect x="372" y="208" width="76" height="52" rx="8" fill="#51cf66" fill-opacity=".25"/>
+                  <rect x="459" y="208" width="76" height="52" rx="8" fill="#4dabf7" fill-opacity=".25"/>
+                </g>
+
+                <!-- Right Sidebar -->
+                <g class="svg-hit" data-key="right">
+                  <rect x="625" y="54" width="185" height="266" rx="12" fill="#ff6b9a" fill-opacity=".14" stroke="#ff6b9a" stroke-width="2.5"/>
+                  <text x="641" y="82" font-size="14" font-weight="800" fill="#d6336c">Right Sidebar</text>
+                  <rect x="641" y="96" width="152" height="24" rx="6" fill="#fff"/>
+                  <text x="651" y="112" font-size="12" font-weight="700" fill="#1d1d35">🎨 Design (X, Y, W, H)</text>
+                  <rect x="641" y="128" width="152" height="24" rx="6" fill="#fff"/>
+                  <text x="651" y="144" font-size="12" font-weight="700" fill="#1d1d35">🔗 Prototype (Зв'язки)</text>
+                  <rect x="641" y="160" width="152" height="24" rx="6" fill="#fff"/>
+                  <text x="651" y="176" font-size="12" font-weight="700" fill="#1d1d35">💻 Dev Mode (Інспектор)</text>
+                </g>
+              </svg>
+
+              <div class="detail" style="--dc:#9b5cf6" data-pane="canvas" hidden>
+                <div class="en">Зона 1 · Canvas (Полотно)</div>
+                <h4>Безкінечна робоча площина 2D координат</h4>
+                <p>Функціонує у двовимірній декартовій системі координат X та Y із підтримкою <b>субпіксельної точності</b>, що виключає похибки масштабування векторних активів. Підтримує масштабування від <b>2% до 25600%</b> та роботу з фреймами.</p>
+              </div>
+              <div class="detail" style="--dc:#5b5bf0" data-pane="left" hidden>
+                <div class="en">Зона 2 · Left Sidebar (Ліва панель ієрархії)</div>
+                <h4>Менеджер структури та активів проєкту</h4>
+                <p>Містить ієрархічне дерево шарів (<b>Layers</b>), менеджер сторінок (<b>Pages</b>) та каталог глобальних компонентів і бібліотек (<b>Assets</b>).</p>
+              </div>
+              <div class="detail" style="--dc:#ff6b9a" data-pane="right" hidden>
+                <div class="en">Зона 3 · Right Sidebar (Права контекстна панель)</div>
+                <h4>Динамічний контекстний інспектор обраного вузла</h4>
+                <p>Перемикається між режимами <b>Design</b> (геометрія, кольори, типографіка), <b>Prototype</b> (налаштування міжкадрових зв'язків та анімацій) та тумблером <b>Dev Mode</b> (інспектування коду для інженерів).</p>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Зона інтерфейсу</th><th>Системне призначення</th><th>Ключовий функціонал</th></tr></thead>
+                <tbody>
+                  <tr><td>Canvas (Полотно)</td><td>Безкінечна робоча площина 2D координат</td><td>Субпіксельний рендеринг, масштабування від 2% до 25600%, робота з фреймами.</td></tr>
+                  <tr><td>Left Sidebar</td><td>Менеджер структури та активів проєкту</td><td>Дерево сторінок (Pages), ієрархія шарів, бібліотека активів (Assets) та перегляд компонентів.</td></tr>
+                  <tr><td>Right Sidebar</td><td>Контекстний інспектор обраного вузла</td><td>Параметри Design (координати, розміри, стилі), Prototype (анімації) та тумблер Dev Mode.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. КОНТРОЛЬ ВЕРСІЙ -->
+          <section class="l-section" id="versioning">
+            <h2><span class="n">03</span>Контроль версій та безпека макетів</h2>
+            <p>Хмарне збереження усуває потребу у проміжних файлах на локальному диску. Figma здійснює <b>автоматичне збереження</b> кожного кроку користувача у фоновому режимі з підтримкою <b>30-денної або безлімітної історії версій</b>. Для великих команд доступні інструменти створення іменних контрольних точок (<b>Named Versions</b>) та розгалуження макетів (<b>Branching</b>), які дозволяють проєктувати нові фічі в ізольованій гілці з наступним злиттям (<b>Merge</b>) у головний файл після код-рев'ю.</p>
+
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">💾</div><h4>Автозбереження (30+ днів)</h4><small>Фонова історія →</small></div>
+                <div class="flip__face flip__back"><b>Жодних локальних копій</b>Кожна дія фіксується в хмарі автоматично. Можна повернутися до стану документа за будь-який момент останніх 30 днів (або безлімітно на професійних тарифах).</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🏷️</div><h4>Named Versions</h4><small>Іменні контрольні точки →</small></div>
+                <div class="flip__face flip__back"><b>File → Version History → Save Named Version</b>Фіксація завершених етапів роботи з назвою та описом внесених змін перед передачею макета в розробку.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🌿</div><h4>Branching &amp; Merge</h4><small>Ізольовані гілки →</small></div>
+                <div class="flip__face flip__back"><b>Як у Git для дизайнерів</b>Нові фічі та масштабні оновлення дизайн-системи проєктуються в окремій гілці (Branch) і зливаються (Merge) в основний файл лише після рев'ю.</div>
+              </div></div>
+            </div>
+          </section>
+
+          <!-- 4. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">04</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-intro"></div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.1</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-intro#tests" style="white-space:nowrap">Пройти тест з теми 2.1 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="course.html?s=figma"><small>← До секції</small><b>Секція 2. Занурення у Figma</b></a>
+              <a href="figma-hotkeys.html" class="next"><small>Наступна тема →</small><b>2.2 Гарячі клавіші та швидкісна навігація</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+</body>
+</html>

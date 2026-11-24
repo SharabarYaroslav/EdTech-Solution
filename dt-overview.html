@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Огляд дизайн-мислення — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Концепції, еволюція та базові моделі дизайн-мислення: d.school, IDEO, Double Diamond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- ============ HERO УРОКУ ============ -->
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=design">Секція 1. Дизайн</a><span>/</span><span>Тема 1.1</span></nav>
+          <div class="lesson-hero__series">Дизайн-мислення в освіті · Модуль 1</div>
+          <h1 class="lesson-hero__title">Огляд дизайн-мислення: концепції, еволюція та базові моделі</h1>
+          <p class="lesson-hero__lead">Фундаментальні витоки, порівняльний аналіз шкіл (Stanford d.school, IDEO, Double Diamond) та когнітивні механізми людиноцентричного проєктування.</p>
+        </div>
+
+        <!-- Інтерактивна картинка -->
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/dt-overview.jpg" alt="П'ять етапів дизайн-мислення у вигляді гексагонів">
+            <button class="hotspot" style="left:27.8%;top:50%" data-icon="💗" data-title="Empathize — Емпатія" data-text="Глибинне розуміння людей, їхніх невербалізованих потреб, емоцій та бар'єрів через спостереження, занурення та інтерв'ю."></button>
+            <button class="hotspot" style="left:38.9%;top:38%" data-icon="🎯" data-title="Define — Фокусування" data-text="Кристалізація спостережень у бачення проблеми (Point of View) та формулювання запитання «Як ми можемо...?» (How Might We)."></button>
+            <button class="hotspot" style="left:50%;top:50%" data-icon="💡" data-title="Ideate — Генерація ідей" data-text="Дивергентне продукування широкого спектра рішень без передчасного судження чи критики."></button>
+            <button class="hotspot" style="left:61%;top:62%" data-icon="🛠️" data-title="Prototype — Прототипування" data-text="Швидка матеріалізація ідей у низькоточних моделях: папір, картон, цифрові чернетки, сценарні розкадровки."></button>
+            <button class="hotspot" style="left:72.2%;top:50%" data-icon="🧪" data-title="Test — Тестування" data-text="Повернення до користувачів для випробування прототипу, збору зворотного зв'язку та перевірки вихідних припущень."></button>
+            <button class="hotspot" style="left:65%;top:27%" data-icon="🧠" data-title="Рефлексія в дії (Д. Шон)" data-text="Дизайнер веде діалог із ситуацією: висуває гіпотезу, втілює її в чорновому макеті та негайно зчитує реакцію середовища."></button>
+            <button class="hotspot" style="left:44%;top:76%" data-icon="💎" data-title="Подвійний діамант" data-text="Ромби на тлі нагадують про ритм дивергенції (розширення) та конвергенції (звуження) — модель UK Design Council."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Кожна точка розкриває ключове поняття уроку.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong data-count="50" data-suffix="+ років">0</strong><span>Еволюції підходу: від праці Г. Саймона (1969) до освітніх систем</span></div>
+        <div class="stat"><strong data-count="52.9" data-suffix="%">0</strong><span>Досліджень використовують модель Stanford d.school (Harabi, 2026)</span></div>
+        <div class="stat"><strong data-count="2" data-suffix=" фази">0</strong><span>Чергування дивергенції та конвергенції в моделі Double Diamond</span></div>
+      </div>
+    </div>
+
+    <!-- ============ ЗМІСТ УРОКУ ============ -->
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#genesis">1. Генеза та фундамент</a>
+          <a href="#schools">2. Провідні школи</a>
+          <a href="#compare">3. Порівняльний аналіз</a>
+          <a href="#rules">4. Дивергенція і конвергенція</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <a href="#sources">6. Джерела</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 1</div>
+            <a href="dt-overview.html" class="is-current">1.1 Огляд ✓</a>
+            <a href="dt-students.html">1.2 Для учнів</a>
+            <a href="dt-teachers.html">1.3 Для вчителів</a>
+            <a href="dt-schools.html">1.4 Для шкіл</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ГЕНЕЗА -->
+          <section class="l-section" id="genesis">
+            <h2><span class="n">01</span>Генеза та теоретико-методологічний фундамент</h2>
+            <p><b>Дизайн-мислення (Design Thinking)</b> виступає провідною людиноцентричною методологією розв'язання складних, відкритих та неструктурованих проблем — <span class="term" title="Від англ. wicked problems">«wicked problems»</span>. Поняття «складних проблем» первісно концептуалізували теоретики соціального планування <b>Горст Ріттель</b> та <b>Мелвін Веббер</b> (1972), а згодом поглибив <b>Річард Буканан</b> (1992) безпосередньо у сфері дизайну.</p>
+
+            <h3>Ознаки «складних проблем»</h3>
+            <p class="hint">Натисніть на картку, щоб перевернути її</p>
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">❓</div><h4>Немає вичерпного формулювання</h4><small>Перевернути →</small></div>
+                <div class="flip__face flip__back"><b>Відсутність попереднього формулювання</b>Проблему неможливо повністю описати заздалегідь: її розуміння формується в процесі розв'язання.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">👥</div><h4>Множинність інтересів</h4><small>Перевернути →</small></div>
+                <div class="flip__face flip__back"><b>Суперечливі стейкхолдери</b>Різні учасники мають різні, часто конфліктні інтереси та бачення того, що вважати «хорошим» рішенням.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🔁</div><h4>Немає єдиної правильної відповіді</h4><small>Перевернути →</small></div>
+                <div class="flip__face flip__back"><b>Потрібне ітеративне тестування</b>Єдино правильну теоретичну відповідь знайти неможливо без практичних спроб, перевірок і вдосконалень.</div>
+              </div></div>
+            </div>
+
+            <p>Виникнувши на стику когнітивної науки, інженерії та промислового проєктування, дизайн-мислення пройшло тривалий шлях інституціоналізації. Його наукові витоки пов'язані з працею <b>Герберта Саймона</b> «Науки про штучне» (1969). Саймон відокремив дизайн від природничих наук: <b>якщо природничі науки досліджують те, що вже існує, то дизайн спрямований на створення бажаних альтернативних станів</b>.</p>
+
+            <h3>Інтерактивна стрічка часу</h3>
+            <p class="hint">Натисніть на подію, щоб побачити деталі</p>
+            <div class="timeline">
+              <div class="tl-item is-open"><div class="tl-year">1969</div><div class="tl-card"><h4>Г. Саймон — «Науки про штучне»</h4><p>Дизайн визначено як специфічний когнітивний спосіб мислення, спрямований на перетворення наявних умов на кращі.</p></div></div>
+              <div class="tl-item"><div class="tl-year">1972</div><div class="tl-card"><h4>Г. Ріттель і М. Веббер — «wicked problems»</h4><p>Концептуалізація складних проблем соціального планування (публікація в Policy Sciences, 1973).</p></div></div>
+              <div class="tl-item"><div class="tl-year">1983</div><div class="tl-card"><h4>Д. Шон — «The Reflective Practitioner»</h4><p>Концепція «рефлексії в дії»: фахівці розв'язують завдання через діалог із ситуацією, а не через жорсткі алгоритми.</p></div></div>
+              <div class="tl-item"><div class="tl-year">1987</div><div class="tl-card"><h4>П. Роу — «Design Thinking»</h4><p>Подальший розвиток концепції поряд із дослідженнями Р. МакКіма та Р. Фасте у Стенфорді.</p></div></div>
+              <div class="tl-item"><div class="tl-year">1992</div><div class="tl-card"><h4>Р. Буканан — «Wicked Problems in Design Thinking»</h4><p>Перенесення ідеї складних проблем безпосередньо у сферу дизайну.</p></div></div>
+              <div class="tl-item"><div class="tl-year">2000-ті</div><div class="tl-card"><h4>Stanford d.school та IDEO</h4><p>Масова популяризація та дидактична адаптація: Девід Келлі, Тім Браун, Інститут дизайну Хассо Платтнера.</p></div></div>
+              <div class="tl-item"><div class="tl-year">2004</div><div class="tl-card"><h4>Double Diamond (UK Design Council)</h4><p>Модель «Подвійного діаманта» на основі концепції Бели Банаті (2004–2005).</p></div></div>
+              <div class="tl-item"><div class="tl-year">2006</div><div class="tl-card"><h4>Н. Кросс — «Designerly Ways of Knowing»</h4><p>Доведено, що дизайнери послуговуються переважно абдуктивним мисленням.</p></div></div>
+              <div class="tl-item"><div class="tl-year">2011</div><div class="tl-card"><h4>Design Thinking for Educators</h4><p>IDEO та Riverdale Country School адаптують методологію для вчителів.</p></div></div>
+              <div class="tl-item"><div class="tl-year">2016</div><div class="tl-card"><h4>Маніфест К. Картер та цикл LAUNCH</h4><p>«Let's stop talking about THE design process» — акцент на 8 дизайнерських здібностях; Спенсер і Джуліані публікують LAUNCH.</p></div></div>
+              <div class="tl-item"><div class="tl-year">2023–26</div><div class="tl-card"><h4>Від емпатії до турботи (care)</h4><p>d.school інтегрує етику та врахування наслідків другого й третього порядків.</p></div></div>
+            </div>
+
+            <div class="callout">
+              <div class="callout__title">🪞 Теоретичний фундамент: «Рефлексія в дії» (Дональд Шон)</div>
+              <p>Філософ і педагог Дональд Шон (1983) довів, що фахівці розв'язують реальні завдання не через формальне застосування жорстких алгоритмів, а через «рефлексію в дії» (reflection-in-action). Дизайнер постійно веде діалог із ситуацією: висуває пробну гіпотезу, втілює її у чорновому макеті та негайно зчитує реакцію середовища, переформульовуючи вихідну проблему на основі отриманого досвіду.</p>
+            </div>
+
+            <h3>Три типи висновування: чим особливе мислення дизайнера?</h3>
+            <p>Найджел Кросс (2006) увів поняття <b>«дизайнерських способів пізнання»</b> (designerly ways of knowing), довівши, що дизайнери послуговуються переважно <b>абдуктивним мисленням</b>.</p>
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">📐</div><h4>Дедукція</h4><small>Від загального до часткового →</small></div>
+                <div class="flip__face flip__back"><b>«Що має бути?»</b>Висновок із відомих правил і законів. Характерна для формальної логіки та математики.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🔬</div><h4>Індукція</h4><small>Від фактів до закономірностей →</small></div>
+                <div class="flip__face flip__back"><b>«Що існує?»</b>Узагальнення спостережень. Характерна для природничих наук, що досліджують наявне.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">✨</div><h4>Абдукція</h4><small>Мислення дизайнера →</small></div>
+                <div class="flip__face flip__back"><b>«Що могло б спрацювати?»</b>Здатність генерувати правдоподібні гіпотези щодо можливих рішень — основа дизайн-мислення (Н. Кросс).</div>
+              </div></div>
+            </div>
+          </section>
+
+          <!-- 2. ШКОЛИ -->
+          <section class="l-section" id="schools">
+            <h2><span class="n">02</span>Провідні школи та архітектура фреймворків</h2>
+            <p>Масова популяризація дизайн-мислення відбулася на початку 2000-х років завдяки <b>Stanford d.school</b> та компанії <b>IDEO</b> під керівництвом Девіда Келлі і Тіма Брауна. У глобальній освітній практиці виокремлюють три класичні фреймворки.</p>
+
+            <h3>2.1. П'ятиетапна модель Stanford d.school</h3>
+            <p>Канонічна модель, опублікована у «Design Thinking Bootleg», структурована навколо п'яти <b>нелінійних</b> когнітивних режимів.</p>
+            <div data-switch>
+              <p class="hint">Оберіть гексагон</p>
+              <div class="hexes">
+                <button class="hex" style="--hc:var(--c-empathy)" data-key="e"><div><span>💗</span>Empathize</div></button>
+                <button class="hex" style="--hc:var(--c-define)" data-key="d"><div><span>🎯</span>Define</div></button>
+                <button class="hex" style="--hc:#f0b400" data-key="i"><div><span>💡</span>Ideate</div></button>
+                <button class="hex" style="--hc:var(--c-prototype)" data-key="p"><div><span>🛠️</span>Prototype</div></button>
+                <button class="hex" style="--hc:var(--c-test)" data-key="t"><div><span>🧪</span>Test</div></button>
+              </div>
+              <div class="detail" style="--dc:var(--c-empathy)" data-pane="e" hidden><div class="en">Етап 1 · Empathize</div><h4>Емпатія</h4><p>Глибинне розуміння людей, їхніх невербалізованих потреб, емоцій та бар'єрів через <b>спостереження, занурення та інтерв'ю</b>.</p></div>
+              <div class="detail" style="--dc:var(--c-define)" data-pane="d" hidden><div class="en">Етап 2 · Define</div><h4>Фокусування</h4><p>Кристалізація зібраних спостережень в особистісно зорієнтоване бачення проблеми (<b>Point of View, POV</b>) та формулювання запитання <b>«Як ми можемо...?»</b> (How Might We).</p></div>
+              <div class="detail" style="--dc:#f0b400" data-pane="i" hidden><div class="en">Етап 3 · Ideate</div><h4>Генерація ідей</h4><p><b>Дивергентне</b> продукування широкого спектра рішень без передчасного судження чи критики.</p></div>
+              <div class="detail" style="--dc:var(--c-prototype)" data-pane="p" hidden><div class="en">Етап 4 · Prototype</div><h4>Прототипування</h4><p>Швидка матеріалізація ідей у <b>низькоточних моделях</b>: папір, картон, цифрові чернетки, сценарні розкадровки.</p></div>
+              <div class="detail" style="--dc:var(--c-test)" data-pane="t" hidden><div class="en">Етап 5 · Test</div><h4>Тестування</h4><p>Повернення до користувачів для випробування прототипу, <b>збору зворотного зв'язку</b> та перевірки вихідних припущень.</p></div>
+            </div>
+
+            <div class="callout callout--warn">
+              <div class="callout__title">⚠️ Методологічне застереження Stanford d.school</div>
+              <p>У 2016 році академічна директорка d.school <b>Карісса Картер</b> опублікувала маніфест «Let's stop talking about THE design process», наголосивши, що п'ять гексагонів були лише первинним рецептом для початківців. Професійне володіння полягає у формуванні <b>восьми дизайнерських здібностей</b> (навігація в умовах невизначеності, швидке експериментування, синтез інформації, людиноцентричність тощо). З 2023–2026 років d.school акцентує на заміні пасивної емпатії концепцією <b>турботи (care)</b>, інтеграції етики та врахуванні наслідків другого й третього порядків.</p>
+            </div>
+
+            <h3>2.2. Трьохфазна модель IDEO (3I)</h3>
+            <p>IDEO під керівництвом Тіма Брауна описує процес не як жорсткі кроки, а як перетин трьох перекриваючих просторів: <b>Inspiration</b> (натхнення через польові етнографічні спостереження), <b>Ideation</b> (синтез інсайтів, концепції, чорнове макетування) та <b>Implementation</b> (шлях від валідованого прототипу до запуску в практику).</p>
+            <p>Інновація, за IDEO, — це зона оптимального балансу трьох вимірів. Натисніть на коло діаграми:</p>
+            <div data-switch="center" class="diagram">
+              <div class="donut" style="grid-template-columns: 1fr 1fr">
+                <svg viewBox="0 0 520 380" role="img" aria-label="Діаграма Венна IDEO">
+                  <circle class="svg-hit" data-key="des" cx="190" cy="140" r="115" fill="#ff6b9a" fill-opacity=".55"/>
+                  <circle class="svg-hit" data-key="fea" cx="330" cy="140" r="115" fill="#5b5bf0" fill-opacity=".5"/>
+                  <circle class="svg-hit" data-key="via" cx="260" cy="255" r="115" fill="#51cf66" fill-opacity=".5"/>
+                  <circle class="svg-hit" data-key="center" cx="260" cy="180" r="34" fill="#fff" stroke="#1d1d35" stroke-width="2"/>
+                  <text x="130" y="110" font-size="17" font-weight="800" fill="#1d1d35" pointer-events="none">Бажаність</text>
+                  <text x="320" y="110" font-size="17" font-weight="800" fill="#1d1d35" pointer-events="none">Здійсненність</text>
+                  <text x="208" y="320" font-size="17" font-weight="800" fill="#1d1d35" pointer-events="none">Життєздатність</text>
+                  <text x="260" y="186" font-size="20" text-anchor="middle" pointer-events="none">💡</text>
+                </svg>
+                <div>
+                  <div class="detail" style="--dc:#ff6b9a" data-pane="des" hidden><div class="en">Desirability</div><h4>Бажаність для людини</h4><p>Чи справді рішення потрібне людям? Чи відповідає воно їхнім реальним потребам, які виявлено через емпатію?</p></div>
+                  <div class="detail" style="--dc:#5b5bf0" data-pane="fea" hidden><div class="en">Feasibility</div><h4>Технологічна здійсненність</h4><p>Чи можна реалізувати рішення наявними технологіями, знаннями та ресурсами?</p></div>
+                  <div class="detail" style="--dc:#51cf66" data-pane="via" hidden><div class="en">Viability</div><h4>Економічна життєздатність</h4><p>Чи буде рішення стійким у довгостроковій перспективі — фінансово й організаційно?</p></div>
+                  <div class="detail" data-pane="center" hidden><div class="en">Зона інновації</div><h4>Перетин трьох вимірів</h4><p>Справжня інновація виникає там, де рішення одночасно <b>бажане</b>, <b>здійсненне</b> та <b>життєздатне</b>. Натисніть на кожне коло, щоб дізнатися більше.</p></div>
+                </div>
+              </div>
+            </div>
+
+            <h3>2.3. Модель «Подвійного діаманта» (UK Design Council)</h3>
+            <p>Розроблена Британською Радою Дизайну у 2004–2005 роках на основі концепції Бели Банаті. Модель ілюструє ритм <b>дивергентного</b> (розширення) та <b>конвергентного</b> (звуження) мислення через два спарені діаманти. Натисніть на частину діаманта:</p>
+            <div data-switch class="diagram">
+              <svg viewBox="0 0 800 300" role="img" aria-label="Модель Double Diamond">
+                <polygon class="svg-hit" data-key="discover" points="20,130 200,20 200,240" fill="#ff6b6b"/>
+                <polygon class="svg-hit" data-key="define" points="200,20 380,130 200,240" fill="#ffa94d"/>
+                <polygon class="svg-hit" data-key="develop" points="420,130 600,20 600,240" fill="#51cf66"/>
+                <polygon class="svg-hit" data-key="deliver" points="600,20 780,130 600,240" fill="#4dabf7"/>
+                <g fill="#fff" font-weight="800" font-size="17" text-anchor="middle" pointer-events="none">
+                  <text x="140" y="136">Discover</text><text x="262" y="136">Define</text>
+                  <text x="540" y="136">Develop</text><text x="662" y="136">Deliver</text>
+                </g>
+                <g font-size="14" font-weight="700" text-anchor="middle" fill="currentColor" pointer-events="none" style="color:var(--c-muted)">
+                  <text x="200" y="275">Пошук правильної проблеми</text>
+                  <text x="600" y="275">Проєктування правильного рішення</text>
+                </g>
+                <line x1="380" y1="130" x2="420" y2="130" stroke="#9b5cf6" stroke-width="3" stroke-dasharray="5 4"/>
+              </svg>
+              <div class="detail" style="--dc:#ff6b6b" data-pane="discover" hidden><div class="en">Діамант 1 · дивергенція</div><h4>Discover — Дослідження</h4><p>Широке дослідження контексту: розширюємо погляд, збираємо інформацію про людей та ситуацію.</p></div>
+              <div class="detail" style="--dc:#ffa94d" data-pane="define" hidden><div class="en">Діамант 1 · конвергенція</div><h4>Define — Визначення</h4><p>Фокусування на реальній проблемі: звужуємо зібрані дані до чіткого формулювання завдання.</p></div>
+              <div class="detail" style="--dc:#51cf66" data-pane="develop" hidden><div class="en">Діамант 2 · дивергенція</div><h4>Develop — Розробка</h4><p>Генерація та ітеративне тестування прототипів: знову розширюємо простір можливих рішень.</p></div>
+              <div class="detail" style="--dc:#4dabf7" data-pane="deliver" hidden><div class="en">Діамант 2 · конвергенція</div><h4>Deliver — Впровадження</h4><p>Фіналізація й запуск рішення. У пізніших версіях (Framework for Innovation, Systemic Design) додано організаційний шар: лідерство, системний зір та залучення стейкхолдерів.</p></div>
+            </div>
+          </section>
+
+          <!-- 3. ПОРІВНЯННЯ -->
+          <section class="l-section" id="compare">
+            <h2><span class="n">03</span>Порівняльний аналіз провідних методологій</h2>
+            <p>Аналіз емпіричних публікацій (Harabi, 2026; Razali et al., 2022) показує, які моделі найчастіше використовують освітні ініціативи. Наведіть курсор або натисніть на сегмент:</p>
+            <div data-switch="ds" class="diagram">
+              <div class="donut">
+                <svg viewBox="0 0 240 240" data-donut style="transform:rotate(-90deg)">
+                  <circle class="seg svg-hit" data-key="ds" data-value="52.9" cx="120" cy="120" stroke="#5b5bf0"/>
+                  <circle class="seg svg-hit" data-key="hy" data-value="26.5" cx="120" cy="120" stroke="#ff6b9a"/>
+                  <circle class="seg svg-hit" data-key="dd" data-value="11.8" cx="120" cy="120" stroke="#51cf66"/>
+                  <circle class="seg svg-hit" data-key="id" data-value="8.8" cx="120" cy="120" stroke="#ffa94d"/>
+                </svg>
+                <div>
+                  <div class="legend">
+                    <button data-key="ds"><i style="background:#5b5bf0"></i>Stanford d.school<b>52.9%</b></button>
+                    <button data-key="hy"><i style="background:#ff6b9a"></i>Адаптовані / гібридні (TPACK, LAUNCH)<b>26.5%</b></button>
+                    <button data-key="dd"><i style="background:#51cf66"></i>Double Diamond<b>11.8%</b></button>
+                    <button data-key="id"><i style="background:#ffa94d"></i>IDEO<b>8.8%</b></button>
+                  </div>
+                  <p class="muted" style="margin-top:14px;font-size:14px" data-pane="ds" hidden>Більше половини освітніх ініціатив спираються на п'ятиетапну модель d.school — її простота робить її зручною для старту.</p>
+                  <p class="muted" style="margin-top:14px;font-size:14px" data-pane="hy" hidden>Чверть досліджень адаптують модель під власний контекст, поєднуючи дизайн-мислення з TPACK чи циклом LAUNCH.</p>
+                  <p class="muted" style="margin-top:14px;font-size:14px" data-pane="dd" hidden>Double Diamond частіше застосовують у системному дизайні освітньої політики та шкільних систем.</p>
+                  <p class="muted" style="margin-top:14px;font-size:14px" data-pane="id" hidden>Модель IDEO поширена в соціальних інноваціях, вищій школі та програмах лідерства.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3>Порівняльна характеристика фреймворків</h3>
+            <div class="tabs" data-table-filter="#fw-table" style="justify-content:flex-start;margin-bottom:6px">
+              <button class="tab is-active" data-filter="all">Усі</button>
+              <button class="tab" data-filter="uni">Вища школа</button>
+              <button class="tab" data-filter="k12">Школа K-12</button>
+              <button class="tab" data-filter="teach">Вчителі</button>
+              <button class="tab" data-filter="policy">Політика</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table" id="fw-table">
+                <thead><tr><th>Фреймворк</th><th>Розробник</th><th>Структурні фази</th><th>Ключовий фокус</th><th>Освітня сфера</th></tr></thead>
+                <tbody>
+                  <tr data-tags="uni k12"><td>Stanford d.school</td><td>Hasso Plattner Institute (2010)</td><td><span class="pill">Empathize</span><span class="pill">Define</span><span class="pill">Ideate</span><span class="pill">Prototype</span><span class="pill">Test</span></td><td>Емпатія, експериментування, навігація в умовах невизначеності</td><td>Університети, STEM, проєктні K-12 школи</td></tr>
+                  <tr data-tags="uni"><td>IDEO Human-Centered Design</td><td>IDEO / Tim Brown (2008/2015)</td><td><span class="pill">Inspiration</span><span class="pill">Ideation</span><span class="pill">Implementation</span></td><td>Баланс бажаності, здійсненності та життєздатності</td><td>Соціальні інновації, вища школа, лідерство</td></tr>
+                  <tr data-tags="policy"><td>Double Diamond</td><td>UK Design Council (2004/2019)</td><td><span class="pill">Discover</span><span class="pill">Define</span><span class="pill">Develop</span><span class="pill">Deliver</span></td><td>Ритм дивергенції/конвергенції, системний підхід</td><td>Освітня політика, дизайн шкільних систем</td></tr>
+                  <tr data-tags="k12"><td>LAUNCH Cycle</td><td>J. Spencer &amp; A.J. Juliani (2016)</td><td><span class="pill">Look</span><span class="pill">Ask</span><span class="pill">Understand</span><span class="pill">Navigate</span><span class="pill">Create</span><span class="pill">Highlight/Fix</span><span class="pill">Launch</span></td><td>Мейкерство, нормалізація помилок, автентична аудиторія</td><td>K-12 початкова та середня школа</td></tr>
+                  <tr data-tags="teach"><td>Design Thinking for Educators</td><td>IDEO &amp; Riverdale School (2011)</td><td><span class="pill">Discovery</span><span class="pill">Interpretation</span><span class="pill">Ideation</span><span class="pill">Experimentation</span><span class="pill">Evolution</span></td><td>Педагогічний рефреймінг, уроки як прототипи</td><td>Професійний розвиток вчителів, дизайн уроків</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 4. ДИВЕРГЕНЦІЯ / КОНВЕРГЕНЦІЯ -->
+          <section class="l-section" id="rules">
+            <h2><span class="n">04</span>Когнітивні правила дивергенції та конвергенції</h2>
+            <p>Фундаментальною засадою успішного дизайн-мислення є усвідомлене розведення процесів <b>дивергенції</b> (розширення вибірки думок, ідей, спостережень) та <b>конвергенції</b> (аналізу, відбору, фокусування та ухвалення рішень). Правило походить від досліджень Дж. Гілфорда щодо природи креативності та правил брейнштормінгу Алекса Осборна (1953): <b>змішування генерації з критикою миттєво блокує креативність команди</b>.</p>
+
+            <div class="diagram">
+              <svg viewBox="0 0 800 200" aria-hidden="true">
+                <defs><linearGradient id="dc" x1="0" x2="1"><stop offset="0" stop-color="#ff6b9a"/><stop offset=".5" stop-color="#9b5cf6"/><stop offset="1" stop-color="#5b5bf0"/></linearGradient></defs>
+                <path d="M20 100 C 200 100, 250 10, 400 10 C 550 10, 600 100, 780 100 C 600 100, 550 190, 400 190 C 250 190, 200 100, 20 100 Z" fill="url(#dc)" opacity=".18"/>
+                <g fill="#9b5cf6"><circle cx="300" cy="60" r="6"/><circle cx="340" cy="140" r="6"/><circle cx="380" cy="40" r="6"/><circle cx="400" cy="100" r="6"/><circle cx="420" cy="160" r="6"/><circle cx="360" cy="95" r="6"/><circle cx="450" cy="70" r="6"/><circle cx="470" cy="130" r="6"/></g>
+                <circle cx="760" cy="100" r="12" fill="#5b5bf0"/>
+                <g font-weight="800" font-size="16" text-anchor="middle"><text x="220" y="50" fill="#ff6b9a">← Дивергенція →</text><text x="600" y="50" fill="#5b5bf0">→ Конвергенція ←</text></g>
+                <g font-size="13" text-anchor="middle" fill="currentColor" style="color:var(--c-muted)"><text x="60" y="130">виклик</text><text x="745" y="135">рішення</text></g>
+              </svg>
+            </div>
+
+            <h3>Закони ефективного дивергентного мислення</h3>
+            <div class="flips flips--4">
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">🚫</div><h4>Відтермінування критики</h4><small>Defer Judgment →</small></div><div class="flip__face flip__back"><b>Defer Judgment</b>Жодна ідея на стадії дивергенції не оцінюється як «погана» чи «нереалістична».</div></div></div>
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">📈</div><h4>Кількість породжує якість</h4><small>Перевернути →</small></div><div class="flip__face flip__back"><b>Більше ідей</b>Перші 10–15 ідей зазвичай є тривіальними шаблонами. Справжні інновації з'являються після подолання очевидних варіантів.</div></div></div>
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">🤝</div><h4>«Yes, and...»</h4><small>Перевернути →</small></div><div class="flip__face flip__back"><b>Розвиток ідей колег</b>Використання чужих пропозицій як трампліну для власного мислення замість критики («Yes, but...»).</div></div></div>
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">🚀</div><h4>Екстремальні ідеї</h4><small>Перевернути →</small></div><div class="flip__face flip__back"><b>Заохочення сміливості</b>Легше спростити дику ідею, ніж зробити банальну думку інноваційною.</div></div></div>
+            </div>
+
+            <h3>Закони конструктивної конвергенції</h3>
+            <div class="flips flips--3">
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">🗂️</div><h4>Кластеризація за змістом</h4><small>Перевернути →</small></div><div class="flip__face flip__back"><b>А не голосування навмання</b>Групування споріднених думок та виявлення прихованих закономірностей.</div></div></div>
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">⚖️</div><h4>Явні критерії</h4><small>Перевернути →</small></div><div class="flip__face flip__back"><b>Матриця «Вплив / Здійсненність»</b>Перевірка ідей за чіткими критеріями або відповідністю сформульованому POV.</div></div></div>
+              <div class="flip"><div class="flip__inner"><div class="flip__face flip__front"><div class="ic">🌈</div><h4>Збереження різноманітності</h4><small>Перевернути →</small></div><div class="flip__face flip__back"><b>2–3 різні концепції</b>Для прототипування обирають кардинально різні концепції, а не кілька варіантів однієї ідеї.</div></div></div>
+            </div>
+
+            <div class="callout callout--pink">
+              <div class="callout__title">🧲 Бар'єр «Дизайнерської фіксації» (Design Fixation)</div>
+              <p>Емпіричні дослідження когнітивних пасток у дизайні показують небезпеку передчасного «залипання» на першому варіанті рішення. Команда підсвідомо шукає підтвердження лише своєї початкової гіпотези (<b>confirmation bias</b>). Саме тому дизайн-мислення вимагає створення альтернативних прототипів та проведення раннього сліпого тестування з реальними респондентами.</p>
+            </div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 1.1</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($6 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=dt-overview#tests" style="white-space:nowrap">Пройти тест з теми 1.1 →</a>
+            </div>
+          </section>
+
+          <!-- 6. ДЖЕРЕЛА -->
+          <section class="l-section" id="sources">
+            <h2><span class="n">06</span>Список рекомендованих джерел</h2>
+            <ol class="sources">
+              <li>Brown, T. (2008). Design Thinking. Harvard Business Review, 86(6), 84–92.</li>
+              <li>Buchanan, R. (1992). Wicked Problems in Design Thinking. Design Issues, 8(2), 5–21.</li>
+              <li>Cross, N. (2006). Designerly Ways of Knowing. Springer-Verlag, London.</li>
+              <li>Harabi, M. (2026). Design Thinking in Teacher Education: A Systematic Literature Review. European Journal of Education Studies, 13(6), 162–185.</li>
+              <li>Hasso Plattner Institute of Design at Stanford (2018). Design Thinking Bootleg. Stanford University.</li>
+              <li>IDEO &amp; Riverdale Country School (2011). Design Thinking for Educators Toolkit (2nd ed.).</li>
+              <li>Razali, N. H. et al. (2022). Design Thinking Approaches in Education and Their Challenges: A Systematic Literature Review. Creative Education, 13, 2289–2299.</li>
+              <li>Rittel, H. W. J., &amp; Webber, M. M. (1973). Dilemmas in a General Theory of Planning. Policy Sciences, 4(2), 155–169.</li>
+              <li>Schön, D. A. (1983). The Reflective Practitioner: How Professionals Think in Action. Basic Books.</li>
+              <li>Simon, H. A. (1969). The Sciences of the Artificial. MIT Press, Cambridge, MA.</li>
+              <li>Spencer, J., &amp; Juliani, A. J. (2016). Launch: Using Design Thinking to Boost Creativity and Bring Out the Maker in Every Student.</li>
+            </ol>
+
+            <div class="lesson-pager">
+              <a href="course.html?s=design"><small>← До секції</small><b>Секція 1. Дизайн</b></a>
+              <a href="dt-students.html" class="next"><small>Наступна тема →</small><b>1.2 Дизайн-мислення для учнів</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гарнітури, шрифти та типографічний рушій — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Variable Fonts, метрики текстового блоку, динамічний ресайзинг рамок (Auto Width, Auto Height, Fixed Size) та зв'язування з Figma Variables.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.3</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 03</div>
+          <h1 class="lesson-hero__title">Гарнітури, шрифти та типографічний рушій</h1>
+          <p class="lesson-hero__lead">Variable Fonts, точні метрики текстового блоку (Line Height, Letter Spacing), динамічний ресайзинг рамок та зв'язування з Figma Variables.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-fonts.jpg" alt="Векторна типографіка, осі варіативності та рамка ресайзингу у Figma">
+            <button class="hotspot" style="left:40%;top:22%" data-icon="✒️" data-title="Векторний контур з метаданими" data-text="Текстовий шар у Figma функціонує як векторний контур, збагачений атрибутивними типографічними метаданими та хмарними Google Fonts."></button>
+            <button class="hotspot" style="left:24%;top:31%" data-icon="🎚️" data-title="Variable Fonts: вісь Weight (100–900)" data-text="Плавний безперервний контроль щільності шрифту з точністю до одиниці для ідеальної читабельності на мобільних дисплеях."></button>
+            <button class="hotspot" style="left:19%;top:50%" data-icon="📐" data-title="Осі Optical Size та Slant" data-text="Варіативні шрифти дозволяють тонко регулювати оптичний кегль та кут нахилу символів без втрати пропорцій."></button>
+            <button class="hotspot" style="left:65%;top:13%" data-icon="↔️" data-title="Режими ресайзингу: Auto Width та Auto Height" data-text="Синя рамка контейнера керує геометрією: Auto Width розтягується по горизонталі для кнопок, а Auto Height нарощує висоту для карток і статей."></button>
+            <button class="hotspot" style="left:82%;top:31%" data-icon="📏" data-title="Line Height (Інтерліньяж)" data-text="Відстань між базовими лініями рядків: 140–160% для основного тексту та 110–125% для великих заголовків (або фіксовані px, кратні 4/8)."></button>
+            <button class="hotspot" style="left:81%;top:63%" data-icon="🔤" data-title="Letter Spacing та Figma Variables" data-text="Трекінг символів (-1..-2% для заголовків, +5..+10% для капслоку) та прив'язка гарнітур і кеглів до дизайн-токенів String/Number."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дослідіть анатомію текстового шару та його параметри у Figma.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>100–900</strong><span>Діапазон осі щільності (Weight) у варіативних шрифтах з точністю до 1 одиниці</span></div>
+        <div class="stat"><strong>+20–35%</strong><span>Зростання довжини слів при локалізації (напр. EN → UK/DE), що ламає Fixed Size</span></div>
+        <div class="stat"><strong>140–160%</strong><span>Стандарт інтерліньяжу (Line Height) для комфортного читання основного тексту у вебі</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#engine">1. Шрифтовий рушій</a>
+          <a href="#metrics">2. Варіативні шрифти та метрики</a>
+          <a href="#containers">3. Контейнери та Variables</a>
+          <a href="#checklist">4. Практична вправа</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти ✓</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. РУШІЙ -->
+          <section class="l-section" id="engine">
+            <h2><span class="n">01</span>Шрифтовий рушій та підключення гарнітур</h2>
+            <p>Типографічна підсистема Figma інтегрована з повною бібліотекою хмарних гарнітур <b>Google Fonts</b>. Для використання локальних корпоративних чи комерційних шрифтів, встановлених в операційній системі, застосовується десктопна версія Figma або спеціальний системний сервіс <b>Figma Font Helper</b> при роботі через браузер.</p>
+            <p>Текстовий шар у Figma функціонує як <b>векторний контур, збагачений атрибутивними типографічними метаданими</b>. Платформа забезпечує безшовну роботу як зі статичними гарнітурами (фіксовані накреслення Regular, Medium, SemiBold, Bold), так і з сучасними варіативними шрифтами (<b>Variable Fonts</b>).</p>
+          </section>
+
+          <!-- 2. ВАРІАТИВНІ ШРИФТИ ТА МЕТРИКИ -->
+          <section class="l-section" id="metrics">
+            <h2><span class="n">02</span>Варіативні шрифти та точні метрики тексту</h2>
+            <p><b>Variable Fonts</b> надають безперервний контроль над параметрами уздовж осей варіативності: щільності (<b>Weight від 100 до 900</b>), оптичного кеглю (<b>Optical Size</b>) та кута нахилу (<b>Slant</b>). Це дозволяє налаштовувати оптичну вагу шрифту з точністю до одиниці, оптимізуючи читабельність на мобільних дисплеях.</p>
+            <p><b>Line Height (інтерліньяж)</b> контролює відстань між базовими лініями рядків і задається у відсотках (%), пікселях (px) або значенні Auto, яке вираховується автоматично на основі шрифтової таблиці гарнітури. <b>Letter Spacing (трекінг)</b> керує міжосьовим інтервалом символів і може задаватися як у пікселях, так і у відсотках від поточного розміру кеглю.</p>
+
+            <!-- Інтерактивна типографічна лабораторія -->
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Режим контейнера
+                  <select id="typo-mode">
+                    <option value="auto-h" selected>Auto Height (абзаци / картки)</option>
+                    <option value="auto-w">Auto Width (кнопки / чипси)</option>
+                    <option value="fixed">Fixed Size (небезпека обрізання!)</option>
+                  </select>
+                </label>
+                <label>Мовна локалізація
+                  <select id="typo-lang">
+                    <option value="en">EN (коротка фраза)</option>
+                    <option value="uk" selected>UK (+30% довжини слів)</option>
+                  </select>
+                </label>
+                <label>Weight (100–900): <b id="typo-w-val">600</b>
+                  <input type="range" id="typo-w" min="400" max="800" step="10" value="600">
+                </label>
+                <label>Line Height (%): <b id="typo-lh-val">145%</b>
+                  <input type="range" id="typo-lh" min="100" max="180" step="5" value="145">
+                </label>
+                <label>Letter Spacing (%): <b id="typo-ls-val">0%</b>
+                  <input type="range" id="typo-ls" min="-4" max="10" step="1" value="0">
+                </label>
+              </div>
+              <div class="sandbox__stage">
+                <div id="typo-box" style="background:var(--c-surface);border:2px solid var(--c-primary);border-radius:12px;padding:16px 20px;transition:all .2s ease">
+                  <div id="typo-text" style="color:var(--c-text)">Проєктування людиноцентричних інтерфейсів у Figma для майбутніх учителів інформатики</div>
+                </div>
+              </div>
+              <p class="muted" style="font-size:13px;margin:10px 0 0" id="typo-hint"></p>
+            </div>
+
+            <div class="callout callout--warn">
+              <div class="callout__title">⚠️ Правило надійної верстки</div>
+              <p>Ніколи не застосовуйте <b>Fixed Size</b> для динамічних текстових блоків у реальних продуктах. При зміні мови (наприклад, з англійської на німецьку чи українську) <b>довжина слів зростає на 20–35%</b>, і фіксований контейнер призведе до фатального обрізання контенту.</p>
+            </div>
+          </section>
+
+          <!-- 3. ПОВЕДІНКА КОНТЕЙНЕРІВ ТА VARIABLES -->
+          <section class="l-section" id="containers">
+            <h2><span class="n">03</span>Поведінка текстових контейнерів та інтеграція змінних</h2>
+            <p>Геометрична поведінка текстового шару визначається трьома режимами ресайзингу рамок: <b>Auto Width</b>, <b>Auto Height</b> та <b>Fixed Size</b>. Правильний вибір режиму є критичним при інтеграції тексту в Auto Layout контейнери.</p>
+            <p>Усі числові та строкові параметри типографіки (кегль, інтерліньяж, сімейство шрифту) можна зв'язувати з дизайн-токенами через <b>Figma Variables (String та Number)</b>. Це дозволяє автоматично адаптувати типографічну ієрархію під час зміни розміру екрана або перемикання мовної локалізації.</p>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Режим / Параметр</th><th>Одиниці вимірювання</th><th>Механіка поведінки та сфера застосування</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Auto Width</td>
+                    <td>Динамічна ширина</td>
+                    <td>Рамка автоматично розтягується по горизонталі під довжину тексту. Використовується для кнопок, чипсів, навігаційних меню.</td>
+                  </tr>
+                  <tr>
+                    <td>Auto Height</td>
+                    <td>Фіксована W / Динамічна H</td>
+                    <td>Ширина контейнера задається жорстко, висота нарощується автоматично по мірі додавання рядків. Ідеально для абзаців, карток і статей.</td>
+                  </tr>
+                  <tr>
+                    <td>Fixed Size</td>
+                    <td>Фіксовані габарити px</td>
+                    <td>Ширина та висота строго обмежені. Текст, що не вміщується, обрізається або виходить за рамки. Застосовується вкрай рідко.</td>
+                  </tr>
+                  <tr>
+                    <td>Line Height</td>
+                    <td>%, px або Auto</td>
+                    <td>Визначає висоту рядка. У вебі стандарт для основного тексту складає <b>140–160%</b>, для великих заголовків — <b>110–125%</b>.</td>
+                  </tr>
+                  <tr>
+                    <td>Letter Spacing</td>
+                    <td>% або px</td>
+                    <td>Трекінг символів. Для великих заголовків рекомендується злегка від'ємний трекінг (<b>-1%..-2%</b>), для капслоку — розрядка (<b>+5%..+10%</b>).</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 4. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">04</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-fonts"></div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.3</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-fonts#tests" style="white-space:nowrap">Пройти тест з теми 2.3 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-hotkeys.html"><small>← Попередня тема</small><b>2.2 Гарячі клавіші та швидкісна навігація</b></a>
+              <a href="figma-frame-group.html" class="next"><small>Наступна тема →</small><b>2.4 Frame чи Group: архітектурні відмінності</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивна типографічна лабораторія */
+    (function () {
+      const box = document.getElementById("typo-box");
+      const txt = document.getElementById("typo-text");
+      const mode = document.getElementById("typo-mode");
+      const lang = document.getElementById("typo-lang");
+      const w = document.getElementById("typo-w");
+      const lh = document.getElementById("typo-lh");
+      const ls = document.getElementById("typo-ls");
+      const hint = document.getElementById("typo-hint");
+      const strings = {
+        en: "Design human-centered UI in Figma",
+        uk: "Проєктування людиноцентричних інтерфейсів у Figma для майбутніх учителів інформатики (+32% довжини)"
+      };
+      const render = () => {
+        document.getElementById("typo-w-val").textContent = w.value;
+        document.getElementById("typo-lh-val").textContent = lh.value + "%";
+        document.getElementById("typo-ls-val").textContent = (ls.value > 0 ? "+" : "") + ls.value + "%";
+        txt.textContent = strings[lang.value];
+        txt.style.fontWeight = w.value;
+        txt.style.lineHeight = (lh.value / 100).toFixed(2);
+        txt.style.letterSpacing = (ls.value / 100) + "em";
+        if (mode.value === "auto-w") {
+          box.style.width = "auto";
+          box.style.maxWidth = "100%";
+          box.style.height = "auto";
+          box.style.overflow = "visible";
+          box.style.whiteSpace = "nowrap";
+          box.style.borderColor = "var(--c-primary)";
+          hint.textContent = "Auto Width: рамка розтягується в один рядок під довжину тексту (ідеально для кнопок і тегів).";
+        } else if (mode.value === "auto-h") {
+          box.style.width = "340px";
+          box.style.height = "auto";
+          box.style.overflow = "visible";
+          box.style.whiteSpace = "normal";
+          box.style.borderColor = "var(--c-prototype)";
+          hint.textContent = "Auto Height: ширина фіксована (340px), висота безпечно нарощується під українську локалізацію ✓.";
+        } else {
+          box.style.width = "260px";
+          box.style.height = "48px";
+          box.style.overflow = "hidden";
+          box.style.whiteSpace = "normal";
+          box.style.borderColor = "var(--c-empathy)";
+          hint.textContent = "⚠️ Fixed Size (260×48px): при перемиканні на українську мову текст фатально обрізається!";
+        }
+      };
+      [mode, lang, w, lh, ls].forEach((el) => el.addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

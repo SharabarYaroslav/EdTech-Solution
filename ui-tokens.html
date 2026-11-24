@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дизайн-системи: Стилі, Змінні (Variables) та Токени — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="5 типів класичних стилів у Figma, дворівнева архітектура токенів (Primitives & Semantic), режими тем Modes (Light/Dark), порівняння Styles vs Variables та 5 етапів міграції.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs">
+            <a href="index.html">Головна</a><span>/</span>
+            <a href="course.html?s=ui">Секція 3. UI елементи</a><span>/</span>
+            <span>Тема 3.3</span>
+          </nav>
+          <div class="lesson-hero__series">UI Architecture &amp; Interface Engineering · Модуль 3.3</div>
+          <h1 class="lesson-hero__title">Дизайн-системи у Figma: Стилі, Змінні (Variables) та Дизайн-токени</h1>
+          <p class="lesson-hero__lead">5 типів класичних стилів, дворівнева архітектура токенів (Primitives &amp; Semantic), принцип Purpose over Appearance, робота з режимами тем (Modes: Light/Dark), матриця вибору Styles проти Variables та 5-етапний алгоритм міграції.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/ui-tokens.jpg" alt="3D візуалізація пайплайну токенів від примітивів до семантики та дуального інтерфейсу Light/Dark Mode">
+            <button class="hotspot" style="left:17%;top:42%" data-icon="🎨" data-title="Примітивні токени (Primitives)" data-text="Базові сирі значення кольорів і чисел (blue-500 = #007BFF, neutral-100 = #F7FAFC, space-base = 8px) без прив'язки до контексту."></button>
+            <button class="hotspot" style="left:38%;top:48%" data-icon="🔗" data-title="Семантичні токени (Semantic Tokens)" data-text="Токени бізнес-призначення (color-bg-primary, color-text, padding-card), що посилаються на примітиви через псевдоніми (Aliasing)."></button>
+            <button class="hotspot" style="left:60%;top:38%" data-icon="☀️" data-title="Світла тема (Light Mode)" data-text="Колонка значень для світлого оформлення (color/background = #FFFFFF, color/text = #12201B, color/primary = #0F6E56)."></button>
+            <button class="hotspot" style="left:76%;top:52%" data-icon="🌙" data-title="Темна тема (Dark Mode)" data-text="Колонка темного режиму (color/background = #0F1A16, color/text = #E8EFEC, color/primary = #3FBF96); перемикається в один клік через Modes."></button>
+            <button class="hotspot" style="left:70%;top:78%" data-icon="🏷️" data-title="Принцип Purpose over Appearance" data-text="Іменування змінних за функцією (color/primary, text/muted), завдяки чому при зміні брендового кольору назва залишається валідною."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Дослідіть архітектуру сучасних дизайн-систем у Figma.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>5 типів</strong><span>Класичних стилів: Color, Text, Effect, Layout Guide та Animation styles</span></div>
+        <div class="stat"><strong>2 рівні</strong><span>Архітектура токенів: технічні Primitives та бізнес-орієнтовані Semantic Tokens</span></div>
+        <div class="stat"><strong>1 Click</strong><span>Миттєве перемикання теми фрейму або екрана між Light та Dark завдяки Modes</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#concept">1. Концепція дизайн-системи</a>
+          <a href="#classic-styles">2. 5 типів класичних стилів</a>
+          <a href="#variables">3. Змінні та архітектура токенів</a>
+          <a href="#modes-demo">4. Робота з режимами тем (Modes)</a>
+          <a href="#matrix">5. Styles проти Variables: Матриця</a>
+          <a href="#migration">6. Гібридна стратегія та міграція</a>
+          <a href="#checklist">7. Практична вправа</a>
+          <a href="#quiz">8. Самоперевірка</a>
+          <a href="#sources">9. Джерела та література</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 3 · Усі 3 уроки</div>
+            <a href="ui-grids.html">3.1 Адаптивні сітки та інтерактивні компоненти</a>
+            <a href="ui-typography.html">3.2 Типографіка та шрифтові пари</a>
+            <a href="ui-tokens.html" class="is-active">3.3 Стилі, змінні та токени ✓</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. КОНЦЕПЦІЯ ДИЗАЙН-СИСТЕМИ -->
+          <section class="l-section" id="concept">
+            <h2><span class="n">01</span>Концепція дизайн-системи: спільні правила та будівельні блоки</h2>
+            <p><b>Дизайн-система (Design System)</b> — це комплексний, взаємопов'язаний набір спільних правил, стандартів, принципів і повторно використовуваних цифрових компонентів, що гарантують абсолютну візуальну й функціональну узгодженість цифрового продукту на всіх пристроях і платформах.</p>
+            <p>Повноцінна дизайн-система охоплює:</p>
+            <ul>
+              <li>Колірні палітри та семантичні контрасти;</li>
+              <li>Шкалу типографіки та міжрядкових ритмів;</li>
+              <li>Систему просторових сіток (Grids) та кратних відступів (Spacing);</li>
+              <li>Базові атомарні компоненти (кнопки, інпути, чекбокси, бейджі);</li>
+              <li>Складні молекулярні інтерфейсні патерни (модальні вікна, форми, хедери).</li>
+            </ul>
+            <p>У середовищі Figma головними інженерними інструментами для формалізації та масштабування цих правил є <b>стилі (Styles)</b> та <b>змінні (Variables)</b>.</p>
+          </section>
+
+          <!-- 2. 5 ТИПІВ КЛАСИЧНИХ СТИЛІВ -->
+          <section class="l-section" id="classic-styles">
+            <h2><span class="n">02</span>5 типів класичних стилів у Figma</h2>
+            <p>Класичні стилі дозволяють зберігати готові комбінації візуальних параметрів і застосовувати їх до елементів інтерфейсу одним кліком. Сучасне середовище Figma офіційно підтримує <b>5 окремих категорій стилів</b>:</p>
+
+            <div class="flips flips--3" style="margin-bottom:18px">
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">🎨</div><h4>Color styles</h4><small>Колір і заливки →</small></div>
+                <div class="flip__face flip__back"><b>Колірні стилі</b>Зберігають значення для суцільних заливок (fills), обведень (strokes), растрових зображень, градієнтів (з кутом нахилу), патернів та шейдерів.</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">✍️</div><h4>Text styles</h4><small>Типографіка →</small></div>
+                <div class="flip__face flip__back"><b>Текстові стилі</b>Зберігають гарнітуру (font family), кегль (size), накреслення (weight), міжрядковий інтервал (line height) та міжлітерну відстань (letter spacing).</div>
+              </div></div>
+              <div class="flip"><div class="flip__inner">
+                <div class="flip__face flip__front"><div class="ic">✨</div><h4>Effect styles</h4><small>Тіні та блюри →</small></div>
+                <div class="flip__face flip__back"><b>Стилі ефектів</b>Контролюють зовнішні тіні (Drop Shadow), внутрішні тіні (Inner Shadow), розмиття шару (Layer Blur), Background Blur та текстурний шум.</div>
+              </div></div>
+            </div>
+
+            <div class="cards cards--2">
+              <div class="card">
+                <span class="card__icon">📐</span>
+                <h4 class="card__title">Layout guide styles</h4>
+                <p class="card__text">Зберігають повні конфігурації сіток, колонок і рядків. Дозволяють стандартизувати 12-колонкову модульну структуру на всіх сторінках великої команди одним натисканням.</p>
+              </div>
+              <div class="card">
+                <span class="card__icon">🎬</span>
+                <h4 class="card__title">Animation styles</h4>
+                <p class="card__text">Новий тип стилів у середовищі <b>Figma Motion</b>, що фіксує переміщення, обертання, масштабування та прозорість за заданими фізичними кривими easing та spring.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 3. ЗМІННІ ТА ТОКЕНИ -->
+          <section class="l-section" id="variables">
+            <h2><span class="n">03</span>Змінні (Variables) та архітектура дизайн-токенів</h2>
+            <p><b>Змінні (Variables)</b> — це динамічні сутності у Figma, що зберігають атомарні одиничні значення кольору, чисел (відступи, скруглення радіусів), тексту або булевих перемикачів (booleans). Змінні функціонують ідентично до Design Tokens у коді фронтенду (CSS Custom Properties), що забезпечує безшовний міст між дизайном і розробкою.</p>
+
+            <div class="cards cards--2">
+              <div class="card">
+                <span class="card__icon">1️⃣</span>
+                <h4 class="card__title">1. Примітивні токени (Primitives)</h4>
+                <p class="card__text">Фіксують «сирі» технічні значення без прив'язки до контексту використання в інтерфейсі. Приклади:<br>
+                <code>blue-500 = #007BFF</code><br>
+                <code>neutral-100 = #F7FAFC</code><br>
+                <code>spacing-base = 8px</code></p>
+              </div>
+              <div class="card">
+                <span class="card__icon">2️⃣</span>
+                <h4 class="card__title">2. Семантичні токени (Semantic Tokens)</h4>
+                <p class="card__text">Посилаються на примітиви через псевдоніми (<b>Aliasing</b>) і відображають функціональне бізнес-призначення елемента. Приклади:<br>
+                <code>color-bg-primary = blue-500</code><br>
+                <code>padding-card = spacing-base * 2</code></p>
+              </div>
+            </div>
+
+            <div class="callout callout--tip">
+              <div class="callout__title">🎯 Принцип функціонального іменування (Purpose over Appearance)</div>
+              <p>Називайте змінні <b>за їхнім призначенням, а не за зовнішнім виглядом</b>! Використовуйте назви <code>color/primary</code>, <code>color/background</code> або <code>text/muted</code> замість <code>green-2</code> або <code>dark-gray</code>. Якщо компанія проведе ребрендинг і змінить фірмовий колір із зеленого на синій, семантична назва залишиться 100% коректною, а значення оновиться глобально в усій екосистемі.</p>
+            </div>
+          </section>
+
+          <!-- 4. РОБОТА З РЕЖИМАМИ ТЕМ (MODES) -->
+          <section class="l-section" id="modes-demo">
+            <h2><span class="n">04</span>Робота з режимами (Modes): світла й темна теми в один клік</h2>
+            <p>Найбільшою перевагою змінних у Figma є нативна підтримка <b>режимів (Modes)</b>. Один і той самий семантичний токен містить паралельні значення для світлої теми (Light mode) та темної теми (Dark mode). Коли дизайнер або розробник перемикає режим фрейму, всі підпорядковані елементи адаптують кольори миттєво.</p>
+
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Семантичний токен</th>
+                    <th>Light Mode (Світла)</th>
+                    <th>Dark Mode (Темна)</th>
+                    <th>Призначення в UI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>color/background</code></td>
+                    <td><span style="display:inline-block;width:14px;height:14px;background:#FFFFFF;border:1px solid #ccc;border-radius:3px;vertical-align:middle;margin-right:6px"></span><code>#FFFFFF</code> (Чистий білий)</td>
+                    <td><span style="display:inline-block;width:14px;height:14px;background:#0F1A16;border:1px solid #444;border-radius:3px;vertical-align:middle;margin-right:6px"></span><code>#0F1A16</code> (Глибокий темний)</td>
+                    <td>Основна підкладка екранів, карток і контейнерів.</td>
+                  </tr>
+                  <tr>
+                    <td><code>color/text</code></td>
+                    <td><span style="display:inline-block;width:14px;height:14px;background:#12201B;border-radius:3px;vertical-align:middle;margin-right:6px"></span><code>#12201B</code> (Темний графіт)</td>
+                    <td><span style="display:inline-block;width:14px;height:14px;background:#E8EFEC;border-radius:3px;vertical-align:middle;margin-right:6px"></span><code>#E8EFEC</code> (Світло-сірий)</td>
+                    <td>Основний текст абзаців, описи та заголовки.</td>
+                  </tr>
+                  <tr>
+                    <td><code>color/primary</code></td>
+                    <td><span style="display:inline-block;width:14px;height:14px;background:#0F6E56;border-radius:3px;vertical-align:middle;margin-right:6px"></span><code>#0F6E56</code> (Насичений смарагд)</td>
+                    <td><span style="display:inline-block;width:14px;height:14px;background:#3FBF96;border-radius:3px;vertical-align:middle;margin-right:6px"></span><code>#3FBF96</code> (Яскрава м'ята)</td>
+                    <td>Акцентні кнопки, активні стани, посилання, чекбокси.</td>
+                  </tr>
+                  <tr>
+                    <td><code>space/md</code></td>
+                    <td><code>16 px</code></td>
+                    <td><code>16 px</code></td>
+                    <td>Стандартний відступ між компонентами й комірками.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Живий симулятор Modes: Light / Dark Mode -->
+            <div style="background:var(--c-surface);border:1.5px solid var(--c-border);border-radius:14px;padding:26px;margin-top:24px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:12px">
+                <div>
+                  <h4 style="margin:0">Інтерактивний симулятор перемикання теми фрейму (Modes)</h4>
+                  <small style="color:var(--c-muted)">Перемикайте режим нижче та спостерігайте за миттєвою адаптацією семантичних токенів:</small>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <button type="button" id="btn-mode-light" class="btn btn--primary btn--sm mode-switcher is-active">☀️ Light Mode</button>
+                  <button type="button" id="btn-mode-dark" class="btn btn--ghost btn--sm mode-switcher">🌙 Dark Mode</button>
+                </div>
+              </div>
+
+              <!-- Макетоване вікно інтерфейсу -->
+              <div id="mode-demo-canvas" style="border-radius:12px;padding:28px;transition:all .3s ease;background:#FFFFFF;border:1.5px solid #E2E8F0;color:#12201B">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+                  <span id="mode-demo-badge" style="display:inline-block;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:800;background:rgba(15,110,86,0.15);color:#0F6E56;letter-spacing:.04em;text-transform:uppercase">Токен color/primary</span>
+                  <span id="mode-demo-meta" style="font-size:12px;opacity:0.7">space/md = 16px</span>
+                </div>
+                <h3 id="mode-demo-h" style="margin:0 0 10px;font-size:22px;color:#12201B">Особистий кабінет студента EdTech</h3>
+                <p id="mode-demo-p" style="margin:0 0 20px;font-size:15px;line-height:1.5;color:#12201B;opacity:0.85">Усі компоненти на цьому фреймі зв'язані з колекцією семантичних змінних. При перемиканні режиму жоден шар не дублюється вручну.</p>
+                <button type="button" id="mode-demo-cta" style="padding:12px 24px;border-radius:8px;background:#0F6E56;color:#FFFFFF;font-weight:700;font-size:14px;border:none;cursor:pointer;transition:background .3s ease">Зберегти налаштування →</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 5. ПОРІВНЯЛЬНИЙ АНАЛІЗ -->
+          <section class="l-section" id="matrix">
+            <h2><span class="n">05</span>Порівняльний аналіз: Styles проти Variables</h2>
+            <p>Вибір між використанням класичних стилів та змінних визначається масштабом проєкту та типами візуальних властивостей:</p>
+
+            <div class="table-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Критерій порівняння</th>
+                    <th>Класичні стилі (Styles)</th>
+                    <th>Змінні (Variables)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Підтримувані типи</b></td>
+                    <td>Колір (вкл. складні градієнти), Текст (усі параметри), Ефекти (Drop/Inner Shadow, Blur), Сітки, Анімація.</td>
+                    <td>Колір (суцільний), Числа (padding, gap, radius), Рядки (strings), Логічні перемикачі (booleans).</td>
+                  </tr>
+                  <tr>
+                    <td><b>Підтримка тем (Modes)</b></td>
+                    <td><b>Відсутня.</b> Для темної теми потрібно вручну дублювати та переприв'язувати всі стилі на екранах.</td>
+                    <td><b>Вбудована.</b> Перемикання Light/Dark та мультибрендовості в один клік через стовпчики режимів.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Зв'язування (Aliasing)</b></td>
+                    <td><b>Неможливо.</b> Відсутній механізм зв'язування та наслідування між різними стилями.</td>
+                    <td><b>Повна підтримка.</b> Семантичний токен безпосередньо посилається на примітивний токен.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Синхронізація з кодом</b></td>
+                    <td>Вимагає ручного перекладу значень дизайнером або експорту плагінами.</td>
+                    <td><b>Безшовна.</b> Напряму транслюється у CSS/SCSS Custom Properties та дизайн-токени розробників.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Складність освоєння</b></td>
+                    <td>Низька. Простий інструмент типу «plug-and-play» для швидких та локальних макетів.</td>
+                    <td>Середня. Потребує системного планування архітектури токенів, колекцій та режимів.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 6. ГІБРИДНА СТРАТЕГІЯ ТА МІГРАЦІЯ -->
+          <section class="l-section" id="migration">
+            <h2><span class="n">06</span>Гібридна стратегія 2025–2026 років та алгоритм міграції</h2>
+            <p>Сучасний галузевий стандарт полягає у <b>гібридному підході</b>: змінні (Variables) виступають архітектурним фундаментом для суцільних кольорів, відступів та скруглень, тоді як стилі (Styles) використовуються для оформлення типографіки, складних градієнтів та ефектів тіней/розмиття.</p>
+
+            <div class="stepper" style="margin:20px 0">
+              <div class="step">
+                <div class="step__num">1</div>
+                <div>
+                  <strong>Аудит існуючих стилів</strong>
+                  <p>Складіть реєстр усіх унікальних кольорів проєкту та усуньте випадкові дублікати й схожі відтінки (наприклад, злийте #1A1A1A та #1B1B1B в єдиний токен).</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">2</div>
+                <div>
+                  <strong>Формування примітивів (Primitives)</strong>
+                  <p>Зареєструйте базові колірні шкали (наприклад, <code>blue-100...900</code>) та шкалу чисел відступів у колекції Primitives.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">3</div>
+                <div>
+                  <strong>Створення семантичного рівня (Tokens)</strong>
+                  <p>Налаштуйте токени функціонального призначення (<code>color/surface</code>, <code>color/primary</code>, <code>text/muted</code>), зв'язавши їх із примітивами через посилання.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">4</div>
+                <div>
+                  <strong>Поступова заміна у компонентах</strong>
+                  <p>Застосуйте змінні до базових компонентів дизайн-системи за допомогою плагінів або вбудованого меню вибору змінних Figma.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step__num">5</div>
+                <div>
+                  <strong>Тестування на масштабі</strong>
+                  <p>Перевірте коректність перемикання тем у режимі презентації (Present) перед масштабуванням на всю систему файлів команди.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 7. ІНЖЕНЕРНИЙ ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">07</span>Практична вправа</h2>
+            <div class="exercise" data-ex="ui-tokens"></div>
+          </section>
+
+          <!-- 8. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">08</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 3.3</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> (5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=ui-tokens#tests" style="white-space:nowrap">Пройти тест з теми 3.3 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="ui-typography.html"><small>← Попередня тема</small><b>3.2 Типографіка, шрифтові пари та ієрархія</b></a>
+              <a href="course.html?s=ui" class="next"><small>Огляд секції →</small><b>Секція 3. UI елементи (Завершено)</b></a>
+            </div>
+          </section>
+
+          <!-- 9. ДЖЕРЕЛА -->
+          <section class="l-section" id="sources">
+            <h2><span class="n">09</span>Джерела та рекомендовані матеріали</h2>
+            <ol class="sources">
+              <li>
+                <strong>Figma Styles vs Variables: Building a Scalable Design System</strong>
+                <p>Автор: Uday Kumar Madarapu · Видання: Design Systems Collective (Medium). Глибокий аналітичний матеріал щодо вибору між стилями та змінними, побудови токенів, мультибрендовості та покрокової стратегії міграції.</p>
+              </li>
+              <li>
+                <strong>Styles, variables and design systems — Figma UI/UX Design</strong>
+                <p>Платформа: SkillGato · Розділ: Components and design systems. Практичний курс із побудови дизайн-систем, функціонального іменування токенів, налаштування Light/Dark mode та чеклиста консистентності файлів.</p>
+              </li>
+              <li>
+                <strong>Guide to styles in Figma</strong>
+                <p>Видавництво: Figma Learn Help Center · Розділ: Styles &amp; Shared Libraries. Офіційні специфікації 5 типів стилів (Color, Text, Effect, Layout Guide, Animation) та публікація у спільні командні бібліотеки.</p>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний симулятор Modes: Light / Dark Mode */
+    (function() {
+      const btnLight = document.getElementById("btn-mode-light");
+      const btnDark = document.getElementById("btn-mode-dark");
+      const canvas = document.getElementById("mode-demo-canvas");
+      const badge = document.getElementById("mode-demo-badge");
+      const heading = document.getElementById("mode-demo-h");
+      const paragraph = document.getElementById("mode-demo-p");
+      const cta = document.getElementById("mode-demo-cta");
+
+      function applyMode(mode) {
+        if (mode === "dark") {
+          btnDark.classList.add("is-active", "btn--primary");
+          btnDark.classList.remove("btn--ghost");
+          btnLight.classList.remove("is-active", "btn--primary");
+          btnLight.classList.add("btn--ghost");
+
+          canvas.style.background = "#0F1A16";
+          canvas.style.borderColor = "#24332D";
+          canvas.style.color = "#E8EFEC";
+          heading.style.color = "#E8EFEC";
+          paragraph.style.color = "#E8EFEC";
+          paragraph.style.opacity = "0.85";
+          badge.style.background = "rgba(63, 191, 150, 0.2)";
+          badge.style.color = "#3FBF96";
+          cta.style.background = "#3FBF96";
+          cta.style.color = "#0F1A16";
+        } else {
+          btnLight.classList.add("is-active", "btn--primary");
+          btnLight.classList.remove("btn--ghost");
+          btnDark.classList.remove("is-active", "btn--primary");
+          btnDark.classList.add("btn--ghost");
+
+          canvas.style.background = "#FFFFFF";
+          canvas.style.borderColor = "#E2E8F0";
+          canvas.style.color = "#12201B";
+          heading.style.color = "#12201B";
+          paragraph.style.color = "#12201B";
+          paragraph.style.opacity = "0.85";
+          badge.style.background = "rgba(15, 110, 86, 0.15)";
+          badge.style.color = "#0F6E56";
+          cta.style.background = "#0F6E56";
+          cta.style.color = "#FFFFFF";
+        }
+      }
+
+      btnLight?.addEventListener("click", () => applyMode("light"));
+      btnDark?.addEventListener("click", () => applyMode("dark"));
+    })();
+  </script>
+</body>
+</html>

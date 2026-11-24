@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Курс — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container">
+        <nav class="breadcrumbs" id="course-crumbs"><a href="index.html">Головна</a><span>/</span><span>Курс</span></nav>
+        <h1 class="page-hero__title" id="course-title">Курс</h1>
+        <p class="page-hero__text" id="course-sub">Чотири секції: дизайн-мислення, Figma, UI-елементи та розробка сайтів.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <!-- Вміст будується з масиву COURSE (js/main.js):
+           course.html           — огляд усіх секцій
+           course.html?s=figma   — сторінка конкретної секції з темами -->
+      <div class="container" id="course-root"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

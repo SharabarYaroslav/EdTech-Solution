@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdTech Solutions — дизайн-мислення для майбутніх учителів інформатики</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Освітній вебресурс для розвитку дизайн-мислення майбутніх учителів інформатики засобами цифрових технологій.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+
+  <!-- ШАПКА: логотип + назва, Курс ▾, Практика ▾, Відеокурси, Вхід/Реєстрація + аватар (js/main.js) -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- ============ 1. HERO — про сайт ============ -->
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="grid-pattern"></div>
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+      <div class="container hero__inner">
+        <div class="reveal">
+          <span class="eyebrow">Освітня платформа</span>
+          <h1 class="hero__title">Розвивай <span class="text-grad">дизайн-мислення</span> з цифровими технологіями</h1>
+          <p class="hero__text">EdTech Solutions — платформа для майбутніх учителів інформатики: від основ дизайн-мислення до розробки інтерфейсів у Figma та цифрових продуктів.</p>
+          <div class="hero__buttons">
+            <a href="course.html" class="btn btn--primary">Почати курс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="hero__meta">
+            <div class="hero__meta-item"><strong>4</strong><span>секції курсу</span></div>
+            <div class="hero__meta-item"><strong>26</strong><span>тем і уроків</span></div>
+            <div class="hero__meta-item"><strong>3</strong><span>види практики</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="mock-wrap">
+            <div class="mock">
+              <div class="mock__bar"><i></i><i></i><i></i></div>
+              <div class="mock__body">
+                <div class="mock__side"><div class="ph-line"></div><div class="ph-line ph-line--mid"></div><div class="ph-line ph-line--short"></div><div class="ph-line"></div><div class="ph-line ph-line--mid"></div></div>
+                <div class="mock__canvas">
+                  <div class="mock__frame">
+                    <div class="mock__hero"></div>
+                    <div class="mock__row"><div></div><div></div><div></div></div>
+                  </div>
+                  <div class="mock__row"><div></div><div></div><div></div></div>
+                </div>
+                <div class="mock__side mock__side--r"><div class="ph-line"></div><div class="ph-line ph-line--short"></div><div class="ph-line ph-line--mid"></div></div>
+              </div>
+            </div>
+            <div class="mock__sticker mock__sticker--1">💡 Дизайн-мислення</div>
+            <div class="mock__sticker mock__sticker--2">🎨 Auto layout</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. ПРО САЙТ ============ -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Про сайт</span>
+          <h2 class="section-title">Що ви знайдете на платформі</h2>
+          <p class="section-sub">Опис мети та можливостей ресурсу — буде додано.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="card reveal"><div class="card__icon">📖</div><h3 class="card__title">Курс</h3><p class="card__text">4 секції: від теорії до готових проєктів.</p></div>
+          <div class="card reveal"><div class="card__icon">🧪</div><h3 class="card__title">Практика</h3><p class="card__text">Тести, завдання у Figma, тренажер гарячих клавіш.</p></div>
+          <div class="card reveal"><div class="card__icon">🎬</div><h3 class="card__title">Відеокурси</h3><p class="card__text">Скрінкасти та мікровідео з покроковими поясненнями.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. СТРУКТУРА КУРСУ (генерується з COURSE у js/main.js) ============ -->
+    <section class="section" id="course">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Курс</span>
+          <h2 class="section-title">Секції курсу</h2>
+          <p class="section-sub">Оберіть секцію, щоб перейти до тем.</p>
+        </div>
+        <div class="grid grid--4" id="home-course"></div>
+        <div style="text-align:center;margin-top:44px" class="reveal">
+          <a href="course.html" class="btn btn--ghost">Увесь курс</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. НАВІГАЦІЯ: як користуватися сайтом ============ -->
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Навігація</span>
+          <h2 class="section-title">Як працювати з платформою</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3 class="card__title">Вивчайте курс</h3><p class="card__text">Проходьте секції послідовно або обирайте теми з меню «Курс».</p></div>
+          <div class="step reveal"><h3 class="card__title">Практикуйтеся</h3><p class="card__text">Закріплюйте знання тестами та завданнями у Figma.</p></div>
+          <div class="step reveal"><h3 class="card__title">Дивіться відео</h3><p class="card__text">Переглядайте відеокурси для поглибленого вивчення.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. ПРАКТИКА (генерується з PRACTICE) ============ -->
+    <section class="section" id="practice">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Практика</span>
+          <h2 class="section-title">Закріпіть знання на практиці</h2>
+        </div>
+        <div class="grid grid--3" id="home-practice"></div>
+      </div>
+    </section>
+
+    <!-- ============ 6. ВІДЕОКУРСИ ============ -->
+    <section class="section section--alt" id="video">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Відеокурси</span>
+          <h2 class="section-title">Навчальні відео</h2>
+          <p class="section-sub">Повний курс Figma для початківців, експрес-інтенсиви та практичні майстер-класи з дизайну сайтів.</p>
+        </div>
+        <div class="grid grid--3" id="home-videos-container"></div>
+        <div style="text-align:center;margin-top:40px" class="reveal">
+          <a href="video.html" class="btn btn--primary">Переглянути всі відеоматеріали (13) →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. FAQ ============ -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title">Часті запитання</h2>
+        </div>
+        <div class="faq">
+          <div class="faq__item reveal"><button class="faq__q">Для кого створено платформу?</button><div class="faq__a"><div class="faq__a-inner">Для вчителів, які хочуть розумітися в дизайн-мисленні та роботі в платформі Figma.</div></div></div>
+          <div class="faq__item reveal"><button class="faq__q">Чи потрібен досвід роботи з Figma?</button><div class="faq__a"><div class="faq__a-inner">Ні, досвід не потрібен, адже даний курс створений для вивчення.</div></div></div>
+          <div class="faq__item reveal"><button class="faq__q">Чи безкоштовне навчання?</button><div class="faq__a"><div class="faq__a-inner">Навчання абсолютно безкоштовне.</div></div></div>
+          <div class="faq__item reveal"><button class="faq__q">Як отримати результати тестів?</button><div class="faq__a"><div class="faq__a-inner">Після проходження тестів одразу відобразиться результат.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- НИЗ САЙТУ: пошта, телефон, розробник (js/main.js) -->
+  <div id="site-footer"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/videos.js"></script>
+</body>
+</html>

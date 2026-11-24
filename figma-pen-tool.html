@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pen Tool та Архітектура Vector Networks — EdTech Solutions</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Запатентована технологія Vector Networks, Vector Edit Mode, Bend Tool, Paint Bucket, Shape Builder та математика скруглень Squircles (Corner Smoothing 60%).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lesson.css">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("dt-theme") || "light";</script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="lesson-hero">
+      <div class="hero__bg"><div class="grid-pattern"></div></div>
+      <div class="container lesson-hero__grid">
+        <div>
+          <nav class="breadcrumbs"><a href="index.html">Головна</a><span>/</span><a href="course.html?s=figma">Секція 2. Занурення у Figma</a><span>/</span><span>Тема 2.6</span></nav>
+          <div class="lesson-hero__series">Figma Architecture &amp; Design System Specification · Модуль 06</div>
+          <h1 class="lesson-hero__title">Pen Tool та Архітектура Vector Networks</h1>
+          <p class="lesson-hero__lead">Нелінійна векторна топологія у Figma, інструментарій Vector Edit Mode, інтерактивна заливка Paint Bucket і математика безперервної кривизни кутів Squircles.</p>
+        </div>
+
+        <figure class="hs-figure" data-hotspots>
+          <div class="hs-wrap">
+            <img src="img/figma-pen-tool.jpg" alt="3D перо Pen Tool у центрі векторної мережі з вузлами, кривими Безьє, заливкою Paint Bucket та скругленням Squircles">
+            <button class="hotspot" style="left:50%;top:50%" data-icon="✒️" data-title="Pen Tool (Клавіша P)" data-text="Базовий інструмент побудови векторних контурів та вершин. Вхід у режим редагування існуючої фігури виконується клавішею Enter."></button>
+            <button class="hotspot" style="left:38%;top:50%" data-icon="🕸️" data-title="Багатопроменевий вузол Vector Network" data-text="У Figma з однієї вершини може виходити 3, 4 або більше сегментів у довільних напрямках — без розриву контуру чи дублювання точок."></button>
+            <button class="hotspot" style="left:50%;top:30%" data-icon="〰️" data-title="Криві Безьє та Bend Tool (Cmd / Ctrl)" data-text="Керуючі вуса визначають траєкторію кривої. Затиснутий Option / Alt дозволяє керувати вусами симетрично або зламувати кут."></button>
+            <button class="hotspot" style="left:73%;top:56%" data-icon="🪣" data-title="Paint Bucket (Shift + B)" data-text="Швидке заповнення колірним тоном або градієнтом будь-якої замкненої комірки всередині єдиної векторної мережі."></button>
+            <button class="hotspot" style="left:69%;top:31%" data-title="Squircles та iOS Corner Smoothing (60%)" data-icon="🍏" data-text="Алгоритм безперервної кривизни плавно вписує дугу у пряму лінію без різкого оптичного зламу на стиках (стандарт Apple iOS)."></button>
+            <button class="hotspot" style="left:35%;top:70%" data-icon="🧩" data-title="Shape Builder та булева геометрія" data-text="Дозволяє інтерактивно об'єднувати (Merge), вилучати (Extract) або віднімати (Subtract) пересічні векторні області простим протягуванням курсора."></button>
+          </div>
+          <div class="hs-panel"><div class="hs-panel__icon">👆</div><div><div class="hs-panel__title">Оберіть точку на зображенні</div><div class="hs-panel__text">Натискайте маркери, щоб вивчити запатентовану векторну геометрію Figma.</div></div></div>
+          <div class="hs-progress"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>∞ сегментів</strong><span>Може виходити з одного вузла у запатентованій моделі Vector Networks</span></div>
+        <div class="stat"><strong data-count="60" data-suffix="%">0</strong><span>Еталонний коефіцієнт Corner Smoothing (iOS Squircle) для преміальних інтерфейсів</span></div>
+        <div class="stat"><strong>Shift + B</strong><span>Миттєвий виклик Paint Bucket у режимі Vector Edit Mode (Enter)</span></div>
+      </div>
+    </div>
+
+    <section class="lesson">
+      <div class="container lesson-layout">
+        <aside class="toc">
+          <div class="toc__title">Зміст уроку</div>
+          <a href="#networks">1. Технологія Vector Networks</a>
+          <a href="#edit-mode">2. Інструменти Vector Edit Mode</a>
+          <a href="#squircles">3. Математика Squircles і стенд</a>
+          <a href="#checklist">4. Практична вправа</a>
+          <a href="#quiz">5. Самоперевірка</a>
+          <div class="toc__other">
+            <div class="toc__title">Секція 2 · Усі 15 уроків</div>
+            <a href="figma-intro.html">2.1 Знайомство з Figma</a>
+            <a href="figma-hotkeys.html">2.2 Гарячі клавіші</a>
+            <a href="figma-fonts.html">2.3 Гарнітури та шрифти</a>
+            <a href="figma-frame-group.html">2.4 Frame or Group</a>
+            <a href="figma-auto-layout.html">2.5 Auto layout</a>
+            <a href="figma-pen-tool.html">2.6 Pen tool та Vector Networks ✓</a>
+            <a href="figma-layout-grid.html">2.7 Layout grid і 8-Point Grid</a>
+            <a href="figma-positioning.html">2.8 Позиціонування і Constraints</a>
+            <a href="figma-components.html">2.9 Компоненти і варіанти</a>
+            <a href="figma-styles.html">2.10 Styles, Variables і токени</a>
+            <a href="figma-effects.html">2.11 Ефекти та Glassmorphism</a>
+            <a href="figma-structure.html">2.12 Структура проєкту і Handoff</a>
+            <a href="figma-export.html">2.13 Експорт та оптимізація</a>
+            <a href="figma-animation.html">2.14 Прототипування і анімація</a>
+            <a href="figma-section.html">2.15 Section та Dev Mode</a>
+          </div>
+        </aside>
+
+        <div>
+          <!-- 1. ЗАПАТЕНТОВАНА ТЕХНОЛОГІЯ VECTOR NETWORKS -->
+          <section class="l-section" id="networks">
+            <h2><span class="n">01</span>Запатентована технологія Vector Networks</h2>
+            <p>Інструмент <b>Pen Tool</b> (<span class="kbd">P</span>) у Figma побудований на революційній математичній моделі <b>Vector Networks (Векторні мережі)</b>, яка усуває вікове обмеження класичних графічних редакторів (Adobe Illustrator, Photoshop). У традиційних програмах векторний шлях є суворо лінійним ланцюгом, де кожна вершина може мати лише два з'єднання: <b>вхід</b> та <b>вихід</b>.</p>
+            <p>У <b>Vector Networks</b> з одного вузла (вершини) може виходити будь-яка кількість сегментів у довільних напрямках. Це дозволяє проектувати складні іконки, ізометричні куби, блок-схеми та символи всередині єдиного векторного об'єкта — без штучного дублювання точок і багатошарового накладання шляхів.</p>
+
+            <div class="stepper" data-stepper>
+              <div class="stepper__head">
+                <div class="stepper__tabs">
+                  <button class="stepper__btn is-active">🔗 Традиційний Path (Illustrator)</button>
+                  <button class="stepper__btn">🕸️ Vector Network (Figma)</button>
+                </div>
+              </div>
+              <div class="stepper__panel">
+                <svg viewBox="0 0 680 175" style="width:100%;max-height:185px;display:block">
+                  <rect x="10" y="10" width="660" height="150" rx="14" fill="var(--c-surface-2)" stroke="var(--c-border)"/>
+                  <path d="M 90 115 L 210 48 L 340 115 L 470 48 L 590 115" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+                  <circle cx="90" cy="115" r="8" fill="#fff" stroke="#ef4444" stroke-width="3"/>
+                  <circle cx="210" cy="48" r="8" fill="#fff" stroke="#ef4444" stroke-width="3"/>
+                  <circle cx="340" cy="115" r="8" fill="#fff" stroke="#ef4444" stroke-width="3"/>
+                  <circle cx="470" cy="48" r="8" fill="#fff" stroke="#ef4444" stroke-width="3"/>
+                  <circle cx="590" cy="115" r="8" fill="#fff" stroke="#ef4444" stroke-width="3"/>
+                  <text x="340" y="144" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--c-muted)">Лінійне обмеження: максимум 2 сегменти на вершину (1 вхід + 1 вихід). Для розгалуження доводиться дублювати контури.</text>
+                </svg>
+              </div>
+              <div class="stepper__panel" hidden>
+                <svg viewBox="0 0 680 175" style="width:100%;max-height:185px;display:block">
+                  <rect x="10" y="10" width="660" height="150" rx="14" fill="var(--c-surface-2)" stroke="var(--c-border)"/>
+                  <polygon points="340,26 450,68 340,110 230,68" fill="rgba(79,70,229,0.16)"/>
+                  <polygon points="230,68 340,110 340,146 230,108" fill="rgba(124,58,237,0.22)"/>
+                  <polygon points="450,68 340,110 340,146 450,108" fill="rgba(14,165,233,0.20)"/>
+                  <path d="M340 26 L450 68 L340 110 L230 68 Z M230 68 L230 108 L340 146 L450 108 L450 68 M340 110 L340 146" fill="none" stroke="#4f46e5" stroke-width="3.5" stroke-linejoin="round"/>
+                  <circle cx="340" cy="110" r="9" fill="#ec4899" stroke="#fff" stroke-width="3"/>
+                  <circle cx="230" cy="68" r="7" fill="#4f46e5" stroke="#fff" stroke-width="2.5"/>
+                  <circle cx="450" cy="68" r="7" fill="#4f46e5" stroke="#fff" stroke-width="2.5"/>
+                  <circle cx="340" cy="26" r="7" fill="#4f46e5" stroke="#fff" stroke-width="2.5"/>
+                  <circle cx="340" cy="146" r="7" fill="#4f46e5" stroke="#fff" stroke-width="2.5"/>
+                  <text x="560" y="84" text-anchor="middle" font-size="12.5" font-weight="800" fill="#4f46e5">Центральний вузол:</text>
+                  <text x="560" y="104" text-anchor="middle" font-size="12" font-weight="700" fill="var(--c-muted)">3 промені + 3 грані заливки</text>
+                </svg>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2. ІНСТРУМЕНТАРІЙ РЕЖИМУ VECTOR EDIT MODE -->
+          <section class="l-section" id="edit-mode">
+            <h2><span class="n">02</span>Інструментарій режиму Vector Edit Mode</h2>
+            <p>Подвійний клік або натискання клавіші <span class="kbd">Enter</span> на обраному векторному шарі чи геометричному примітиві активує спеціалізований режим <b>Vector Edit Mode</b>. У цьому середовищі верхня панель інструментів трансформується, відкриваючи доступ до високоточних операцій над геометрією:</p>
+            <ul>
+              <li><b>Bend Tool</b> — дозволяє миттєво вигинати прямі сегменти в криві Безьє простим перетягуванням самої лінії.</li>
+              <li><b>Variable Width Tool</b> — забезпечує локальну зміну товщини обводки у будь-якій точці контуру для каліграфічної та ілюстративної графіки.</li>
+              <li><b>Shape Builder</b> — дозволяє інтерактивно об'єднувати (Merge), вилучати (Extract) або віднімати (Subtract) пересічні векторні області простим протягуванням курсора.</li>
+            </ul>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Інструмент</th><th>Клавіша</th><th>Функціональне призначення у Vector Edit Mode</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Pen / Move</td>
+                    <td><span class="kbd">P</span> / <span class="kbd">V</span></td>
+                    <td>Створення нових вершин і векторних зв'язків або точне позиціонування існуючих точок.</td>
+                  </tr>
+                  <tr>
+                    <td>Bend Tool</td>
+                    <td><span class="kbd">Cmd / Ctrl</span></td>
+                    <td>Швидке додавання та коригування керуючих вусів Безьє до прямих чи кривих сегментів.</td>
+                  </tr>
+                  <tr>
+                    <td>Shape Builder</td>
+                    <td>Меню Draw</td>
+                    <td>Інтерактивне злиття (Merge), вилучення (Extract) та віднімання (Subtract) векторних областей.</td>
+                  </tr>
+                  <tr>
+                    <td>Paint Bucket (Заливка)</td>
+                    <td><span class="kbd">Shift + B</span></td>
+                    <td>Швидке заповнення колірним тоном будь-якої замкненої області всередині векторної мережі.</td>
+                  </tr>
+                  <tr>
+                    <td>Cut Tool / Eraser</td>
+                    <td><span class="kbd">X</span> / <span class="kbd">Shift + E</span></td>
+                    <td>Точкове розсічення сегмента контуру або повне стирання частини векторної лінії.</td>
+                  </tr>
+                  <tr>
+                    <td>Lasso Tool</td>
+                    <td><span class="kbd">Q</span></td>
+                    <td>Довільне виділення групи точок для їх спільного переміщення чи масштабування через Bounding Box.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 3. МАТЕМАТИКА СКРУГЛЕНЬ SQUIRCLES ТА ЛАБОРАТОРІЯ -->
+          <section class="l-section" id="squircles">
+            <h2><span class="n">03</span>Математика безперервної кривизни та Squircles</h2>
+            <p>Для побудови естетично довершених інтерфейсів Figma використовує алгоритм <b>Corner Smoothing (Згладжування кутів)</b>. Звичайне геометричне скруглення (<code>Corner Radius</code> при 0% згладжування) має різкий візуальний перехід у точці, де пряма лінія сторони переходить у дугу кола — людське око фіксує цей перепад кривизни як мікроскопічний «злам».</p>
+            <p>Параметр <b>Corner Smoothing</b> трансформує кути у математичні <b>супереліпси (Squircles)</b>, де радіус кривизни плавно наростає від нуля до максимуму. Значення <b>60% (пресет iOS)</b> точно відтворює фірмову геометрію іконок та апаратних корпусів екосистеми Apple.</p>
+
+            <div class="sandbox">
+              <div class="sandbox__controls">
+                <label>Corner Radius (Радіус кута): <b id="sq-rad-val">36 px</b>
+                  <input type="range" id="sq-rad" min="8" max="68" step="2" value="36">
+                </label>
+                <label>Corner Smoothing (Згладжування): <b id="sq-smooth-val">60% (iOS Squircle)</b>
+                  <input type="range" id="sq-smooth" min="0" max="100" step="10" value="60">
+                </label>
+                <label>Швидкі пресети
+                  <select id="sq-preset">
+                    <option value="0">0% — Стандартне коло (CSS border-radius)</option>
+                    <option value="60" selected>60% — Еталон Apple iOS Squircle</option>
+                    <option value="100">100% — Максимальний супереліпс</option>
+                  </select>
+                </label>
+                <label>Показати накладання еталонного кола
+                  <select id="sq-guide">
+                    <option value="show" selected>Увімкнено (видно різницю стиків)</option>
+                    <option value="hide">Вимкнено (чистий прев'ю іконки)</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="sandbox__stage" style="gap:32px">
+                <svg id="sq-svg" viewBox="0 0 220 220" style="width:190px;height:190px;overflow:visible">
+                  <defs>
+                    <linearGradient id="sqGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#4f46e5"/>
+                      <stop offset="100%" stop-color="#9333ea"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Стандартний прямокутник для порівняння -->
+                  <rect id="sq-std" x="20" y="20" width="180" height="180" rx="36" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="5 4"/>
+                  <!-- Супереліпс Squircle -->
+                  <path id="sq-path" fill="url(#sqGrad)" fill-opacity="0.88" stroke="#312e81" stroke-width="2.5"/>
+                  <text x="110" y="115" text-anchor="middle" fill="#fff" font-weight="800" font-size="16" id="sq-label">iOS 60%</text>
+                </svg>
+                <div style="max-width:340px;font-size:14px">
+                  <div style="font-weight:800;margin-bottom:6px;color:var(--text)">Аналіз кривизни контуру:</div>
+                  <p style="margin:0 0 8px" id="sq-desc">При 60% згладжуванні дуга починається раніше вздовж прямої грані (червоний пунктир показує звичайний радіус 0%), усуваючи оптичний злам на переході.</p>
+                  <div class="chips" style="margin-top:8px">
+                    <span class="chip">🔴 Пунктир: 0% (коло)</span>
+                    <span class="chip">🟣 Фігура: Squircle</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="callout callout--tip" style="margin-top:18px">
+              <div class="callout__title">✨ Естетика преміального UI</div>
+              <p>Встановлення <b>Corner Smoothing</b> на рівні <b>60%</b> для прямокутників, карток і кнопок миттєво надає інтерфейсу візуальної м'якості та преміальності, усуваючи грубість стандартних геометричних кіл на стиках ліній.</p>
+            </div>
+          </section>
+
+          <!-- 4. ЧЕКЛІСТ -->
+          <section class="l-section" id="checklist">
+            <h2><span class="n">04</span>Практична вправа</h2>
+            <div class="exercise" data-ex="figma-pen-tool"></div>
+          </section>
+
+          <!-- 5. САМОПЕРЕВІРКА -->
+          <section class="l-section" id="quiz">
+            <h2><span class="n">05</span>Самоперевірка</h2>
+            <div class="callout callout--tip" style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+              <div>
+                <div class="callout__title">📝 Тестова самоперевірка з теми 2.6</div>
+                <p style="margin:0">Усі тестові завдання винесено до єдиного Центру тестування у вкладці <b>«Практика → Тести»</b> ($5 запитань із миттєвою перевіркою та збереженням прогресу).</p>
+              </div>
+              <a class="btn btn--primary btn--sm" href="practice.html?test=figma-pen-tool#tests" style="white-space:nowrap">Пройти тест з теми 2.6 →</a>
+            </div>
+
+            <div class="lesson-pager">
+              <a href="figma-auto-layout.html"><small>← Попередня тема</small><b>2.5 Auto Layout: алгоритмічна модель Flexbox</b></a>
+              <a href="figma-layout-grid.html" class="next"><small>Наступна тема →</small><b>2.7 Layout Guides та 8-Point Grid System</b></a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/lesson.js"></script>
+  <script>
+    /* Інтерактивний стенд Squircle (Corner Smoothing) */
+    (function () {
+      const rad = document.getElementById("sq-rad");
+      const smooth = document.getElementById("sq-smooth");
+      const preset = document.getElementById("sq-preset");
+      const guide = document.getElementById("sq-guide");
+      const stdRect = document.getElementById("sq-std");
+      const sqPath = document.getElementById("sq-path");
+      const sqLabel = document.getElementById("sq-label");
+      const sqDesc = document.getElementById("sq-desc");
+
+      function buildSquirclePath(x, y, size, r, s) {
+        // Апроксимація кутів з плавним входом дуги при Corner Smoothing (0..1)
+        const half = size / 2;
+        const R = Math.min(r, half);
+        const reach = Math.min(half, R * (1 + s * 0.58));
+        const cp = R * (0.55228 * (1 - s * 0.35));
+        const x0 = x, y0 = y, x1 = x + size, y1 = y + size;
+        return [
+          `M ${x0 + reach} ${y0}`,
+          `L ${x1 - reach} ${y0}`,
+          `C ${x1 - cp} ${y0}, ${x1} ${y0 + cp}, ${x1} ${y0 + reach}`,
+          `L ${x1} ${y1 - reach}`,
+          `C ${x1} ${y1 - cp}, ${x1 - cp} ${y1}, ${x1 - reach} ${y1}`,
+          `L ${x0 + reach} ${y1}`,
+          `C ${x0 + cp} ${y1}, ${x0} ${y1 - cp}, ${x0} ${y1 - reach}`,
+          `L ${x0} ${y0 + reach}`,
+          `C ${x0} ${y0 + cp}, ${x0 + cp} ${y0}, ${x0 + reach} ${y0}`,
+          "Z"
+        ].join(" ");
+      }
+
+      function render() {
+        const r = Number(rad.value);
+        const sm = Number(smooth.value);
+        document.getElementById("sq-rad-val").textContent = r + " px";
+        document.getElementById("sq-smooth-val").textContent = sm + "%" + (sm === 60 ? " (iOS Squircle)" : "");
+        stdRect.setAttribute("rx", r);
+        stdRect.style.display = guide.value === "show" ? "block" : "none";
+        sqPath.setAttribute("d", buildSquirclePath(20, 20, 180, r, sm / 100));
+        sqLabel.textContent = sm === 60 ? "iOS 60%" : `Smooth ${sm}%`;
+        if (sm === 0) {
+          sqDesc.textContent = "При 0% згладжування фігура є звичайним прямокутником із дугами кола (повністю збігається з червоним пунктиром). На стику прямої та дуги виникає помітний оптичний перехід.";
+        } else if (sm === 60) {
+          sqDesc.textContent = "Еталон Apple iOS (60%): кривизна наростає поступово від прямої сторони до вершини кута, формуючи гармонійний супереліпс без різких стиків.";
+        } else {
+          sqDesc.textContent = `При ${sm}% згладжування перехід від прямої грані до кутової дуги розтягується ще глибше вздовж сторін квадрата.`;
+        }
+      }
+
+      preset.addEventListener("change", () => {
+        smooth.value = preset.value;
+        render();
+      });
+      smooth.addEventListener("input", () => {
+        if ([0, 60, 100].includes(Number(smooth.value))) preset.value = smooth.value;
+        render();
+      });
+      rad.addEventListener("input", render);
+      guide.addEventListener("change", render);
+      render();
+    })();
+  </script>
+</body>
+</html>
